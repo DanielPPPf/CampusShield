@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CampusShield | Security Admin Panel</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed-dim": "#d0cc00",
+                    "secondary-fixed-dim": "#b4c5ff",
+                    "tertiary-container": "#b4b000",
+                    "on-tertiary-container": "#434200",
+                    "primary-container": "#001c65",
+                    "on-error": "#ffffff",
+                    "primary-fixed": "#dce1ff",
+                    "surface-container-highest": "#e1e2ec",
+                    "on-error-container": "#93000a",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed": "#001551",
+                    "surface-bright": "#faf9ff",
+                    "surface": "#faf9ff",
+                    "primary": "#000a34",
+                    "on-primary": "#ffffff",
+                    "surface-dim": "#d8d9e4",
+                    "surface-container-low": "#f2f3fd",
+                    "surface-container": "#ecedf8",
+                    "on-primary-container": "#7487d3",
+                    "secondary": "#3759b6",
+                    "on-secondary-fixed": "#00174c",
+                    "inverse-primary": "#b7c4ff",
+                    "on-secondary-container": "#002f88",
+                    "on-surface-variant": "#454651",
+                    "on-primary-fixed-variant": "#2e4289",
+                    "on-background": "#191b23",
+                    "error": "#ba1a1a",
+                    "inverse-on-surface": "#eff0fa",
+                    "secondary-fixed": "#dbe1ff",
+                    "tertiary": "#636100",
+                    "on-tertiary-fixed-variant": "#4b4900",
+                    "surface-tint": "#475aa2",
+                    "surface-variant": "#e1e2ec",
+                    "surface-container-high": "#e7e7f2",
+                    "on-secondary-fixed-variant": "#18409d",
+                    "outline-variant": "#c5c5d2",
+                    "inverse-surface": "#2e3038",
+                    "secondary-container": "#7d9cfe",
+                    "background": "#faf9ff",
+                    "on-surface": "#191b23",
+                    "primary-fixed-dim": "#b7c4ff",
+                    "tertiary-fixed": "#eee900",
+                    "on-tertiary-fixed": "#1d1d00",
+                    "outline": "#757682",
+                    "error-container": "#ffdad6",
+                    "surface-container-lowest": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-glass {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .pulse-error {
+            animation: pulse-red 2s infinite;
+        }
+        @keyframes pulse-red {
+            0% { box-shadow: 0 0 0 0 rgba(186, 26, 26, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(186, 26, 26, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(186, 26, 26, 0); }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body antialiased">
+<!-- TopAppBar (From Shared JSON) -->
+<header class="fixed top-0 w-full z-50 bg-[#faf9ff] dark:bg-[#000a34] shadow-[0_12px_32px_rgba(0,10,52,0.08)]">
+<div class="flex justify-between items-center w-full px-6 py-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary dark:text-f2f3fd" data-icon="shield">shield</span>
+<h1 class="font-headline font-extrabold uppercase tracking-widest text-xl text-[#000a34] dark:text-[#faf9ff]">CampusShield</h1>
+</div>
+<div class="flex items-center gap-6">
+<!-- Top Nav for Desktop -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-[#001c65] dark:text-[#faf9ff] font-bold transition-colors" href="#">DASHBOARD</a>
+<a class="text-[#3759b6] dark:text-[#e1e2ec] opacity-70 hover:opacity-100 transition-colors" href="#">PATROLS</a>
+<a class="text-[#3759b6] dark:text-[#e1e2ec] opacity-70 hover:opacity-100 transition-colors" href="#">ANALYTICS</a>
+</nav>
+<div class="relative">
+<span class="material-symbols-outlined text-primary p-2 rounded-full hover:bg-surface-container-low transition-colors" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full ring-2 ring-surface"></span>
+</div>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32 px-4 md:px-8 max-w-7xl mx-auto space-y-8">
+<!-- Dashboard Header & Status -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<div class="md:col-span-8 space-y-2">
+<h2 class="text-display-lg font-headline font-extrabold text-primary leading-tight">Security Command</h2>
+<p class="text-body-md text-outline">Monitoring Universidad de La Sabana Campus Central</p>
+</div>
+<div class="md:col-span-4 flex items-center justify-end">
+<!-- Shield Gauge (Signature Component) -->
+<div class="relative w-32 h-32 flex items-center justify-center bg-surface-container-lowest rounded-full shadow-lg border border-outline-variant/10">
+<svg class="absolute inset-0 w-full h-full transform -rotate-90">
+<circle class="text-surface-container-high" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-width="8"></circle>
+<circle cx="64" cy="64" fill="transparent" r="58" stroke="url(#gradient)" stroke-dasharray="364.4" stroke-dashoffset="72.8" stroke-width="8"></circle>
+<defs>
+<lineargradient id="gradient" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#000a34"></stop>
+<stop offset="100%" stop-color="#3759b6"></stop>
+</lineargradient>
+</defs>
+</svg>
+<div class="text-center">
+<span class="block text-2xl font-headline font-extrabold text-primary">80%</span>
+<span class="text-[10px] font-label font-bold uppercase text-on-secondary-fixed-variant">Secure</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid Main Dashboard -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Real-Time Notification Feed (3 Columns) -->
+<aside class="lg:col-span-4 space-y-6">
+<div class="bg-surface-container-low rounded-xl p-6 shadow-sm border border-outline-variant/5">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-headline font-semibold text-primary">Live Activity</h3>
+<span class="text-xs font-label text-secondary animate-pulse">● LIVE</span>
+</div>
+<div class="space-y-4">
+<div class="flex gap-4 p-3 bg-surface rounded-lg">
+<span class="material-symbols-outlined text-tertiary" data-icon="minor_crash">minor_crash</span>
+<div>
+<p class="text-sm font-semibold">Zone 4: Vehicle access issue</p>
+<p class="text-[11px] text-outline">2 mins ago • Gate B</p>
+</div>
+</div>
+<div class="flex gap-4 p-3 bg-surface rounded-lg">
+<span class="material-symbols-outlined text-error" data-icon="emergency">emergency</span>
+<div>
+<p class="text-sm font-semibold">Zone 7: High Priority Incident</p>
+<p class="text-[11px] text-outline">14 mins ago • Library</p>
+</div>
+</div>
+<div class="flex gap-4 p-3 bg-surface-container-lowest/50 opacity-60 rounded-lg">
+<span class="material-symbols-outlined text-primary" data-icon="assignment_turned_in">assignment_turned_in</span>
+<div>
+<p class="text-sm font-medium text-outline">Patrol 02 check-in</p>
+<p class="text-[11px] text-outline">25 mins ago • Sports Center</p>
+</div>
+</div>
+</div>
+<button class="w-full mt-6 py-2 text-xs font-label font-bold text-secondary-container hover:underline tracking-widest">VIEW ALL HISTORY</button>
+</div>
+<div class="relative overflow-hidden rounded-xl h-64 shadow-lg group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Campus security map with digital overlay of safe zones and real-time personnel tracking" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9Oz9dOMsbm06Lz0PrfxY4xHS9iwtXMv2ePKeWPUBTgxTym3I36bw-JAIJq2CGRrp9_GwBLTjyUNxdM-2d4GNle1q3vckCHvwsEOvuTSUSAj8SnsYxrS_ILS5ZFKmpeI-4NtR3ok-ofa7JtZxVhfmi4_K0CE8mcqBhosBbMPazubINMHACLO-mGxV2HzAqAJWFXTGokKwAefFIKYLVF-dm0qvFeg-ZbSO-dRSRRDKLtutjdHgrBUatxDiSl4Q_p7iM3yo8fTtS8Ec"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex flex-col justify-end p-6">
+<h4 class="text-white font-headline font-bold">Interactive Map</h4>
+<p class="text-white/70 text-xs">Tracking 12 Active Units</p>
+</div>
+</div>
+</aside>
+<!-- Active Incidents (8 Columns) -->
+<section class="lg:col-span-8 space-y-6">
+<div class="flex items-center justify-between">
+<h3 class="text-headline-md font-headline font-bold text-primary">Active Incidents</h3>
+<div class="flex gap-2">
+<button class="px-4 py-1.5 rounded-full bg-surface-container-highest text-on-surface-variant text-[10px] font-label font-bold">ALL</button>
+<button class="px-4 py-1.5 rounded-full bg-error text-white text-[10px] font-label font-bold flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[14px]" data-icon="warning">warning</span> HIGH RISK
+                        </button>
+</div>
+</div>
+<!-- Incident List -->
+<div class="space-y-4">
+<!-- Incident Card 1 (High Priority) -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-[0_4px_20px_rgba(0,10,52,0.04)] border-l-4 border-error group hover:shadow-md transition-all">
+<div class="flex flex-col md:flex-row justify-between gap-4">
+<div class="space-y-2">
+<div class="flex items-center gap-3">
+<span class="bg-error/10 text-error px-3 py-1 rounded-full text-[10px] font-label font-extrabold uppercase tracking-widest">New</span>
+<span class="bg-primary text-white px-3 py-1 rounded-full text-[10px] font-label font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]" data-icon="trending_up">trending_up</span> ZONE SCORE: 88
+                                    </span>
+</div>
+<h4 class="text-title-lg font-headline font-bold text-primary">Suspicious activity reported at Engineering Block</h4>
+<p class="text-body-md text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span> Entrance 3 - Stairwell Area
+                                </p>
+</div>
+<div class="flex flex-wrap md:flex-nowrap gap-2 items-start">
+<button class="p-2 bg-surface-container-low rounded-xl text-primary hover:bg-primary hover:text-white transition-all flex items-center gap-2 group/btn">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+<span class="text-xs font-bold hidden group-hover/btn:block">View Map</span>
+</button>
+<button class="p-2 bg-surface-container-low rounded-xl text-primary hover:bg-primary hover:text-white transition-all flex items-center gap-2 group/btn">
+<span class="material-symbols-outlined" data-icon="person_add">person_add</span>
+<span class="text-xs font-bold hidden group-hover/btn:block">Assign Patrol</span>
+</button>
+<button class="p-2 bg-primary text-white rounded-xl hover:bg-secondary transition-all flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
+<span class="text-xs font-bold">Update Status</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Incident Card 2 (In Progress) -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-[0_4px_20px_rgba(0,10,52,0.04)] border-l-4 border-secondary group hover:shadow-md transition-all">
+<div class="flex flex-col md:flex-row justify-between gap-4">
+<div class="space-y-2">
+<div class="flex items-center gap-3">
+<span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-[10px] font-label font-extrabold uppercase tracking-widest">In Progress</span>
+<span class="bg-surface-container-highest text-on-surface-variant px-3 py-1 rounded-full text-[10px] font-label font-bold">ZONE SCORE: 42</span>
+</div>
+<h4 class="text-title-lg font-headline font-bold text-primary">Elevator malfunction - Students trapped</h4>
+<p class="text-body-md text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span> Ad Portas Building - Central Elevator
+                                </p>
+</div>
+<div class="flex flex-wrap md:flex-nowrap gap-2 items-start">
+<button class="p-2 bg-surface-container-low rounded-xl text-primary hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+</button>
+<div class="flex -space-x-2">
+<img class="w-10 h-10 rounded-full border-2 border-surface object-cover" data-alt="Portrait of security guard Miguel" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYSGmoAptqTFIb-e2ZN5LEQ7Y1AV6mmM_cXpIf0F1RILLWEgHGdmatnCe6lLkjNH3ozo1DICfAWB75AlWKWH0uJo5mXqB_y8lHkLTAgMeLiV1mzfxBvqLtvjqz2EpsWlazm5gLrMuRO_HCRZZqmsjmrau5vtXRT1LPQUdTVevoOIfNSKCxDhDkGo7ty6P4Htds2h0bLSk3fGYzexECZEMTj-UxvTfs4gmJV-2nmeo0iAviuaULNPS6CQm5C-8X7LwCsEA19b4q3mw"/>
+<img class="w-10 h-10 rounded-full border-2 border-surface object-cover" data-alt="Portrait of security supervisor Sarah" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDx_muO6Rl-SfhhT3mcjm7xxMOI9BUx8Z8VApVcLug0lE1ofualYSaz90cQx2Th8Db4fR8q__RMXF5Sbfi6wCojVqSKQHOMX5jrHHfI8mdQyZGgRDGwVU7snmFFmcQWRj_sR79xzjkm43NNttyiXWwb-FYq7ExJomRdH5Vruidt7gkUHgj77hufXpWsG_9417wcJIVUKXoY7vXIizZPpGSOX7MVAVsCXG7Mat7df2kLrkF65dJgFwYBN0O6ihFg-GFVFaDcTJukuw0"/>
+</div>
+<button class="p-2 bg-primary text-white rounded-xl hover:bg-secondary transition-all flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
+<span class="text-xs font-bold">Update Status</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Incident Card 3 (Resolved) -->
+<div class="bg-surface-container-lowest/60 rounded-xl p-6 shadow-sm border-l-4 border-tertiary-container opacity-80">
+<div class="flex flex-col md:flex-row justify-between gap-4">
+<div class="space-y-2">
+<div class="flex items-center gap-3">
+<span class="bg-tertiary-container/10 text-on-tertiary-container px-3 py-1 rounded-full text-[10px] font-label font-extrabold uppercase tracking-widest">Resolved</span>
+<span class="bg-surface-container-highest text-on-surface-variant px-3 py-1 rounded-full text-[10px] font-label font-bold">ZONE SCORE: 15</span>
+</div>
+<h4 class="text-title-lg font-headline font-bold text-primary">Lost item report - Laptop found</h4>
+<p class="text-body-md text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span> Cafeteria North
+                                </p>
+</div>
+<div class="flex gap-2 items-start">
+<button class="px-4 py-2 border border-outline-variant text-[10px] font-label font-bold rounded-xl text-outline">ARCHIVE REPORT</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Emergency FAB (Pulse animation only on high alert) -->
+<button class="fixed bottom-24 right-8 w-16 h-16 bg-error text-white rounded-full flex items-center justify-center shadow-xl z-50 pulse-error active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="emergency_share" style="font-variation-settings: 'FILL' 1;">emergency_share</span>
+</button>
+<!-- BottomNavBar (From Shared JSON) -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 z-50 rounded-t-[1.5rem] bg-white/80 backdrop-blur-xl shadow-[0_-8px_24px_rgba(0,10,52,0.06)] px-4 py-3 pb-safe flex justify-around items-center">
+<a class="flex flex-col items-center justify-center bg-gradient-to-br from-[#000a34] to-[#001c65] text-white rounded-[1rem] px-4 py-2 shadow-lg scale-105 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Inter'] text-[10px] font-semibold uppercase tracking-tighter mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#3759b6] dark:text-[#e1e2ec] opacity-60 px-4 py-2 hover:opacity-100 transition-opacity" href="#">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+<span class="font-['Inter'] text-[10px] font-semibold uppercase tracking-tighter mt-1">Map</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#3759b6] dark:text-[#e1e2ec] opacity-60 px-4 py-2 hover:opacity-100 transition-opacity" href="#">
+<span class="material-symbols-outlined" data-icon="emergency">emergency</span>
+<span class="font-['Inter'] text-[10px] font-semibold uppercase tracking-tighter mt-1">Report</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#3759b6] dark:text-[#e1e2ec] opacity-60 px-4 py-2 hover:opacity-100 transition-opacity" href="#">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+<span class="font-['Inter'] text-[10px] font-semibold uppercase tracking-tighter mt-1">AI Insights</span>
+</a>
+</nav>
+</body></html>

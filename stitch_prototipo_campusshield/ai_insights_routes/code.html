@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Insights &amp; Safe Routes - CampusShield</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "tertiary-fixed-dim": "#d0cc00",
+                "secondary-fixed-dim": "#b4c5ff",
+                "tertiary-container": "#b4b000",
+                "on-tertiary-container": "#434200",
+                "primary-container": "#001c65",
+                "on-error": "#ffffff",
+                "primary-fixed": "#dce1ff",
+                "surface-container-highest": "#e1e2ec",
+                "on-error-container": "#93000a",
+                "on-secondary": "#ffffff",
+                "on-tertiary": "#ffffff",
+                "on-primary-fixed": "#001551",
+                "surface-bright": "#faf9ff",
+                "surface": "#faf9ff",
+                "primary": "#000a34",
+                "on-primary": "#ffffff",
+                "surface-dim": "#d8d9e4",
+                "surface-container-low": "#f2f3fd",
+                "surface-container": "#ecedf8",
+                "on-primary-container": "#7487d3",
+                "secondary": "#3759b6",
+                "on-secondary-fixed": "#00174c",
+                "inverse-primary": "#b7c4ff",
+                "on-secondary-container": "#002f88",
+                "on-surface-variant": "#454651",
+                "on-primary-fixed-variant": "#2e4289",
+                "on-background": "#191b23",
+                "error": "#ba1a1a",
+                "inverse-on-surface": "#eff0fa",
+                "secondary-fixed": "#dbe1ff",
+                "tertiary": "#636100",
+                "on-tertiary-fixed-variant": "#4b4900",
+                "surface-tint": "#475aa2",
+                "surface-variant": "#e1e2ec",
+                "surface-container-high": "#e7e7f2",
+                "on-secondary-fixed-variant": "#18409d",
+                "outline-variant": "#c5c5d2",
+                "inverse-surface": "#2e3038",
+                "secondary-container": "#7d9cfe",
+                "background": "#faf9ff",
+                "on-surface": "#191b23",
+                "primary-fixed-dim": "#b7c4ff",
+                "tertiary-fixed": "#eee900",
+                "on-tertiary-fixed": "#1d1d00",
+                "outline": "#757682",
+                "error-container": "#ffdad6",
+                "surface-container-lowest": "#ffffff"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+            },
+            "fontFamily": {
+                "headline": ["Manrope"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-morphism {
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      h1, h2, h3 {
+        font-family: 'Manrope', sans-serif;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface antialiased min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#faf9ff] dark:bg-[#000a34] shadow-[0_12px_32px_rgba(0,10,52,0.08)] flex justify-between items-center px-6 py-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary dark:text-f2f3fd text-2xl" style="font-variation-settings: 'FILL' 1;">shield</span>
+<span class="font-['Manrope'] font-extrabold uppercase tracking-widest text-xl text-[#000a34] dark:text-[#faf9ff]">CampusShield</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="p-2 rounded-full hover:bg-[#f2f3fd] dark:hover:bg-[#001c65] transition-colors active:scale-95 duration-200 cursor-pointer">
+<span class="material-symbols-outlined text-[#001c65] dark:text-[#f2f3fd]">notifications</span>
+</div>
+</div>
+</header>
+<main class="pt-24 px-6 max-w-2xl mx-auto space-y-8">
+<!-- Header Section -->
+<section>
+<span class="text-secondary font-label text-[10px] font-semibold uppercase tracking-[0.2em] block mb-2">Institutional Intelligence</span>
+<h1 class="text-4xl font-headline font-extrabold text-primary tracking-tight leading-tight">AI Recommendations</h1>
+<p class="text-on-surface-variant body-md mt-2">Personalized safety insights based on campus history and real-time activity patterns.</p>
+</section>
+<!-- Safe Route Planner (Bento Style) -->
+<section class="grid grid-cols-1 gap-4">
+<div class="bg-surface-container-lowest rounded-[1.5rem] p-6 shadow-[0_4px_20px_rgba(0,10,52,0.04)] relative overflow-hidden">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">route</span>
+<h2 class="font-headline font-semibold text-lg text-primary">Safe Route Planner</h2>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-4 relative">
+<div class="flex flex-col items-center gap-1 z-10">
+<span class="w-3 h-3 rounded-full bg-secondary"></span>
+<div class="w-0.5 h-10 bg-outline-variant/30"></div>
+<span class="material-symbols-outlined text-primary text-[18px]">location_on</span>
+</div>
+<div class="flex-1 space-y-3">
+<div class="bg-surface-container-low p-3 rounded-xl flex items-center justify-between">
+<span class="text-on-surface-variant text-sm">Biblioteca Octavio Arizmendi</span>
+<span class="material-symbols-outlined text-outline text-sm">my_location</span>
+</div>
+<div class="bg-surface-container-low p-3 rounded-xl flex items-center justify-between">
+<span class="text-primary font-medium text-sm">Edificio Ad Portas</span>
+<span class="material-symbols-outlined text-outline text-sm">search</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Suggested Route Card (Nested) -->
+<div class="mt-6 p-5 bg-gradient-to-br from-primary to-primary-container rounded-2xl text-white shadow-xl">
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="text-[10px] font-bold uppercase tracking-widest opacity-80">Recommended Strategy</span>
+<h3 class="text-lg font-headline font-bold">Alternative Route via Puerta de Madera</h3>
+</div>
+<div class="bg-white/20 backdrop-blur-md rounded-lg px-2 py-1 flex flex-col items-center">
+<span class="text-xs font-bold">+3</span>
+<span class="text-[8px] uppercase">mins</span>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-white/10 rounded-xl p-3 border border-white/5">
+<div class="flex-1">
+<div class="text-[10px] uppercase tracking-tighter opacity-70 mb-1">Risk Reduction</div>
+<div class="text-2xl font-extrabold flex items-center gap-2">
+                                60%
+                                <span class="material-symbols-outlined text-tertiary-fixed text-lg">trending_down</span>
+</div>
+</div>
+<button class="bg-white text-primary px-4 py-2 rounded-lg font-bold text-xs shadow-lg active:scale-95 transition-transform">
+                            Start Walk
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- AI Patterns Section -->
+<section class="space-y-4">
+<h2 class="font-headline font-semibold text-xl text-primary px-1">Behavioral Analytics</h2>
+<div class="bg-surface-container-low rounded-[1.5rem] p-6 relative">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-2xl bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">psychology</span>
+</div>
+<div class="flex-1">
+<h4 class="font-headline font-bold text-primary mb-1">Time-Based Intelligence</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed italic">
+                            "74% of incidents in Ad Portas occur 8pm-11pm"
+                        </p>
+</div>
+</div>
+<div class="mt-6 grid grid-cols-2 gap-3">
+<div class="bg-surface-container-lowest p-4 rounded-2xl border border-outline-variant/10">
+<span class="text-[10px] font-bold text-secondary uppercase block mb-1">Safest Zone</span>
+<div class="text-primary font-bold text-sm">Central Plaza</div>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-2xl border border-outline-variant/10">
+<span class="text-[10px] font-bold text-tertiary uppercase block mb-1">Peak Activity</span>
+<div class="text-primary font-bold text-sm">6:00 PM - 7:30 PM</div>
+</div>
+</div>
+</div>
+<!-- Contextual Map Hint -->
+<div class="relative h-48 w-full rounded-[1.5rem] overflow-hidden group cursor-pointer">
+<img class="w-full h-full object-cover grayscale brightness-75 group-hover:scale-105 transition-transform duration-700" data-alt="abstract satellite view of a modern university campus with highlighted pedestrian pathways and glowing safe zones" data-location="Chia, Colombia" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIt2V0kw3-_v6WplAlX8zGFqSMTNyPK_I7oXWD_8ZR-fJnVb4TyZhl77PHXC1bYl4W6GcY8shGVqOapRGKguEj2Ek4Zvgq6p5rjGkt22saFc8mSM1lIoMSKhclt9w26U030Eqc2dGWaYLtV3c6FVBMLEEhjyuEF0PbO4ihEJLx5afNfRLZQ_bIK7QKAKJrWOw9P2euKOXg_tgu8aeNCt8MsihfDVmE62AAfxOXMDBgJvjCSn7yk3oMuLA6T0FqqKZE36wPMd18Bno"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex flex-col justify-end p-6">
+<div class="flex items-center gap-2 text-white">
+<span class="material-symbols-outlined text-sm">visibility</span>
+<span class="text-xs font-bold uppercase tracking-widest">Live Safety Overlay Active</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Risk Insight Badges -->
+<section class="flex flex-wrap gap-3 pb-8">
+<div class="bg-surface-container-highest px-4 py-2 rounded-full flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-on-secondary-fixed-variant"></span>
+<span class="text-[10px] font-bold uppercase tracking-tighter text-on-surface-variant">Gate North: Secure</span>
+</div>
+<div class="bg-surface-container-highest px-4 py-2 rounded-full flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="text-[10px] font-bold uppercase tracking-tighter text-on-surface-variant">Library: High Traffic</span>
+</div>
+<div class="bg-surface-container-highest px-4 py-2 rounded-full flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="text-[10px] font-bold uppercase tracking-tighter text-on-surface-variant">Ad Portas: Caution</span>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full flex justify-around items-center px-4 py-3 pb-safe bg-white/80 dark:bg-[#000a34]/80 backdrop-blur-xl z-50 rounded-t-[1.5rem] shadow-[0_-8px_24px_rgba(0,10,52,0.06)]">
+<div class="flex flex-col items-center justify-center text-[#3759b6] dark:text-[#e1e2ec] opacity-60 px-4 py-2 transition-opacity hover:opacity-100">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-['Inter'] text-[10px] font-semibold uppercase tracking-tighter">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#3759b6] dark:text-[#e1e2ec] opacity-60 px-4 py-2 transition-opacity hover:opacity-100">
+<span class="material-symbols-outlined mb-1">map</span>
+<span class="font-['Inter'] text-[10px] font-semibold uppercase tracking-tighter">Map</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#3759b6] dark:text-[#e1e2ec] opacity-60 px-4 py-2 transition-opacity hover:opacity-100">
+<span class="material-symbols-outlined mb-1">emergency</span>
+<span class="font-['Inter'] text-[10px] font-semibold uppercase tracking-tighter">Report</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-gradient-to-br from-[#000a34] to-[#001c65] text-white rounded-[1rem] px-4 py-2 shadow-lg scale-105 active:scale-90 duration-150 ease-in-out">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">psychology</span>
+<span class="font-['Inter'] text-[10px] font-semibold uppercase tracking-tighter">AI Insights</span>
+</div>
+</nav>
+</body></html>

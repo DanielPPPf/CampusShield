@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>CampusShield · Mockup Navegable · UniSabana</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  /* ── UniSabana palette (exact) ── */
+  --navy:    #001C65;
+  --blue:    #1A419E;
+  --blue-lt: #E0EDFE;
+  --blue-mid:#4A70C4;
+  --nav-bg:  #F4F4F4;
+  --white:   #FFFFFF;
+  /* ── UI neutrals ── */
+  --bg:      #F7F7F5;
+  --border:  #E2E4EC;
+  --border2: #C8D0E8;
+  --ink:     #0A1240;
+  --ink-mid: #3A4A7A;
+  --ink-dim: #7A8AAA;
+  --ink-ghost:#B8C4D8;
+  /* ── Semantic ── */
+  --red-bg:  #FCEEF0;--red-text:#6B1020;--red-mid:#C83050;
+  --amber-bg:#FFF4E0;--amber-text:#5A3000;--amber-mid:#D4830A;
+  --green-bg:#E8F4F0;--green-text:#0A3828;--green-mid:#1A8060;
+  --f:'Outfit',sans-serif;--m:'DM Mono',monospace;
+}
+body{background:var(--bg);font-family:var(--f);color:var(--ink);min-height:100vh;
+  background-image:radial-gradient(var(--border2) 1px,transparent 1px);background-size:26px 26px;}
+
+.page{max-width:1000px;margin:0 auto;padding:36px 24px 64px;}
+
+/* header */
+.page-header{display:flex;justify-content:space-between;align-items:flex-end;padding-bottom:20px;border-bottom:1px solid var(--border);margin-bottom:32px;}
+.logo-row{display:flex;align-items:center;gap:10px;}
+.unisabana-shield{width:32px;height:32px;background:var(--navy);border-radius:4px 4px 50% 50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.page-title{font-size:15px;font-weight:600;color:var(--navy);}
+.page-title span{color:var(--blue);}
+.meta{font-family:var(--m);font-size:10px;color:var(--ink-dim);letter-spacing:1.5px;text-align:right;line-height:1.9;}
+
+/* layout */
+.layout{display:flex;gap:28px;align-items:flex-start;justify-content:center;}
+
+/* phone */
+.phone{width:282px;background:#2C3E6E;border-radius:40px;padding:12px;border:7px solid #E8EDF8;flex-shrink:0;}
+.notch{width:64px;height:6px;background:#E0E8F4;border-radius:3px;margin:0 auto 10px;}
+.chin{width:64px;height:6px;background:#E0E8F4;border-radius:3px;margin:10px auto 0;}
+.screen{background:#F5F7FB;border-radius:30px;overflow:hidden;height:580px;display:flex;flex-direction:column;}
+
+/* statusbar */
+.statusbar{background:var(--navy);padding:9px 18px 7px;display:flex;justify-content:space-between;align-items:center;flex-shrink:0;}
+.stime{font-family:var(--m);font-size:11px;color:#A0B4E8;}
+
+/* content */
+.content{flex:1;overflow-y:auto;overflow-x:hidden;scrollbar-width:none;}
+.content::-webkit-scrollbar{display:none;}
+.view{display:none;}
+.view.active{display:block;}
+
+/* navbar */
+.navbar{background:var(--white);border-top:1px solid var(--border);display:flex;justify-content:space-around;padding:9px 0 12px;flex-shrink:0;}
+.nav-item{display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;padding:3px 10px;border-radius:8px;transition:background .15s;}
+.nav-item:hover{background:var(--blue-lt);}
+.nav-label{font-size:10px;color:var(--ink-dim);transition:color .15s;}
+.nav-item.active .nav-label{color:var(--navy);font-weight:600;}
+
+/* topbar */
+.topbar{background:var(--navy);padding:12px 16px 16px;}
+.topbar-title{font-size:16px;font-weight:700;color:var(--white);}
+.topbar-sub{font-size:10px;color:#A0B4E8;margin-top:2px;font-family:var(--m);letter-spacing:.5px;}
+
+/* section title */
+.stitle{font-size:11px;font-weight:600;color:var(--blue);padding:10px 14px 5px;letter-spacing:.4px;}
+
+/* card */
+.card{background:var(--white);border-radius:12px;padding:12px 14px;margin:0 12px 9px;border:1px solid var(--border);}
+
+/* risk bar */
+.risk-bar{height:6px;border-radius:3px;background:#D4DAF0;overflow:hidden;margin-top:6px;}
+.risk-fill{height:100%;border-radius:3px;}
+
+/* badge */
+.badge{display:inline-flex;align-items:center;gap:4px;padding:3px 8px;border-radius:4px;font-size:10px;font-weight:600;}
+.b-red{background:var(--red-bg);color:var(--red-text);}
+.b-amber{background:var(--amber-bg);color:var(--amber-text);}
+.b-green{background:var(--green-bg);color:var(--green-text);}
+.b-blue{background:var(--blue-lt);color:var(--navy);}
+.dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+
+/* buttons */
+.report-btn{display:flex;align-items:center;justify-content:center;gap:8px;background:var(--navy);color:var(--white);border:none;border-radius:12px;padding:12px;font-size:12px;font-weight:600;cursor:pointer;width:calc(100% - 24px);margin:0 12px 12px;font-family:var(--f);}
+.send-btn{display:block;background:var(--navy);color:var(--white);border:none;border-radius:12px;padding:12px;font-size:12px;font-weight:600;cursor:pointer;width:100%;font-family:var(--f);}
+.send-btn:hover,.report-btn:hover{background:var(--blue);}
+
+/* incident */
+.inc-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:0 12px 12px;}
+.inc-item{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:10px 8px;text-align:center;cursor:pointer;transition:all .15s;}
+.inc-item:hover{border-color:var(--blue-mid);}
+.inc-item.selected{background:var(--blue-lt);border-color:var(--navy);border-width:1.5px;}
+.inc-label{font-size:10px;color:var(--ink-mid);margin-top:4px;}
+
+/* success */
+.success-msg{display:none;margin:0 12px 12px;background:var(--green-bg);border-radius:10px;padding:12px;text-align:center;border:1px solid #9FD4C8;}
+
+/* ai zones */
+.ai-zone{padding:0 12px;display:flex;flex-direction:column;gap:7px;margin-bottom:4px;}
+.ai-item{background:var(--white);border-radius:10px;padding:9px 12px;border:1px solid var(--border);}
+.rec-item{background:var(--blue-lt);border:1px solid var(--border2);border-radius:10px;padding:9px 12px;margin:0 12px 8px;display:flex;gap:8px;align-items:flex-start;}
+
+/* sidebar */
+.sidebar{width:220px;flex-shrink:0;}
+.sidebar-title{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:14px;}
+.sbtn{padding:11px 14px;border-radius:10px;border:1px solid var(--border);background:var(--white);cursor:pointer;margin-bottom:8px;width:100%;text-align:left;transition:all .18s;font-family:var(--f);}
+.sbtn:hover{border-color:var(--blue-mid);}
+.sbtn.active{border-color:var(--navy);background:var(--blue-lt);border-width:1.5px;}
+.sbtn .bn{font-size:12px;font-weight:600;color:var(--navy);margin-bottom:2px;}
+.sbtn .bd{font-size:11px;color:var(--ink-dim);line-height:1.45;}
+.hint{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:12px 14px;margin-top:6px;}
+.hint p{font-size:11px;color:var(--ink-dim);line-height:1.65;}
+
+/* footer */
+.page-footer{margin-top:36px;padding-top:18px;border-top:1px solid var(--border);display:flex;justify-content:space-between;font-family:var(--m);font-size:9.5px;color:var(--ink-ghost);letter-spacing:1px;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="page-header">
+    <div class="logo-row">
+      <div class="unisabana-shield">
+        <svg width="18" height="20" viewBox="0 0 18 20" fill="none"><circle cx="9" cy="8" r="4" stroke="white" stroke-width="1.2" fill="none"/><circle cx="9" cy="8" r="1.5" fill="white"/><line x1="9" y1="12" x2="9" y2="16" stroke="white" stroke-width="1.2" stroke-linecap="round"/><line x1="6" y1="14" x2="12" y2="14" stroke="white" stroke-width="1" stroke-linecap="round" opacity=".6"/></svg>
+      </div>
+      <div>
+        <div class="page-title">Campus<span>Shield</span> · Mockup navegable</div>
+        <div style="font-family:var(--m);font-size:9px;color:var(--ink-dim);letter-spacing:1px;margin-top:2px;">Vibras Corporation · Universidad de La Sabana</div>
+      </div>
+    </div>
+    <div class="meta">Capstone Design Project · 2026<br>Facultad de Ingeniería</div>
+  </div>
+
+  <div class="layout">
+
+    <!-- PHONE -->
+    <div>
+      <div class="phone">
+        <div class="notch"></div>
+        <div class="screen">
+
+          <div class="statusbar">
+            <span class="stime">9:41</span>
+            <div style="display:flex;align-items:center;gap:5px;">
+              <svg width="15" height="11" viewBox="0 0 15 11"><rect x="0" y="5" width="2" height="6" rx="1" fill="#A0B4E8"/><rect x="3.5" y="3" width="2" height="8" rx="1" fill="#A0B4E8"/><rect x="7" y="1" width="2" height="10" rx="1" fill="#A0B4E8"/><rect x="10.5" y="3" width="2" height="8" rx="1" fill="#A0B4E8" opacity=".4"/></svg>
+              <svg width="18" height="11" viewBox="0 0 18 11"><rect x="0" y="2" width="14" height="8" rx="2" stroke="#A0B4E8" stroke-width="1" fill="none"/><rect x="14" y="4" width="3" height="4" rx="1" fill="#A0B4E8"/><rect x="1.5" y="3.5" width="9" height="5" rx="1" fill="#A0B4E8"/></svg>
+            </div>
+          </div>
+
+          <div class="content">
+
+            <!-- DASHBOARD -->
+            <div class="view active" id="v-home">
+              <div style="background:var(--navy);padding:14px 16px 20px;">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+                  <div>
+                    <div style="font-size:10px;color:#A0B4E8;font-family:var(--m);margin-bottom:2px;">Buen día,</div>
+                    <div style="font-size:16px;font-weight:700;color:var(--white);">Daniel Pareja</div>
+                  </div>
+                  <div style="width:34px;height:34px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--white);">DP</div>
+                </div>
+                <div style="margin-top:14px;background:#002080;border-radius:12px;padding:12px 14px;">
+                  <div style="font-size:10px;color:#A0B4E8;font-family:var(--m);margin-bottom:6px;">Zona actual · Ad Portas</div>
+                  <div style="display:flex;align-items:center;gap:12px;">
+                    <div style="flex:1;">
+                      <div style="font-size:13px;font-weight:600;color:var(--white);">Riesgo moderado</div>
+                      <div class="risk-bar" style="margin-top:8px;background:#0A2878;"><div class="risk-fill" style="width:58%;background:var(--amber-mid);"></div></div>
+                    </div>
+                    <div style="font-size:28px;font-weight:800;color:var(--amber-mid);line-height:1;">58</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="stitle">Alertas activas</div>
+              <div class="card">
+                <div style="display:flex;align-items:flex-start;gap:10px;">
+                  <div style="width:30px;height:30px;border-radius:8px;background:var(--red-bg);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2L12.5 11.5H1.5L7 2Z" stroke="#C83050" stroke-width="1.3" fill="none" stroke-linejoin="round"/><line x1="7" y1="6" x2="7" y2="9" stroke="#C83050" stroke-width="1.3" stroke-linecap="round"/><circle cx="7" cy="10.5" r=".8" fill="#C83050"/></svg>
+                  </div>
+                  <div style="flex:1;">
+                    <div style="font-size:12px;font-weight:600;color:var(--ink);">Avistamiento reportado</div>
+                    <div style="font-size:10px;color:var(--ink-dim);margin-top:2px;">Puente peatonal · hace 8 min</div>
+                  </div>
+                  <span class="badge b-red">Alta</span>
+                </div>
+              </div>
+              <div class="card">
+                <div style="display:flex;align-items:flex-start;gap:10px;">
+                  <div style="width:30px;height:30px;border-radius:8px;background:var(--green-bg);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5" stroke="#1A8060" stroke-width="1.2" fill="none"/><path d="M4.5 7l2 2 3-3" stroke="#1A8060" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
+                  <div style="flex:1;">
+                    <div style="font-size:12px;font-weight:600;color:var(--ink);">Puerta de madera · segura</div>
+                    <div style="font-size:10px;color:var(--ink-dim);margin-top:2px;">Sin incidentes · últimas 4h</div>
+                  </div>
+                  <span class="badge b-green">Baja</span>
+                </div>
+              </div>
+
+              <div class="stitle">Recomendación IA</div>
+              <div class="card" style="background:var(--blue-lt);border-color:var(--border2);">
+                <div style="display:flex;gap:9px;align-items:flex-start;">
+                  <div class="dot" style="background:var(--blue);margin-top:3px;"></div>
+                  <div style="font-size:11px;color:var(--navy);line-height:1.65;">Usa la salida por Puerta de Madera hoy entre 9–11pm. Score de riesgo 22% menor que Ad Portas en este horario.</div>
+                </div>
+              </div>
+
+              <button class="report-btn" onclick="goTo('report')">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="#A0B4E8" stroke-width="1.2"/><line x1="7" y1="4" x2="7" y2="10" stroke="#A0B4E8" stroke-width="1.4" stroke-linecap="round"/><line x1="4" y1="7" x2="10" y2="7" stroke="#A0B4E8" stroke-width="1.4" stroke-linecap="round"/></svg>
+                Reportar incidente
+              </button>
+            </div>
+
+            <!-- MAPA -->
+            <div class="view" id="v-map">
+              <div class="topbar">
+                <div class="topbar-title">Mapa de zonas</div>
+                <div class="topbar-sub">Tiempo real · Campus UniSabana</div>
+              </div>
+              <div style="margin:10px 12px 4px;border-radius:12px;overflow:hidden;border:1px solid var(--border);">
+                <svg width="100%" viewBox="0 0 258 210" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="258" height="210" fill="#F0F4FC"/>
+                  <rect x="64" y="44" width="134" height="112" rx="7" fill="#D4DAF0" stroke="#B8C4E8" stroke-width="0.8"/>
+                  <rect x="82" y="60" width="98" height="80" rx="4" fill="#C4CCEC"/>
+                  <text x="131" y="103" text-anchor="middle" font-size="9" fill="#1A419E" font-family="Outfit,sans-serif" font-weight="700">Campus</text>
+                  <text x="131" y="115" text-anchor="middle" font-size="8" fill="#4A70C4" font-family="Outfit,sans-serif">UniSabana</text>
+                  <rect x="28" y="93" width="36" height="9" rx="2" fill="#C0C8E4"/>
+                  <rect x="194" y="93" width="36" height="9" rx="2" fill="#C0C8E4"/>
+                  <rect x="114" y="20" width="9" height="24" rx="2" fill="#C0C8E4"/>
+                  <rect x="135" y="20" width="9" height="24" rx="2" fill="#C0C8E4"/>
+                  <rect x="114" y="178" width="9" height="17" rx="2" fill="#C0C8E4"/>
+                  <circle cx="44" cy="97" r="12" fill="#C83050" opacity=".8"/>
+                  <text x="44" y="101" text-anchor="middle" font-size="8" fill="white" font-family="Outfit,sans-serif" font-weight="700">78</text>
+                  <text x="44" y="118" text-anchor="middle" font-size="7" fill="#6B1020" font-family="Outfit,sans-serif">Ad Portas</text>
+                  <circle cx="131" cy="30" r="11" fill="#D4830A" opacity=".85"/>
+                  <text x="131" y="34" text-anchor="middle" font-size="8" fill="white" font-family="Outfit,sans-serif" font-weight="700">52</text>
+                  <text x="131" y="50" text-anchor="middle" font-size="7" fill="#5A3000" font-family="Outfit,sans-serif">Puente</text>
+                  <circle cx="208" cy="97" r="10" fill="#D4830A" opacity=".75"/>
+                  <text x="208" y="101" text-anchor="middle" font-size="8" fill="white" font-family="Outfit,sans-serif" font-weight="700">44</text>
+                  <text x="208" y="116" text-anchor="middle" font-size="7" fill="#5A3000" font-family="Outfit,sans-serif">P.Madera</text>
+                  <circle cx="131" cy="185" r="10" fill="#1A8060" opacity=".85"/>
+                  <text x="131" y="189" text-anchor="middle" font-size="8" fill="white" font-family="Outfit,sans-serif" font-weight="700">18</text>
+                  <text x="131" y="204" text-anchor="middle" font-size="7" fill="#0A3828" font-family="Outfit,sans-serif">Entrada sur</text>
+                  <!-- user location dot -->
+                  <circle cx="131" cy="97" r="6" fill="var(--navy)"/>
+                  <circle cx="131" cy="97" r="3.5" fill="#A0B4E8"/>
+                  <circle cx="131" cy="97" r="13" fill="none" stroke="#1A419E" stroke-width="1" opacity=".5"/>
+                  <circle cx="131" cy="97" r="22" fill="none" stroke="#1A419E" stroke-width="0.6" opacity=".25"/>
+                </svg>
+              </div>
+              <div class="stitle">Leyenda</div>
+              <div style="display:flex;gap:7px;padding:0 12px 10px;flex-wrap:wrap;">
+                <span class="badge b-red"><span class="dot" style="background:#C83050;"></span>Alto 70+</span>
+                <span class="badge b-amber"><span class="dot" style="background:#D4830A;"></span>Medio 40–70</span>
+                <span class="badge b-green"><span class="dot" style="background:#1A8060;"></span>Bajo &lt;40</span>
+              </div>
+              <div class="stitle">Zonas críticas</div>
+              <div style="padding:0 12px 14px;display:flex;flex-direction:column;gap:7px;">
+                <div class="card" style="padding:9px 12px;margin:0;"><div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:12px;font-weight:600;color:var(--ink);">Ad Portas</span><span class="badge b-red">Score 78</span></div><div style="font-size:10px;color:var(--ink-dim);margin-top:3px;">Iluminación deficiente · Horario nocturno</div></div>
+                <div class="card" style="padding:9px 12px;margin:0;"><div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:12px;font-weight:600;color:var(--ink);">Puente peatonal</span><span class="badge b-amber">Score 52</span></div><div style="font-size:10px;color:var(--ink-dim);margin-top:3px;">Acceso Chía · Vigilancia escasa</div></div>
+                <div class="card" style="padding:9px 12px;margin:0;"><div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:12px;font-weight:600;color:var(--ink);">Puerta de madera</span><span class="badge b-amber">Score 44</span></div><div style="font-size:10px;color:var(--ink-dim);margin-top:3px;">Acceso peatonal · Iluminación baja</div></div>
+              </div>
+            </div>
+
+            <!-- REPORTE -->
+            <div class="view" id="v-report">
+              <div class="topbar">
+                <div class="topbar-title">Reportar incidente</div>
+                <div class="topbar-sub">GPS detectado automáticamente</div>
+              </div>
+              <div class="stitle">Tipo de incidente</div>
+              <div class="inc-grid">
+                <div class="inc-item" onclick="selInc(this)">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="display:block;margin:0 auto;"><rect x="5" y="9" width="10" height="9" rx="2" stroke="#1A419E" stroke-width="1.3" fill="none"/><path d="M7 9V7a3 3 0 016 0v2" stroke="#1A419E" stroke-width="1.3" fill="none" stroke-linecap="round"/></svg>
+                  <div class="inc-label">Hurto / robo</div>
+                </div>
+                <div class="inc-item" onclick="selInc(this)">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="display:block;margin:0 auto;"><circle cx="10" cy="7" r="3.5" stroke="#1A419E" stroke-width="1.3" fill="none"/><path d="M3 18c0-3.866 3.134-7 7-7s7 3.134 7 7" stroke="#1A419E" stroke-width="1.3" fill="none" stroke-linecap="round"/></svg>
+                  <div class="inc-label">Persona sospechosa</div>
+                </div>
+                <div class="inc-item" onclick="selInc(this)">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="display:block;margin:0 auto;"><circle cx="10" cy="10" r="6" stroke="#1A419E" stroke-width="1.3" fill="none"/><line x1="10" y1="5" x2="10" y2="7" stroke="#1A419E" stroke-width="1.3" stroke-linecap="round"/><line x1="10" y1="13" x2="10" y2="15" stroke="#1A419E" stroke-width="1.3" stroke-linecap="round"/><line x1="5" y1="10" x2="7" y2="10" stroke="#1A419E" stroke-width="1.3" stroke-linecap="round"/><line x1="13" y1="10" x2="15" y2="10" stroke="#1A419E" stroke-width="1.3" stroke-linecap="round"/></svg>
+                  <div class="inc-label">Zona oscura</div>
+                </div>
+                <div class="inc-item" onclick="selInc(this)">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="display:block;margin:0 auto;"><circle cx="4" cy="10" r="1.8" fill="#1A419E"/><circle cx="10" cy="10" r="1.8" fill="#1A419E"/><circle cx="16" cy="10" r="1.8" fill="#1A419E"/></svg>
+                  <div class="inc-label">Otro</div>
+                </div>
+              </div>
+              <div style="padding:0 12px 10px;">
+                <div style="font-size:11px;font-weight:600;color:var(--blue);margin-bottom:6px;">Descripción (opcional)</div>
+                <div style="background:var(--white);border:1px solid var(--border);border-radius:10px;padding:10px 12px;font-size:11px;color:var(--ink-dim);min-height:52px;">Añade detalles del incidente...</div>
+              </div>
+              <div style="padding:0 12px 10px;">
+                <div style="background:var(--blue-lt);border-radius:10px;padding:10px 12px;display:flex;align-items:center;gap:10px;border:1px solid var(--border2);">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="var(--blue)" stroke-width="1.2" fill="none"/><circle cx="8" cy="8" r="2.5" fill="var(--blue)"/></svg>
+                  <div>
+                    <div style="font-size:11px;font-weight:600;color:var(--navy);">GPS detectado</div>
+                    <div style="font-size:10px;color:var(--blue);">Ad Portas · Campus UniSabana</div>
+                  </div>
+                </div>
+              </div>
+              <div style="padding:0 12px 12px;"><button class="send-btn" onclick="showSuccess()">Enviar reporte</button></div>
+              <div class="success-msg" id="success-msg">
+                <div style="font-size:13px;font-weight:700;color:var(--green-text);">Reporte enviado</div>
+                <div style="font-size:11px;color:var(--green-mid);margin-top:3px;">El equipo de seguridad fue notificado</div>
+              </div>
+            </div>
+
+            <!-- ANÁLISIS IA -->
+            <div class="view" id="v-ai">
+              <div class="topbar">
+                <div class="topbar-title">Análisis e IA</div>
+                <div class="topbar-sub">Modelo predictivo · Clustering activo</div>
+              </div>
+              <div class="stitle">Score por zona · ahora</div>
+              <div class="ai-zone">
+                <div class="ai-item"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;"><span style="font-size:11px;font-weight:600;color:var(--ink);">Ad Portas</span><span style="font-size:16px;font-weight:800;color:#C83050;">78</span></div><div class="risk-bar"><div class="risk-fill" style="width:78%;background:#C83050;"></div></div></div>
+                <div class="ai-item"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;"><span style="font-size:11px;font-weight:600;color:var(--ink);">Puente peatonal</span><span style="font-size:16px;font-weight:800;color:#D4830A;">52</span></div><div class="risk-bar"><div class="risk-fill" style="width:52%;background:#D4830A;"></div></div></div>
+                <div class="ai-item"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;"><span style="font-size:11px;font-weight:600;color:var(--ink);">Puerta de madera</span><span style="font-size:16px;font-weight:800;color:#D4830A;">44</span></div><div class="risk-bar"><div class="risk-fill" style="width:44%;background:#D4830A;"></div></div></div>
+                <div class="ai-item"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;"><span style="font-size:11px;font-weight:600;color:var(--ink);">Entrada sur</span><span style="font-size:16px;font-weight:800;color:#1A8060;">18</span></div><div class="risk-bar"><div class="risk-fill" style="width:18%;background:#1A8060;"></div></div></div>
+              </div>
+              <div class="stitle">Patrón detectado · clustering</div>
+              <div class="card" style="background:var(--blue-lt);border-color:var(--border2);">
+                <div style="font-size:11px;font-weight:700;color:var(--navy);margin-bottom:5px;">Cluster nocturno — Ad Portas</div>
+                <div style="font-size:10px;color:var(--blue);line-height:1.65;">El 74% de los incidentes en Ad Portas ocurren entre 8pm–11pm de lunes a jueves. Patrón consistente en las últimas 6 semanas.</div>
+              </div>
+              <div class="stitle">Recomendaciones IA</div>
+              <div class="rec-item"><div class="dot" style="background:var(--blue);margin-top:3px;"></div><div style="font-size:10px;color:var(--navy);line-height:1.65;">Ruta recomendada esta noche: Entrada sur → Puerta de madera. Tiempo extra: +3 min. Reducción de riesgo: 60%.</div></div>
+              <div class="rec-item"><div class="dot" style="background:var(--blue);margin-top:3px;"></div><div style="font-size:10px;color:var(--navy);line-height:1.65;">Horario más seguro para Ad Portas: 6am–12pm. Score promedio en ese rango: 21.</div></div>
+              <div style="height:14px;"></div>
+            </div>
+
+          </div><!-- /content -->
+
+          <!-- NAVBAR -->
+          <div class="navbar">
+            <div class="nav-item active" id="ni-home" onclick="goTo('home')">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="9" width="14" height="10" rx="1.5" fill="currentColor" opacity=".2"/><path d="M1 10L10 2l9 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+              <span class="nav-label">Inicio</span>
+            </div>
+            <div class="nav-item" id="ni-map" onclick="goTo('map')">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="9" r="6" stroke="currentColor" stroke-width="1.4" fill="none"/><circle cx="10" cy="9" r="2.5" fill="currentColor" opacity=".4"/><line x1="10" y1="15" x2="10" y2="18" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+              <span class="nav-label">Mapa</span>
+            </div>
+            <div class="nav-item" id="ni-report" onclick="goTo('report')">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.4" fill="none"/><line x1="10" y1="6" x2="10" y2="14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="6" y1="10" x2="14" y2="10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              <span class="nav-label">Reportar</span>
+            </div>
+            <div class="nav-item" id="ni-ai" onclick="goTo('ai')">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="3" width="14" height="14" rx="2.5" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M7 10h6M10 7v6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+              <span class="nav-label">Análisis</span>
+            </div>
+          </div>
+
+        </div><!-- /screen -->
+        <div class="chin"></div>
+      </div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+      <div class="sidebar-title">Pantallas</div>
+      <button class="sbtn active" id="sb-home" onclick="goTo('home')"><div class="bn">Dashboard</div><div class="bd">Alertas activas, score de zona y recomendación IA</div></button>
+      <button class="sbtn" id="sb-map" onclick="goTo('map')"><div class="bn">Mapa de calor</div><div class="bd">Zonas críticas con scores en tiempo real</div></button>
+      <button class="sbtn" id="sb-report" onclick="goTo('report')"><div class="bn">Reporte de incidente</div><div class="bd">Flujo de 3 pasos con GPS automático</div></button>
+      <button class="sbtn" id="sb-ai" onclick="goTo('ai')"><div class="bn">Análisis e IA</div><div class="bd">Scores, clustering y recomendaciones</div></button>
+
+      <div class="hint" style="margin-top:12px;">
+        <p>Navega tocando la barra inferior del teléfono o los botones de arriba. En Reporte, selecciona un tipo y presiona "Enviar reporte".</p>
+      </div>
+
+      <div style="margin-top:16px;">
+        <div style="font-size:10px;font-family:var(--m);color:var(--ink-dim);letter-spacing:1.5px;margin-bottom:8px;">Módulos integrados</div>
+        <div style="display:flex;flex-wrap:wrap;gap:5px;">
+          <span class="badge b-blue">M-01 Dashboard</span>
+          <span class="badge b-blue">M-02 Mapa</span>
+          <span class="badge b-blue">M-03 Reporte</span>
+          <span class="badge b-blue">M-05 IA</span>
+          <span class="badge b-blue">M-06 Análisis</span>
+        </div>
+      </div>
+
+      <!-- UniSabana credit -->
+      <div style="margin-top:20px;padding:10px 12px;background:var(--navy);border-radius:10px;display:flex;align-items:center;gap:10px;">
+        <div style="width:28px;height:28px;background:var(--blue);border-radius:6px 6px 50% 50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="5.5" r="2.5" stroke="white" stroke-width="1" fill="none"/><circle cx="7" cy="5.5" r="1" fill="white"/><line x1="7" y1="8" x2="7" y2="11" stroke="white" stroke-width="1" stroke-linecap="round"/></svg>
+        </div>
+        <div>
+          <div style="font-size:10px;font-weight:700;color:white;">Universidad de La Sabana</div>
+          <div style="font-size:9px;color:#A0B4E8;font-family:var(--m);">Facultad de Ingeniería</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="page-footer">
+    <span>CampusShield · Vibras Corporation · Capstone Design Project</span>
+    <span>Universidad de La Sabana · ODS 11 · 2026</span>
+  </div>
+
+</div>
+
+<script>
+const screens=['home','map','report','ai'];
+let cur='home';
+function goTo(to){
+  document.getElementById('v-'+cur).classList.remove('active');
+  document.getElementById('ni-'+cur).classList.remove('active');
+  document.getElementById('sb-'+cur).classList.remove('active');
+  cur=to;
+  document.getElementById('v-'+cur).classList.add('active');
+  document.getElementById('ni-'+cur).classList.add('active');
+  document.getElementById('sb-'+cur).classList.add('active');
+  document.getElementById('success-msg').style.display='none';
+  document.querySelector('.content').scrollTop=0;
+}
+function selInc(el){
+  document.querySelectorAll('.inc-item').forEach(i=>i.classList.remove('selected'));
+  el.classList.add('selected');
+}
+function showSuccess(){
+  const el=document.getElementById('success-msg');
+  el.style.display='block';
+  el.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+</script>
+</body>
+</html>

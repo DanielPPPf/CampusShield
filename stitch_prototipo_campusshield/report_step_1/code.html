@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed-dim": "#d0cc00",
+                    "secondary-fixed-dim": "#b4c5ff",
+                    "tertiary-container": "#b4b000",
+                    "on-tertiary-container": "#434200",
+                    "primary-container": "#001c65",
+                    "on-error": "#ffffff",
+                    "primary-fixed": "#dce1ff",
+                    "surface-container-highest": "#e1e2ec",
+                    "on-error-container": "#93000a",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed": "#001551",
+                    "surface-bright": "#faf9ff",
+                    "surface": "#faf9ff",
+                    "primary": "#000a34",
+                    "on-primary": "#ffffff",
+                    "surface-dim": "#d8d9e4",
+                    "surface-container-low": "#f2f3fd",
+                    "surface-container": "#ecedf8",
+                    "on-primary-container": "#7487d3",
+                    "secondary": "#3759b6",
+                    "on-secondary-fixed": "#00174c",
+                    "inverse-primary": "#b7c4ff",
+                    "on-secondary-container": "#002f88",
+                    "on-surface-variant": "#454651",
+                    "on-primary-fixed-variant": "#2e4289",
+                    "on-background": "#191b23",
+                    "error": "#ba1a1a",
+                    "inverse-on-surface": "#eff0fa",
+                    "secondary-fixed": "#dbe1ff",
+                    "tertiary": "#636100",
+                    "on-tertiary-fixed-variant": "#4b4900",
+                    "surface-tint": "#475aa2",
+                    "surface-variant": "#e1e2ec",
+                    "surface-container-high": "#e7e7f2",
+                    "on-secondary-fixed-variant": "#18409d",
+                    "outline-variant": "#c5c5d2",
+                    "inverse-surface": "#2e3038",
+                    "secondary-container": "#7d9cfe",
+                    "background": "#faf9ff",
+                    "on-surface": "#191b23",
+                    "primary-fixed-dim": "#b7c4ff",
+                    "tertiary-fixed": "#eee900",
+                    "on-tertiary-fixed": "#1d1d00",
+                    "outline": "#757682",
+                    "error-container": "#ffdad6",
+                    "surface-container-lowest": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.75rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-card {
+        background: rgba(250, 249, 255, 0.8);
+        backdrop-filter: blur(20px);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface min-h-screen">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#faf9ff] dark:bg-[#000a34] shadow-[0_12px_32px_rgba(0,10,52,0.08)]">
+<div class="flex justify-between items-center w-full px-6 py-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container" data-icon="shield">shield</span>
+<h1 class="font-headline font-extrabold uppercase tracking-widest text-[#000a34] dark:text-[#faf9ff] text-xl">CampusShield</h1>
+</div>
+<button class="material-symbols-outlined text-primary-container hover:bg-[#f2f3fd] dark:hover:bg-[#001c65] transition-colors p-2 rounded-full active:scale-95 duration-200" data-icon="notifications">notifications</button>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-2xl mx-auto">
+<!-- Step Indicator -->
+<section class="mb-10">
+<div class="flex justify-between items-center mb-4">
+<h2 class="font-headline text-headline-md text-primary font-semibold">Incident Report</h2>
+<span class="text-secondary font-bold text-sm">Step 1 of 3</span>
+</div>
+<div class="flex gap-2 h-1.5 w-full">
+<div class="flex-1 bg-secondary rounded-full"></div>
+<div class="flex-1 bg-surface-container-highest rounded-full"></div>
+<div class="flex-1 bg-surface-container-highest rounded-full"></div>
+</div>
+</section>
+<!-- Main Task Header -->
+<section class="mb-8">
+<h3 class="font-headline text-xl text-primary-container mb-2">What happened?</h3>
+<p class="text-on-surface-variant body-md">Select the type of incident that best describes the situation. Your safety is our priority.</p>
+</section>
+<!-- Incident Grid (Asymmetric Bento Style) -->
+<div class="grid grid-cols-2 gap-4 mb-12">
+<!-- Theft/Robbery -->
+<button class="flex flex-col items-start p-6 rounded-xl bg-surface-container-low hover:bg-secondary-container hover:text-on-secondary-container transition-all group border border-transparent hover:border-white/20 shadow-sm text-left col-span-1">
+<div class="mb-4 bg-primary-container/10 p-3 rounded-lg group-hover:bg-white/20">
+<span class="material-symbols-outlined text-primary" data-icon="lock_open">lock_open</span>
+</div>
+<span class="font-headline font-bold text-lg leading-tight">Theft/Robbery</span>
+</button>
+<!-- Suspicious Person -->
+<button class="flex flex-col items-start p-6 rounded-xl bg-surface-container-highest hover:bg-secondary-container hover:text-on-secondary-container transition-all group border border-transparent hover:border-white/20 shadow-sm text-left col-span-1">
+<div class="mb-4 bg-primary-container/10 p-3 rounded-lg group-hover:bg-white/20">
+<span class="material-symbols-outlined text-primary" data-icon="visibility">visibility</span>
+</div>
+<span class="font-headline font-bold text-lg leading-tight">Suspicious Person</span>
+</button>
+<!-- Dark Zone (Large Card) -->
+<button class="flex items-center justify-between p-6 rounded-xl bg-primary-container text-white hover:bg-secondary transition-all group shadow-lg col-span-2 relative overflow-hidden">
+<div class="z-10">
+<div class="mb-2 bg-white/20 p-3 rounded-lg inline-block">
+<span class="material-symbols-outlined text-white" data-icon="lightbulb_outline">lightbulb_outline</span>
+</div>
+<span class="block font-headline font-bold text-xl">Dark Zone</span>
+<p class="text-white/70 text-xs mt-1 font-body">Reporting insufficient campus lighting</p>
+</div>
+<div class="absolute right-0 top-0 opacity-10 scale-150 rotate-12">
+<span class="material-symbols-outlined text-[120px]" data-icon="dark_mode">dark_mode</span>
+</div>
+<span class="material-symbols-outlined z-10" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<!-- Other -->
+<button class="flex flex-col items-start p-6 rounded-xl bg-surface-container-low hover:bg-secondary-container hover:text-on-secondary-container transition-all group border border-transparent hover:border-white/20 shadow-sm text-left col-span-2">
+<div class="flex items-center gap-4">
+<div class="bg-primary-container/10 p-3 rounded-lg group-hover:bg-white/20">
+<span class="material-symbols-outlined text-primary" data-icon="more_horiz">more_horiz</span>
+</div>
+<span class="font-headline font-bold text-lg leading-tight">Other</span>
+</div>
+</button>
+</div>
+<!-- Next Action Button -->
+<button class="w-full py-5 rounded-full bg-gradient-to-br from-[#000a34] to-[#001c65] text-white font-headline font-bold text-lg shadow-[0_12px_32px_rgba(0,10,52,0.15)] active:scale-95 transition-transform flex items-center justify-center gap-2">
+            Continue
+            <span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+<!-- Location Status Card -->
+<section class="mt-8">
+<div class="bg-surface-container-low p-4 rounded-xl flex items-center gap-3 border-l-4 border-on-secondary-fixed-variant">
+<div class="relative flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-fixed-variant" data-icon="location_on" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<span class="absolute inline-flex h-full w-full rounded-full bg-on-secondary-fixed-variant opacity-20 animate-ping"></span>
+</div>
+<div>
+<p class="text-[10px] font-label uppercase tracking-wider text-outline">Live GPS Status</p>
+<p class="text-sm font-semibold text-primary">Location detected: <span class="text-on-secondary-fixed-variant">Ad Portas</span></p>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 rounded-t-[1.5rem] bg-white/80 dark:bg-[#000a34]/80 backdrop-blur-xl shadow-[0_-8px_24px_rgba(0,10,52,0.06)] md:hidden">
+<div class="fixed bottom-0 w-full flex justify-around items-center px-4 py-3 pb-safe">
+<!-- Home -->
+<button class="flex flex-col items-center justify-center text-[#3759b6] dark:text-[#e1e2ec] opacity-60 px-4 py-2 hover:opacity-100 transition-opacity active:scale-90 duration-150 ease-in-out">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Inter'] text-[10px] font-semibold uppercase tracking-tighter">Home</span>
+</button>
+<!-- Map -->
+<button class="flex flex-col items-center justify-center text-[#3759b6] dark:text-[#e1e2ec] opacity-60 px-4 py-2 hover:opacity-100 transition-opacity active:scale-90 duration-150 ease-in-out">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+<span class="font-['Inter'] text-[10px] font-semibold uppercase tracking-tighter">Map</span>
+</button>
+<!-- Report (Active) -->
+<button class="flex flex-col items-center justify-center bg-gradient-to-br from-[#000a34] to-[#001c65] text-white rounded-[1rem] px-4 py-2 shadow-lg scale-105 active:scale-90 duration-150 ease-in-out">
+<span class="material-symbols-outlined" data-icon="emergency" style="font-variation-settings: 'FILL' 1;">emergency</span>
+<span class="font-['Inter'] text-[10px] font-semibold uppercase tracking-tighter">Report</span>
+</button>
+<!-- AI Insights -->
+<button class="flex flex-col items-center justify-center text-[#3759b6] dark:text-[#e1e2ec] opacity-60 px-4 py-2 hover:opacity-100 transition-opacity active:scale-90 duration-150 ease-in-out">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+<span class="font-['Inter'] text-[10px] font-semibold uppercase tracking-tighter">AI Insights</span>
+</button>
+</div>
+</nav>
+</body></html>

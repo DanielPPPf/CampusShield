@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CampusShield - Interactive Heatmap</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#d0cc00",
+                        "secondary-fixed-dim": "#b4c5ff",
+                        "tertiary-container": "#b4b000",
+                        "on-tertiary-container": "#434200",
+                        "primary-container": "#001c65",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#dce1ff",
+                        "surface-container-highest": "#e1e2ec",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#001551",
+                        "surface-bright": "#faf9ff",
+                        "surface": "#faf9ff",
+                        "primary": "#000a34",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#d8d9e4",
+                        "surface-container-low": "#f2f3fd",
+                        "surface-container": "#ecedf8",
+                        "on-primary-container": "#7487d3",
+                        "secondary": "#3759b6",
+                        "on-secondary-fixed": "#00174c",
+                        "inverse-primary": "#b7c4ff",
+                        "on-secondary-container": "#002f88",
+                        "on-surface-variant": "#454651",
+                        "on-primary-fixed-variant": "#2e4289",
+                        "on-background": "#191b23",
+                        "error": "#ba1a1a",
+                        "inverse-on-surface": "#eff0fa",
+                        "secondary-fixed": "#dbe1ff",
+                        "tertiary": "#636100",
+                        "on-tertiary-fixed-variant": "#4b4900",
+                        "surface-tint": "#475aa2",
+                        "surface-variant": "#e1e2ec",
+                        "surface-container-high": "#e7e7f2",
+                        "on-secondary-fixed-variant": "#18409d",
+                        "outline-variant": "#c5c5d2",
+                        "inverse-surface": "#2e3038",
+                        "secondary-container": "#7d9cfe",
+                        "background": "#faf9ff",
+                        "on-surface": "#191b23",
+                        "primary-fixed-dim": "#b7c4ff",
+                        "tertiary-fixed": "#eee900",
+                        "on-tertiary-fixed": "#1d1d00",
+                        "outline": "#757682",
+                        "error-container": "#ffdad6",
+                        "surface-container-lowest": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .heatmap-overlay {
+            background: radial-gradient(circle at 30% 40%, rgba(186, 26, 26, 0.4) 0%, rgba(186, 26, 26, 0) 40%),
+                        radial-gradient(circle at 70% 60%, rgba(99, 97, 0, 0.35) 0%, rgba(99, 97, 0, 0) 35%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#faf9ff] dark:bg-[#000a34] shadow-[0_12px_32px_rgba(0,10,52,0.08)]">
+<div class="flex justify-between items-center w-full px-6 py-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#001c65] dark:text-[#f2f3fd]" style="font-variation-settings: 'FILL' 1;">shield</span>
+<h1 class="text-xl font-extrabold text-[#000a34] dark:text-[#faf9ff] font-['Manrope'] uppercase tracking-widest">CampusShield</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-[#f2f3fd] dark:hover:bg-[#001c65] transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined text-[#3759b6] dark:text-[#e1e2ec]">notifications</span>
+</button>
+</div>
+</div>
+</header>
+<main class="pt-20 pb-32">
+<!-- Map Canvas Section -->
+<section class="px-4 relative">
+<div class="relative w-full h-[397px] rounded-[2rem] overflow-hidden shadow-2xl bg-surface-container-highest group">
+<!-- Mock Map Implementation -->
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover grayscale-[0.2] contrast-[1.1]" data-alt="Detailed 3D bird's eye view of a prestigious university campus architecture with lush green gardens and modern pathways at daylight" data-location="Chia, Colombia" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpJyxWT-3PofrXaqIiLQ39ul4zvxkF1g460r_XJAIAZ_iVcCPsjEnKLh21IN5fvzTjHBfv88VcLuLi8IQXSjlsjQLdjkOBuHPihbxyQd56a6GWK5c4_-XFcyDBXDP3hEaF1XtFqp3jLnEAA8jbkDZZslRKB3I1H79dobSSiY8v5ONnvMzm6oQ0q96bTd-kHot-rfhgpJ1kfUbvU1uHzYm4RBKP5fHrszQU91htHqftjqJgmGXVklh06n3m1Jw74nQjUVodyJreU-o"/>
+<!-- Heatmap Overlay Simulation -->
+<div class="absolute inset-0 heatmap-overlay mix-blend-multiply opacity-80"></div>
+</div>
+<!-- Floating Map Controls -->
+<div class="absolute top-4 right-4 flex flex-col gap-2 z-10">
+<button class="w-10 h-10 rounded-full bg-white/90 backdrop-blur-md shadow-lg flex items-center justify-center text-primary hover:bg-white active:scale-90 transition-all">
+<span class="material-symbols-outlined">add</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-white/90 backdrop-blur-md shadow-lg flex items-center justify-center text-primary hover:bg-white active:scale-90 transition-all">
+<span class="material-symbols-outlined">remove</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-primary text-white shadow-lg flex items-center justify-center active:scale-90 transition-all">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">my_location</span>
+</button>
+</div>
+<!-- Map Legend Glass Card -->
+<div class="absolute bottom-4 left-4 right-4 bg-white/80 backdrop-blur-xl rounded-[1.25rem] p-4 shadow-xl">
+<div class="flex items-center justify-between">
+<div class="flex gap-4">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-error ring-4 ring-error/20 animate-pulse"></span>
+<span class="text-[10px] font-semibold uppercase tracking-wider text-on-surface-variant">High Risk</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-tertiary ring-4 ring-tertiary/20"></span>
+<span class="text-[10px] font-semibold uppercase tracking-wider text-on-surface-variant">Medium</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-on-secondary-fixed-variant ring-4 ring-on-secondary-fixed-variant/20"></span>
+<span class="text-[10px] font-semibold uppercase tracking-wider text-on-surface-variant">Safe</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Search and Filter Bar -->
+<section class="px-6 mt-8">
+<div class="relative">
+<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline">search</span>
+</div>
+<input class="w-full h-14 pl-12 pr-4 bg-surface-container-low border-none rounded-2xl text-on-surface placeholder:text-outline focus:ring-2 focus:ring-secondary transition-all shadow-sm" placeholder="Search specific campus zones..." type="text"/>
+<button class="absolute inset-y-2 right-2 px-4 bg-surface-container-highest rounded-xl flex items-center text-primary font-semibold text-sm">
+<span class="material-symbols-outlined mr-1">tune</span>
+                    Filter
+                </button>
+</div>
+</section>
+<!-- Critical Zones Editorial List -->
+<section class="px-6 mt-10">
+<div class="flex items-baseline justify-between mb-6">
+<h2 class="font-headline text-2xl font-semibold text-primary tracking-tight">Critical Zones</h2>
+<span class="text-sm font-medium text-secondary">Live updates</span>
+</div>
+<div class="grid grid-cols-1 gap-4">
+<!-- Zone Card: High Risk -->
+<div class="group relative overflow-hidden bg-surface-container-lowest rounded-[1.5rem] p-5 shadow-sm hover:shadow-md transition-all">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 rounded-2xl overflow-hidden bg-error/10 flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="Modern architecture glass building entrance with geometric concrete stairs at dusk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8L6hyFuOjGZVL9In7idHDYkYy1MHryXgkPSd2cTybHpAV38hl10w4vKy1UAmhV0CKrWAFQ1A6BDKhGqQxPHMjlICteU2gDrXZ2FO4Bt0QzLyomN25ZsF8omUsk37wNV8cti1Xnxr3msphCJSfeAfgYgY3DQIBF5iC4gndJh50Trg6F9_lb3hIAWGqaomqIA5on7ueaOfv24hCBfv-2NAL_8Sz8q4euMfjfuAzN9e_0qJ6J1VoBlEUG7blKRgRpCU3IGSPsdKcHbs"/>
+</div>
+<div>
+<h3 class="font-headline font-bold text-primary text-lg">Ad Portas</h3>
+<p class="text-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">group</span>
+                                    High Density • 4 Alerts
+                                </p>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-2xl font-headline font-extrabold text-error">94</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter text-error/60">Risk Score</span>
+</div>
+</div>
+<!-- Risk Progress Bar -->
+<div class="mt-4 w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="w-[94%] h-full bg-error"></div>
+</div>
+</div>
+<!-- Zone Card: Medium Risk -->
+<div class="group relative overflow-hidden bg-surface-container-lowest rounded-[1.5rem] p-5 shadow-sm hover:shadow-md transition-all">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 rounded-2xl overflow-hidden bg-tertiary/10 flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="Pedestrian bridge with metal railings crossing over a busy modern highway at night with light trails" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCp3ZOvkNgDT2CG5okzEr7niRbvJusdmvvkjdyxfMETAMQABfDNOfMJs9flQ2m7YD3Bfl-scjw3PHIZgEVGpF3lvQ5xRmy69gUqiMYromqcCs5dT6iVkL-oGACv-qvKgNgkOXeP99lKkTIPIaXWrhSOIlUzh--4CbgQYchs5twiZPmDQRPcGrKT9x2u09u8fejwrJQ64gypyJqbgsRTzFZZBVMokYIeoBW9Y5DhWxDdZO66jzpW6I3tIgKAzfJIJpu4v7JI0sDnWno"/>
+</div>
+<div>
+<h3 class="font-headline font-bold text-primary text-lg">Puente Peatonal</h3>
+<p class="text-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">visibility</span>
+                                    Low Lighting • 1 Alert
+                                </p>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-2xl font-headline font-extrabold text-tertiary">42</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter text-tertiary/60">Risk Score</span>
+</div>
+</div>
+<!-- Risk Progress Bar -->
+<div class="mt-4 w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="w-[42%] h-full bg-tertiary"></div>
+</div>
+</div>
+<!-- Zone Card: Safe -->
+<div class="group relative overflow-hidden bg-surface-container-lowest rounded-[1.5rem] p-5 shadow-sm hover:shadow-md transition-all">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 rounded-2xl overflow-hidden bg-on-secondary-fixed-variant/10 flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="University library interior with rows of books and warm ambient lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARGGKOeo7lxC62a-H2BEtK0SBd0MO8D9VVt3ftIPe4_LiFD87ElSTCQm_AtCGTZVoTUCYrLRemxSkH_fhz6MdK8SN953qvxF2R6mA8Np3UB5y90rVoCmeIs26szrRpX_ffNuOFYowCxcWiksYr-i619yC0HNREnOcGI5e9VkIUZHdoUUp6PB0WKiWm1QpnJApfHHqZtdsGWsWbW6vqCJ0JfZsLrfCtBNFkzetIQdgNTDdZMmMB8hp69kigtZ-M61eaferhQpYDQvc"/>
+</div>
+<div>
+<h3 class="font-headline font-bold text-primary text-lg">Central Library</h3>
+<p class="text-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">verified_user</span>
+                                    Secure Zone • No Alerts
+                                </p>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-2xl font-headline font-extrabold text-on-secondary-fixed-variant">08</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter text-on-secondary-fixed-variant/60">Risk Score</span>
+</div>
+</div>
+<!-- Risk Progress Bar -->
+<div class="mt-4 w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="w-[8%] h-full bg-on-secondary-fixed-variant"></div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full flex justify-around items-center px-4 py-3 pb-safe bg-white/80 dark:bg-[#000a34]/80 backdrop-blur-xl z-50 rounded-t-[1.5rem] shadow-[0_-8px_24px_rgba(0,10,52,0.06)]">
+<!-- Home -->
+<a class="flex flex-col items-center justify-center text-[#3759b6] dark:text-[#e1e2ec] opacity-60 px-4 py-2 hover:opacity-100 transition-opacity" href="#">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-['Inter'] text-[10px] font-semibold uppercase tracking-tighter">Home</span>
+</a>
+<!-- Map (Active) -->
+<a class="flex flex-col items-center justify-center bg-gradient-to-br from-[#000a34] to-[#001c65] text-white rounded-[1rem] px-4 py-2 shadow-lg scale-105 active:scale-90 duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">map</span>
+<span class="font-['Inter'] text-[10px] font-semibold uppercase tracking-tighter">Map</span>
+</a>
+<!-- Report -->
+<a class="flex flex-col items-center justify-center text-[#3759b6] dark:text-[#e1e2ec] opacity-60 px-4 py-2 hover:opacity-100 transition-opacity" href="#">
+<span class="material-symbols-outlined mb-1">emergency</span>
+<span class="font-['Inter'] text-[10px] font-semibold uppercase tracking-tighter">Report</span>
+</a>
+<!-- AI Insights -->
+<a class="flex flex-col items-center justify-center text-[#3759b6] dark:text-[#e1e2ec] opacity-60 px-4 py-2 hover:opacity-100 transition-opacity" href="#">
+<span class="material-symbols-outlined mb-1">psychology</span>
+<span class="font-['Inter'] text-[10px] font-semibold uppercase tracking-tighter">AI Insights</span>
+</a>
+</nav>
+<!-- Emergency Floating Button (Supressed on details/map focus by design system if needed, but kept here for accessibility context if user wants it) -->
+<div class="fixed bottom-24 right-6 z-40">
+<button class="w-16 h-16 rounded-full bg-error shadow-[0_12px_32px_rgba(186,26,26,0.3)] flex items-center justify-center text-white active:scale-90 transition-transform relative group">
+<span class="absolute inset-0 rounded-full bg-error/20 animate-ping group-hover:animate-none"></span>
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">sos</span>
+</button>
+</div>
+</body></html>

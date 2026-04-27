@@ -1,0 +1,24 @@
+# ── Documentación y archivos del proceso ─────────────────────────────────────
+*.docx
+*.pdf
+extracted_requirements.md
+requerimientos_documentacion.md
+reference.docx
+
+# ── Archivos internos de Claude Code ─────────────────────────────────────────
+.claude/
+
+# ── Archivos temporales / basura ──────────────────────────────────────────────
+,
+*.tmp
+*.bak
+*~
+.DS_Store
+Thumbs.db
+
+# ── Node (por si se agrega package.json en el futuro) ────────────────────────
+node_modules/
+npm-debug.log*
+yarn-error.log*
+.env
+.env.*

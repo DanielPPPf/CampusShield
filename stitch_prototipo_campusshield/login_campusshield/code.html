@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CampusShield - Login</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#d0cc00",
+                        "secondary-fixed-dim": "#b4c5ff",
+                        "tertiary-container": "#b4b000",
+                        "on-tertiary-container": "#434200",
+                        "primary-container": "#001c65",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#dce1ff",
+                        "surface-container-highest": "#e1e2ec",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#001551",
+                        "surface-bright": "#faf9ff",
+                        "surface": "#faf9ff",
+                        "primary": "#000a34",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#d8d9e4",
+                        "surface-container-low": "#f2f3fd",
+                        "surface-container": "#ecedf8",
+                        "on-primary-container": "#7487d3",
+                        "secondary": "#3759b6",
+                        "on-secondary-fixed": "#00174c",
+                        "inverse-primary": "#b7c4ff",
+                        "on-secondary-container": "#002f88",
+                        "on-surface-variant": "#454651",
+                        "on-primary-fixed-variant": "#2e4289",
+                        "on-background": "#191b23",
+                        "error": "#ba1a1a",
+                        "inverse-on-surface": "#eff0fa",
+                        "secondary-fixed": "#dbe1ff",
+                        "tertiary": "#636100",
+                        "on-tertiary-fixed-variant": "#4b4900",
+                        "surface-tint": "#475aa2",
+                        "surface-variant": "#e1e2ec",
+                        "surface-container-high": "#e7e7f2",
+                        "on-secondary-fixed-variant": "#18409d",
+                        "outline-variant": "#c5c5d2",
+                        "inverse-surface": "#2e3038",
+                        "secondary-container": "#7d9cfe",
+                        "background": "#faf9ff",
+                        "on-surface": "#191b23",
+                        "primary-fixed-dim": "#b7c4ff",
+                        "tertiary-fixed": "#eee900",
+                        "on-tertiary-fixed": "#1d1d00",
+                        "outline": "#757682",
+                        "error-container": "#ffdad6",
+                        "surface-container-lowest": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(250, 249, 255, 0.8);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface overflow-x-hidden">
+<div class="relative min-h-screen flex flex-col md:flex-row">
+<!-- Asymmetric Decorative Section (Institutional Heritage) -->
+<div class="hidden md:flex md:w-1/2 lg:w-3/5 bg-primary relative overflow-hidden items-end p-16">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-40 mix-blend-luminosity" data-alt="modern brutalist university architecture with sharp clean lines and deep blue sky reflecting prestige and security" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwz21f8Y6gVmwqvx6H99HyMBcTfdSMG7_koV3s5UgwXN0-wu6XpenumSViFVfniZ5RCwgPxmP7rjaHDvyLImzrKXxxuc2kX3s6r8tGeAWFMnpaWyG3HdgK_lr21PZUQMeLY8LNmsUQeY7LnYXv-8N1ut8OHff74xE09WSfI6EEG4oDIbYpHIeymVRJWo0YDXTyerRyNYXGq9oNiMKMSIXiKV_9_OQPrG0wq-kEpyWNy8_GfxK-pfzbApSSzI-uFBzSJoHHD2pje3A"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/50 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-lg">
+<div class="flex items-center gap-4 mb-8">
+<span class="material-symbols-outlined text-surface text-5xl" data-icon="shield">shield</span>
+<h1 class="font-headline font-extrabold text-4xl text-surface tracking-widest uppercase">CampusShield</h1>
+</div>
+<h2 class="font-headline text-5xl font-extrabold text-surface leading-tight mb-6">
+                    Elite Protection for our Academic Community.
+                </h2>
+<p class="text-surface-variant text-lg leading-relaxed max-w-md">
+                    Securing the future of Universidad de La Sabana through advanced AI insights and real-time response infrastructure.
+                </p>
+</div>
+</div>
+<!-- Login Canvas -->
+<div class="flex-1 flex flex-col justify-center items-center px-6 py-12 md:px-16 lg:px-24 bg-surface relative">
+<!-- Mobile Header -->
+<div class="md:hidden absolute top-8 left-8 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="shield">shield</span>
+<span class="font-headline font-extrabold text-primary text-lg tracking-widest uppercase">CampusShield</span>
+</div>
+<div class="w-full max-w-md">
+<div class="mb-10 text-center md:text-left">
+<h3 class="font-headline text-3xl font-extrabold text-primary mb-2">Welcome Back</h3>
+<p class="text-on-surface-variant">Access the secure sentinel network with your institutional credentials.</p>
+</div>
+<form class="space-y-6">
+<!-- Email Field -->
+<div class="space-y-2">
+<label class="block font-label text-xs font-semibold uppercase tracking-wider text-outline" for="email">Institutional Email</label>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline group-focus-within:text-secondary transition-colors" data-icon="mail">mail</span>
+</div>
+<input class="block w-full pl-12 pr-4 py-4 bg-surface-container-low border-none rounded-xl text-on-surface focus:ring-2 focus:ring-secondary transition-all placeholder:text-outline/50" id="email" name="email" placeholder="username@unisabana.edu.co" required="" type="email"/>
+</div>
+<p class="text-[10px] text-outline italic px-1">Access restricted to authorized @unisabana.edu.co domains.</p>
+</div>
+<!-- Password Field -->
+<div class="space-y-2">
+<div class="flex justify-between items-end">
+<label class="block font-label text-xs font-semibold uppercase tracking-wider text-outline" for="password">Security Credential</label>
+<a class="text-xs font-semibold text-secondary hover:underline transition-all" href="#">Forgot password?</a>
+</div>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline group-focus-within:text-secondary transition-colors" data-icon="lock">lock</span>
+</div>
+<input class="block w-full pl-12 pr-4 py-4 bg-surface-container-low border-none rounded-xl text-on-surface focus:ring-2 focus:ring-secondary transition-all placeholder:text-outline/50" id="password" name="password" placeholder="••••••••" required="" type="password"/>
+</div>
+</div>
+<!-- Action Button -->
+<div class="pt-4">
+<button class="w-full py-4 px-6 bg-gradient-to-br from-primary to-primary-container text-surface font-headline font-bold rounded-xl shadow-[0_12px_32px_rgba(0,10,52,0.15)] hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-2" type="submit">
+<span>Sign In to Shield</span>
+<span class="material-symbols-outlined text-lg" data-icon="login">login</span>
+</button>
+</div>
+</form>
+<!-- Institutional Trust Marker -->
+<div class="mt-12 p-6 bg-surface-container rounded-xl flex items-start gap-4">
+<span class="material-symbols-outlined text-on-secondary-fixed-variant" data-icon="verified_user">verified_user</span>
+<div>
+<p class="text-xs font-bold uppercase text-primary tracking-tight">Encrypted Session</p>
+<p class="text-xs text-on-surface-variant leading-relaxed">Your authentication is handled through the university's central identity provider (SSO) with end-to-end TLS 1.3 encryption.</p>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="absolute bottom-8 w-full px-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] font-semibold text-outline tracking-wider uppercase">
+<div class="flex items-center gap-2">
+<img class="w-4 h-4 grayscale opacity-50" data-alt="stylized minimalist university shield logo with elegant heraldic elements in navy blue" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPMRov30y8FBmHCuNI8JtS77do0e93H-RpBIUHHCSAr8-8Xe_Oh17TKPdgEMiJDuz5Tmb-Lm4ikjERSzs5Q1LDhiQ1rgBATKdJ6fj-ZlDF9eh-_c2l1ShS_w6qhBBI24RmSikQrjvbI5jXxBjY1e7epvjah0eWFqQwsiUq94cqwiMa0CQMZI9iWCZXL9CJ6R8WueuV72tvaH5pAAou82P240DUeDwmB4LkJU2BygF-d5bqmChE0ivSwZJOX0wYGHSWdwBPKWn5pXg"/>
+<span>Universidad de La Sabana © 2024</span>
+</div>
+<div class="flex gap-6">
+<a class="hover:text-primary transition-colors" href="#">Privacy Protocol</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-primary transition-colors" href="#">Institutional Security</a>
+</div>
+</footer>
+</div>
+</div>
+</body></html>
