@@ -4,15 +4,21 @@
 - Daniel Pareja Franco 
 - Julián Mauricio Zafra Moreno
 
+## Visión
+Crear un entorno universitario donde la seguridad sea la prioridad, donde la tecnología permitía anticipar riesgos y proteger a la comunidad en base a la toma de decisiones basadas en datos en tiempo real. 
+
 ## Sobre la App
 CampusShield es una Progressive Web App (PWA) de tipo “super app” de seguridad universitaria. 
 La decisión de adoptar el modelo PWA fue estratégica: permite que la misma base de código funcione tanto en dispositivos móviles (Android e iOS, instalable desde el navegador) como en escritorio, sin necesidad de desarrollar y mantener aplicaciones nativas separadas, reduciendo drásticamente los costos y tiempos de desarrollo.
 
+Las funciones en términos generales se resumen como se enlista a continuación:
+- Los usuarios reportan los incidentes en tiempo real
+- Los datos alimentan el modelo IA y mapa de calor con zonas de riesgo
+- Sistema de análisis de patrones y riesgos mediante IA
+- Alertas y recomendaciones sobre seguridad
+- Acceso a módulos de información
 
-## Visión
-Crear un entorno universitario donde la seguridad sea la prioridad, donde la tecnología permitía anticipar riesgos y proteger a la comunidad en base a la toma de decisiones basadas en datos en tiempo real. 
-
-## Impacto
+## Impacto (Soluciones de Triple Impacto)
 - Impacto Económico: Reducción de costos operativos en temas de seguridad
 para las zonas criticas con el fin de optimizar los recursos disponibles de
 forma estratégica.
