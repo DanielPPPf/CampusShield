@@ -1,4 +1,6 @@
-const VALIDATION_THRESHOLD = 2;
+import { config } from './config.js';
+
+const VALIDATION_THRESHOLD = config.validationThreshold;
 
 const INITIAL_INCIDENTS = [
     {

@@ -151,6 +151,20 @@
     </style>
 </head>
 <body class="bg-surface font-body text-on-surface">
+    <!-- Dev environment banner — hidden in production via config.features.debugBanner -->
+    <div id="env-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:99999;background:#3759b6;color:#fff;text-align:center;font-family:monospace;font-size:11px;padding:3px 0;letter-spacing:0.05em;">
+        ⚙ DEVELOPMENT — validationThreshold: <span id="env-threshold"></span> · apiBase: <span id="env-api"></span>
+    </div>
+    <script type="module">
+        import { config } from './src/config.js';
+        if (config.features.debugBanner) {
+            const b = document.getElementById('env-banner');
+            b.style.display = 'block';
+            document.getElementById('env-threshold').textContent = config.validationThreshold;
+            document.getElementById('env-api').textContent = config.apiBase;
+        }
+    </script>
+
     <div id="app-root">
         <!-- Views will be rendered here -->
     </div>

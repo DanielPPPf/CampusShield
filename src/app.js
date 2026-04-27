@@ -1,3 +1,4 @@
+import { config } from './config.js';
 import { store } from './store.js';
 import { views } from './views.js';
 
@@ -166,7 +167,7 @@ function showToast({ icon, message, sub, type = 'info' }) {
         toast.classList.add('translate-x-full', 'opacity-0');
         setTimeout(() => toast.remove(), 300);
     };
-    const timer = setTimeout(dismiss, 5000);
+    const timer = setTimeout(dismiss, config.toastDuration);
     toast.querySelector('button').addEventListener('click', () => { clearTimeout(timer); dismiss(); });
 }
 
@@ -235,7 +236,7 @@ function checkNotifications() {
     incidentSnapshot = Object.fromEntries(incidents.map(i => [i.id, i.validationStatus]));
 }
 
-setInterval(checkNotifications, 3000);
+setInterval(checkNotifications, config.pollInterval);
 ensureToastContainer();
 
 // ── Leaflet Map ───────────────────────────────────────────────────────────────
@@ -257,7 +258,7 @@ function initMap() {
     // Center on campus centroid
     leafletMap = L.map('campus-map', {
         center: [4.861, -74.034],
-        zoom: 15,
+        zoom: config.mapZoom,
         zoomControl: true,
         scrollWheelZoom: false,
     });
