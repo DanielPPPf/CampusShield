@@ -498,7 +498,9 @@ export const views = {
             ${common.navbar('dashboard')}
         `;
     },
-    report: () => `
+    report: () => {
+        const zones = store.getZones();
+        return `
         ${common.header()}
         <main class="pt-24 pb-32 px-6 max-w-2xl mx-auto view-enter">
             <section class="mb-10">
@@ -576,11 +578,17 @@ export const views = {
                     <p class="text-on-surface-variant text-sm">${t('finalizeReport')}</p>
                 </section>
                 <div class="bg-surface-container-low p-6 rounded-xl border-l-4 border-on-secondary-fixed-variant space-y-4">
-                    <div class="flex items-center gap-3">
-                        <span class="material-symbols-outlined text-on-secondary-fixed-variant" style="font-variation-settings: 'FILL' 1;">location_on</span>
-                        <div>
-                            <p class="text-[10px] font-label uppercase tracking-wider text-outline">${t('detectedLoc')}</p>
-                            <p class="text-lg font-bold text-primary">Ad Portas Building</p>
+                    <div class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-on-secondary-fixed-variant mt-1" style="font-variation-settings: 'FILL' 1;">location_on</span>
+                        <div class="flex-1">
+                            <p class="text-[10px] font-label uppercase tracking-wider text-outline mb-2">${t('detectedLoc')}</p>
+                            <select id="incident-location" class="w-full bg-white border border-outline-variant/30 rounded-xl px-4 py-3 text-base font-bold text-primary focus:ring-2 focus:ring-secondary focus:outline-none cursor-pointer">
+                                ${zones.map(z => `
+                                    <option value="${z.name}">
+                                        ${z.name} — ${z.riskScore > 70 ? '🔴' : z.riskScore > 40 ? '🟡' : '🟢'} Risk ${z.riskScore}
+                                    </option>
+                                `).join('')}
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -597,7 +605,8 @@ export const views = {
             </section>
         </main>
         ${common.navbar('report')}
-    `,
+        `;
+    },
     map: () => {
         const zones = store.getZones();
         return `

@@ -601,13 +601,14 @@ function attachEventListeners(view) {
         });
 
         document.getElementById('submit-report-btn').addEventListener('click', () => {
-            const details = document.getElementById('incident-details').value;
+            const details     = document.getElementById('incident-details').value;
             const isAnonymous = document.getElementById('anonymous-mode').checked;
+            const location    = document.getElementById('incident-location')?.value || 'Ad Portas';
 
             store.addIncident({
                 type: selectedType,
                 details: details || 'No additional details provided.',
-                location: 'Ad Portas',
+                location,
                 intensity: selectedType === 'Theft/Robbery' ? 'High' : 'Medium',
                 isAnonymous
             });
