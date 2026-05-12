@@ -331,6 +331,79 @@ function initMap() {
     }
 }
 
+// ── Export incidents (HU-AD-03) ───────────────────────────────────────────────
+
+function downloadBlob(content, filename, mime) {
+    const blob = new Blob([content], { type: mime });
+    const url  = URL.createObjectURL(blob);
+    const a    = Object.assign(document.createElement('a'), { href: url, download: filename });
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+}
+
+function exportIncidents() {
+    const incidents = store.getIncidents();
+    const zones     = store.getZones();
+    const lang      = store.getLanguage();
+    const now       = new Date();
+    const stamp     = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}`;
+
+    // ── CSV ──────────────────────────────────────────────────────────────────
+    const CSV_HEADERS = ['ID','Tipo','Ubicacion','Intensidad','Estado','Validacion','Confirmaciones','Negaciones','Reportado Por','Tiempo','Risk Score','Nota Admin'];
+    const csvRows = incidents.map(i => [
+        i.id,
+        `"${i.type}"`,
+        `"${i.location}"`,
+        i.intensity,
+        i.status,
+        i.validationStatus,
+        i.confirmations.length,
+        i.denials.length,
+        i.isAnonymous ? 'Anonimo' : `"${i.reportedBy}"`,
+        `"${i.time}"`,
+        i.riskScore ?? '',
+        `"${(i.adminNote || '').replace(/"/g, "'")}"`
+    ].join(','));
+    const csv = [CSV_HEADERS.join(','), ...csvRows].join('\n');
+    downloadBlob(csv, `CampusShield_Incidentes_${stamp}.csv`, 'text/csv;charset=utf-8;');
+
+    // ── JSON (reporte completo con zonas) ────────────────────────────────────
+    const report = {
+        generated_at: now.toISOString(),
+        generated_by: store.getUser()?.email,
+        summary: {
+            total: incidents.length,
+            verified: incidents.filter(i => i.validationStatus === 'verified').length,
+            pending:  incidents.filter(i => i.validationStatus === 'pending').length,
+            discarded: incidents.filter(i => i.validationStatus === 'discarded').length,
+            by_zone: zones.map(z => ({
+                zone: z.name,
+                riskScore: z.riskScore,
+                alerts: z.alerts,
+                incidents: incidents.filter(i => i.location === z.name).length,
+            })),
+            by_type: [...new Set(incidents.map(i => i.type))].map(type => ({
+                type,
+                count: incidents.filter(i => i.type === type).length,
+            })),
+        },
+        incidents,
+        zones,
+    };
+    downloadBlob(JSON.stringify(report, null, 2), `CampusShield_Reporte_${stamp}.json`, 'application/json');
+
+    showToast({
+        icon: 'download_done',
+        message: lang === 'es' ? 'Exportación completada' : 'Export complete',
+        sub: lang === 'es'
+            ? `Descargados: CSV + JSON (${incidents.length} incidentes)`
+            : `Downloaded: CSV + JSON (${incidents.length} incidents)`,
+        type: 'success',
+    });
+}
+
 // ── Global handlers for view actions ─────────────────────────────────────────
 
 window.setLang = (lang) => {
@@ -580,20 +653,7 @@ function attachEventListeners(view) {
         });
 
         document.getElementById('export-btn')?.addEventListener('click', () => {
-            showToast({
-                icon: 'picture_as_pdf',
-                message: 'Generating report…',
-                sub: 'PDF/Excel will be sent to admin@unisabana.edu.co',
-                type: 'info',
-            });
-            setTimeout(() => {
-                showToast({
-                    icon: 'check_circle',
-                    message: 'Report ready!',
-                    sub: 'Sent to admin@unisabana.edu.co',
-                    type: 'success',
-                });
-            }, 2500);
+            exportIncidents();
         });
     }
 }
