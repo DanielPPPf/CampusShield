@@ -853,6 +853,7 @@ export const views = {
     admin: () => {
         const incidents = store.getIncidents();
         const zones = store.getZones();
+        const lang = store.getLanguage();
 
         const stats = {
             total: incidents.length,
@@ -978,18 +979,43 @@ export const views = {
 
                     <!-- Main Queue Section -->
                     <section class="lg:col-span-8 space-y-6">
-                        <div class="flex items-center justify-between">
-                            <h3 class="text-xl font-headline font-bold text-primary">${t('activeIncidentQueue')}</h3>
-                            <div class="flex gap-2">
-                                <button class="p-2 bg-surface-container-high rounded-lg hover:bg-surface-container-highest transition-colors">
-                                    <span class="material-symbols-outlined text-sm">filter_list</span>
+                        <div class="flex flex-col gap-3">
+                            <div class="flex items-center justify-between">
+                                <h3 class="text-xl font-headline font-bold text-primary">${t('activeIncidentQueue')}</h3>
+                                <span id="admin-result-count" class="text-[10px] font-bold text-outline uppercase tracking-widest">${incidents.length} incidentes</span>
+                            </div>
+                            <!-- Filter bar -->
+                            <div class="flex flex-wrap gap-2 p-4 bg-surface-container-low rounded-2xl border border-outline-variant/10">
+                                <div class="relative flex-1 min-w-[160px]">
+                                    <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-base">search</span>
+                                    <input id="admin-search" type="text" placeholder="${lang === 'es' ? 'Buscar...' : 'Search...'}"
+                                        class="w-full pl-9 pr-3 py-2 bg-white rounded-xl text-sm text-on-surface border border-outline-variant/20 focus:ring-2 focus:ring-secondary focus:outline-none"/>
+                                </div>
+                                <select id="admin-filter-status" class="py-2 px-3 bg-white rounded-xl text-sm font-bold text-primary border border-outline-variant/20 focus:ring-2 focus:ring-secondary cursor-pointer">
+                                    <option value="">${lang === 'es' ? 'Todo estado' : 'All statuses'}</option>
+                                    <option value="New">New</option>
+                                    <option value="In Attention">In Attention</option>
+                                    <option value="Resolved">Resolved</option>
+                                </select>
+                                <select id="admin-filter-validation" class="py-2 px-3 bg-white rounded-xl text-sm font-bold text-primary border border-outline-variant/20 focus:ring-2 focus:ring-secondary cursor-pointer">
+                                    <option value="">${lang === 'es' ? 'Toda validación' : 'All validations'}</option>
+                                    <option value="pending">${t('pendingBadge')}</option>
+                                    <option value="verified">${t('verifiedBadge')}</option>
+                                    <option value="discarded">${t('falseAlarmBadge')}</option>
+                                </select>
+                                <select id="admin-filter-zone" class="py-2 px-3 bg-white rounded-xl text-sm font-bold text-primary border border-outline-variant/20 focus:ring-2 focus:ring-secondary cursor-pointer">
+                                    <option value="">${lang === 'es' ? 'Toda zona' : 'All zones'}</option>
+                                    ${zones.map(z => `<option value="${z.name}">${z.name}</option>`).join('')}
+                                </select>
+                                <button id="admin-filter-clear" class="py-2 px-3 bg-white rounded-xl text-xs font-bold text-outline border border-outline-variant/20 hover:text-error hover:border-error/30 transition-colors">
+                                    <span class="material-symbols-outlined text-sm align-middle">close</span>
                                 </button>
                             </div>
                         </div>
                         
-                        <div class="grid grid-cols-1 gap-4">
-                            ${store.getIncidents().map(inc => `
-                                <div class="bg-white rounded-2xl p-6 shadow-sm border border-outline-variant/10 border-l-[6px] ${inc.validationStatus === 'discarded' ? 'border-l-outline opacity-60' : inc.intensity === 'High' ? 'border-l-error' : 'border-l-secondary'} transition-all hover:shadow-md">
+                        <div class="grid grid-cols-1 gap-4" id="admin-incident-queue">
+                            ${incidents.map(inc => `
+                                <div data-incident-id="${inc.id}" class="bg-white rounded-2xl p-6 shadow-sm border border-outline-variant/10 border-l-[6px] ${inc.validationStatus === 'discarded' ? 'border-l-outline opacity-60' : inc.intensity === 'High' ? 'border-l-error' : 'border-l-secondary'} transition-all hover:shadow-md">
                                     <div class="flex flex-col md:flex-row justify-between items-start gap-6">
                                         <div class="flex-1 space-y-3">
                                             <div class="flex flex-wrap items-center gap-3">

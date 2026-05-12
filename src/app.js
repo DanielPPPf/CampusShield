@@ -646,6 +646,56 @@ function attachEventListeners(view) {
     }
 
     if (view === 'admin') {
+        // ── Admin filters ─────────────────────────────────────────────────
+        const filterSearch     = document.getElementById('admin-search');
+        const filterStatus     = document.getElementById('admin-filter-status');
+        const filterValidation = document.getElementById('admin-filter-validation');
+        const filterZone       = document.getElementById('admin-filter-zone');
+        const filterClear      = document.getElementById('admin-filter-clear');
+        const resultCount      = document.getElementById('admin-result-count');
+        const queue            = document.querySelector('#admin-incident-queue');
+
+        function applyFilters() {
+            if (!queue) return;
+            const search     = filterSearch?.value.toLowerCase() || '';
+            const status     = filterStatus?.value || '';
+            const validation = filterValidation?.value || '';
+            const zone       = filterZone?.value || '';
+
+            const cards = queue.querySelectorAll('[data-incident-id]');
+            let visible = 0;
+            cards.forEach(card => {
+                const id   = Number(card.dataset.incidentId);
+                const inc  = store.getIncidents().find(i => i.id === id);
+                if (!inc) { card.style.display = 'none'; return; }
+
+                const matchSearch     = !search     || inc.type.toLowerCase().includes(search) || inc.location.toLowerCase().includes(search) || inc.details.toLowerCase().includes(search);
+                const matchStatus     = !status     || inc.status === status;
+                const matchValidation = !validation || inc.validationStatus === validation;
+                const matchZone       = !zone       || inc.location === zone;
+
+                const show = matchSearch && matchStatus && matchValidation && matchZone;
+                card.style.display = show ? '' : 'none';
+                if (show) visible++;
+            });
+
+            const lang = store.getLanguage();
+            if (resultCount) resultCount.textContent = `${visible} ${lang === 'es' ? 'incidentes' : 'incidents'}`;
+        }
+
+        [filterSearch, filterStatus, filterValidation, filterZone].forEach(el => {
+            el?.addEventListener('input', applyFilters);
+            el?.addEventListener('change', applyFilters);
+        });
+
+        filterClear?.addEventListener('click', () => {
+            if (filterSearch)     filterSearch.value = '';
+            if (filterStatus)     filterStatus.value = '';
+            if (filterValidation) filterValidation.value = '';
+            if (filterZone)       filterZone.value = '';
+            applyFilters();
+        });
+
         document.getElementById('admin-logout')?.addEventListener('click', () => {
             incidentSnapshot = null;
             store.logout();
