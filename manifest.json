@@ -1,0 +1,50 @@
+{
+    "name": "CampusShield",
+    "short_name": "CampusShield",
+    "description": "Plataforma de seguridad universitaria — Universidad de La Sabana",
+    "start_url": "/",
+    "display": "standalone",
+    "orientation": "portrait-primary",
+    "background_color": "#000a34",
+    "theme_color": "#000a34",
+    "lang": "es",
+    "scope": "/",
+    "icons": [
+        {
+            "src": "icons/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "icons/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "stitch_prototipo_campusshield/dashboard_community/screen.png",
+            "sizes": "540x720",
+            "type": "image/png",
+            "form_factor": "narrow",
+            "label": "Dashboard de seguridad"
+        }
+    ],
+    "categories": ["security", "education", "utilities"],
+    "shortcuts": [
+        {
+            "name": "Reportar incidente",
+            "short_name": "Reportar",
+            "url": "/#report",
+            "description": "Reportar un incidente de seguridad"
+        },
+        {
+            "name": "Ver mapa",
+            "short_name": "Mapa",
+            "url": "/#map",
+            "description": "Mapa de zonas críticas"
+        }
+    ]
+}
