@@ -1,0 +1,82 @@
+version: '3.9'
+
+# ═══════════════════════════════════════════════════════════════════════════
+# CampusShield — Docker Compose
+# Servicios: PostgreSQL 15 + PostGIS · Redis 7 · Adminer (dev only)
+# ═══════════════════════════════════════════════════════════════════════════
+
+services:
+
+  # ── Base de datos principal ──────────────────────────────────────────────
+  postgres:
+    image: postgis/postgis:15-3.4-alpine
+    container_name: campusshield-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB:       ${POSTGRES_DB:-campusshield}
+      POSTGRES_USER:     ${POSTGRES_USER:-campusshield}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./docker/postgres/init.sql:/docker-entrypoint-initdb.d/01_init.sql:ro
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-campusshield} -d ${POSTGRES_DB:-campusshield}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - campusshield-net
+
+  # ── Caché y sesiones ─────────────────────────────────────────────────────
+  redis:
+    image: redis:7-alpine
+    container_name: campusshield-redis
+    restart: unless-stopped
+    command: >
+      redis-server /usr/local/etc/redis/redis.conf
+      --requirepass ${REDIS_PASSWORD}
+    volumes:
+      - redis_data:/data
+      - ./docker/redis/redis.conf:/usr/local/etc/redis/redis.conf:ro
+    ports:
+      - "${REDIS_PORT:-6379}:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "${REDIS_PASSWORD}", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - campusshield-net
+
+  # ── Adminer (UI para base de datos — solo dev) ───────────────────────────
+  adminer:
+    image: adminer:4-standalone
+    container_name: campusshield-adminer
+    restart: unless-stopped
+    environment:
+      ADMINER_DEFAULT_SERVER: postgres
+      ADMINER_DESIGN: dracula
+    ports:
+      - "${ADMINER_PORT:-8080}:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    profiles:
+      - dev
+    networks:
+      - campusshield-net
+
+# ── Volúmenes persistentes ────────────────────────────────────────────────
+volumes:
+  postgres_data:
+    name: campusshield-postgres-data
+  redis_data:
+    name: campusshield-redis-data
+
+# ── Red interna ──────────────────────────────────────────────────────────
+networks:
+  campusshield-net:
+    name: campusshield-network
+    driver: bridge
