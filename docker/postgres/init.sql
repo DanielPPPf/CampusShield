@@ -187,3 +187,27 @@ LEFT JOIN validation_votes v ON i.id = v.incident_id
 GROUP BY i.id, z.name, z.risk_score;
 
 COMMENT ON VIEW incident_summary IS 'Vista desnormalizada para el panel de administración';
+
+-- ── Seed: usuarios de demo ────────────────────────────────────────────────────
+-- Las contraseñas se hashean con bcrypt cost-factor 12 usando pgcrypto.
+-- Para verificar en el backend: crypt(input_password, stored_hash) = stored_hash
+
+INSERT INTO users (email, name, password_hash, role, language_pref) VALUES
+    (
+        'admin@unisabana.edu.co',
+        'Administrador Campus',
+        crypt('1234', gen_salt('bf', 12)),
+        'admin',
+        'es'
+    ),
+    (
+        'danielpafr@unisabana.edu.co',
+        'Daniel Pedraza',
+        crypt('1234', gen_salt('bf', 12)),
+        'student',
+        'es'
+    );
+
+-- Registrar la creación en audit_log
+INSERT INTO audit_log (action, target, meta) VALUES
+    ('seed', 'users', '{"source": "init.sql", "env": "demo"}'::jsonb);
