@@ -556,13 +556,23 @@ function attachEventListeners(view) {
             }
 
             // Feedback visual mientras bcrypt verifica
+            const btnLabel = store.getLanguage() === 'es' ? 'Iniciar Sesión en Shield' : 'Sign In to Shield';
+            const resetBtn = () => {
+                btn.disabled = false;
+                btn.innerHTML = `<span>${btnLabel}</span><span class="material-symbols-outlined text-lg">login</span>`;
+            };
+
             btn.disabled = true;
-            btn.innerHTML = '<span class="material-symbols-outlined animate-spin text-lg">progress_activity</span> Verificando...';
+            btn.innerHTML = '<span class="material-symbols-outlined text-lg" style="animation:spin 1s linear infinite">progress_activity</span> Verificando...';
+
+            if (typeof dcodeIO === 'undefined' || !dcodeIO.bcrypt) {
+                resetBtn();
+                showToast({ icon: 'error', message: 'Error de sistema', sub: 'Recarga la página e intenta de nuevo.', type: 'error' });
+                return;
+            }
 
             const valid = await dcodeIO.bcrypt.compare(password, user.passwordHash);
-
-            btn.disabled = false;
-            btn.innerHTML = `<span>${store.getLanguage() === 'es' ? 'Iniciar Sesión en Shield' : 'Sign In to Shield'}</span><span class="material-symbols-outlined text-lg">login</span>`;
+            resetBtn();
 
             if (!valid) {
                 showToast({ icon: 'lock', message: 'Contraseña incorrecta', sub: 'Verifica tus credenciales e intenta de nuevo.', type: 'error' });
