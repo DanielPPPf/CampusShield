@@ -17,6 +17,12 @@ export const DEMO_USERS = [
         role:  'student',
         passwordHash: '$2a$12$Nq.JJJlnwzrf6CYXyppcTuwNF80NZHuN6ZYgUlmi95edxmOhOeFY6',
     },
+    {
+        email: 'hola@unisabana.edu.co',
+        name:  'Hola Usuario',
+        role:  'student',
+        passwordHash: '$2a$12$eM9gU922ygFGPR8wy24Ia.9dBGsk/3LTDuDt7/636ddKVbyPk8DEe',
+    },
 ];
 
 const INITIAL_INCIDENTS = [
