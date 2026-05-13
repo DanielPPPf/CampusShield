@@ -2,6 +2,23 @@ import { config } from './config.js';
 
 const VALIDATION_THRESHOLD = config.validationThreshold;
 
+// ── Usuarios de demo (hashes bcrypt generados con pgcrypto cost-factor 12) ────
+// La verificación real ocurre con bcryptjs.compare(inputPassword, hash)
+export const DEMO_USERS = [
+    {
+        email: 'admin@unisabana.edu.co',
+        name:  'Administrador Campus',
+        role:  'admin',
+        passwordHash: '$2a$12$zD1g02.4qizVls9jxxECaexvpZzALgXrAPGauNjXlOP9IacDZjfvq',
+    },
+    {
+        email: 'danielpafr@unisabana.edu.co',
+        name:  'Daniel Pedraza',
+        role:  'student',
+        passwordHash: '$2a$12$Nq.JJJlnwzrf6CYXyppcTuwNF80NZHuN6ZYgUlmi95edxmOhOeFY6',
+    },
+];
+
 const INITIAL_INCIDENTS = [
     {
         id: 1,
@@ -91,11 +108,11 @@ class Store {
         localStorage.setItem('campus_shield_data', JSON.stringify(this.state));
     }
 
-    login(email, role) {
+    login(email, role, name) {
         if (!email.endsWith('@unisabana.edu.co')) {
             throw new Error('Access restricted to UniSabana community.');
         }
-        this.state.user = { email, role, name: email.split('@')[0] };
+        this.state.user = { email, role, name: name || email.split('@')[0] };
         this.save();
     }
 

@@ -1,5 +1,5 @@
 import { config } from './config.js';
-import { store } from './store.js';
+import { store, DEMO_USERS } from './store.js';
 import { views } from './views.js';
 
 const appRoot = document.getElementById('app-root');
@@ -538,22 +538,42 @@ function navigate() {
 function attachEventListeners(view) {
     if (view === 'login') {
         const form = document.getElementById('login-form');
-        form.addEventListener('submit', (e) => {
+        form.addEventListener('submit', async (e) => {
             e.preventDefault();
-            const email = document.getElementById('email').value;
+            const email    = document.getElementById('email').value.trim().toLowerCase();
+            const password = document.getElementById('password').value;
+            const btn      = form.querySelector('button[type="submit"]');
+
             if (!email.endsWith('@unisabana.edu.co')) {
-                showToast({
-                    icon: 'block',
-                    message: 'Acceso restringido',
-                    sub: 'Solo cuentas @unisabana.edu.co',
-                    type: 'error',
-                });
+                showToast({ icon: 'block', message: 'Acceso restringido', sub: 'Solo cuentas @unisabana.edu.co', type: 'error' });
                 return;
             }
-            const role = email.includes('admin') ? 'admin' : 'student';
-            store.login(email, role);
-            incidentSnapshot = null; // fresh baseline after login
-            window.location.hash = role === 'admin' ? '#admin' : '#dashboard';
+
+            const user = DEMO_USERS.find(u => u.email === email);
+            if (!user) {
+                showToast({ icon: 'lock', message: 'Credenciales incorrectas', sub: 'Correo no registrado en el sistema.', type: 'error' });
+                return;
+            }
+
+            // Feedback visual mientras bcrypt verifica
+            btn.disabled = true;
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin text-lg">progress_activity</span> Verificando...';
+
+            const valid = await dcodeIO.bcrypt.compare(password, user.passwordHash);
+
+            btn.disabled = false;
+            btn.innerHTML = `<span>${store.getLanguage() === 'es' ? 'Iniciar Sesión en Shield' : 'Sign In to Shield'}</span><span class="material-symbols-outlined text-lg">login</span>`;
+
+            if (!valid) {
+                showToast({ icon: 'lock', message: 'Contraseña incorrecta', sub: 'Verifica tus credenciales e intenta de nuevo.', type: 'error' });
+                document.getElementById('password').value = '';
+                document.getElementById('password').focus();
+                return;
+            }
+
+            store.login(user.email, user.role, user.name);
+            incidentSnapshot = null;
+            window.location.hash = user.role === 'admin' ? '#admin' : '#dashboard';
         });
     }
 
