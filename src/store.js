@@ -163,6 +163,18 @@ class Store {
         }
 
         this.save();
+
+        // Persistir en PostgreSQL (fire-and-forget)
+        fetch(`${config.apiBase}/incidents`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                ...incident,
+                reportedBy: this.state.user?.email || null,
+                riskScore:  newIncident.riskScore ?? null,
+            }),
+        }).catch(() => {}); // silencioso si la API no está disponible
+
         return newIncident;
     }
 
