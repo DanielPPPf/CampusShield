@@ -59,6 +59,34 @@ npm run load
 
 Nota: la cobertura quedó por debajo del objetivo objetivo del 85%. Si quieres, puedo seguir añadiendo pruebas unitarias dirigidas a los archivos con baja cobertura para elevar ese porcentaje.
 
+### Ejecuciones recientes (detalles)
+
+- Unit tests:
+	- Comando: `node node_modules/vitest/vitest.mjs --run --environment jsdom`
+	- Resultado: 11 tests pasados (2 archivos de prueba).
+
+- Coverage:
+	- Comando: `node node_modules/vitest/vitest.mjs --run --coverage --environment jsdom`
+	- Resultado: cobertura global **63.82%**.
+	- Archivos con baja cobertura: `src/app.js` (excluido en reportes, sin instrumentación) y parte de `src/store.js`.
+
+- Playwright E2E:
+	- Comando: `node node_modules/@playwright/test/cli.js test --reporter=list`
+	- Resultado: 1 test E2E pasado (`e2e/tests/login.spec.mjs`).
+
+- k6 load test:
+	- Comando: `k6 run --env BASE_URL=http://127.0.0.1:4173 tests/load/dashboard.js`
+	- Escenario: 50 VUs por 1m
+	- Resultado: thresholds cumplidos
+		- `http_req_failed` rate = 0.00%
+		- `http_req_duration` p95 = 6.62ms
+		- checks: 6000/6000 succeeded
+
+### Notas operativas
+
+- El `webServer` de Playwright fue ajustado para usar la ruta completa a `node` en Windows y el servidor estático (`scripts/serve-static.mjs`) ahora sirve desde el directorio del proyecto.
+- Hice un commit en la rama `qa-setup` con los cambios de tests/configs/scripts y el adaptador de coverage. No hice push remoto.
+
 ## Comentarios normales de implementación
 
 - Al principio Playwright estaba agarrando archivos que no tocaban, entonces se ajustó la configuración para que solo mire `e2e/tests`.
