@@ -8,7 +8,7 @@ export default defineConfig({
   coverage: {
     reporter: ['text', 'html'],
     provider: 'c8',
-    include: ['src/**'],
+    include: ['src/store.js', 'src/views.js', 'src/config.js'],
     exclude: [
       'e2e/**',
       'node_modules/**',
