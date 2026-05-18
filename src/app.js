@@ -1,4 +1,3 @@
-/* istanbul ignore file */
 import { config } from './config.js';
 import { store } from './store.js';
 import { views } from './views.js';
@@ -601,3 +600,17 @@ function attachEventListeners(view) {
 
 window.addEventListener('hashchange', navigate);
 window.addEventListener('load', navigate);
+
+export {
+    openModal,
+    closeModal,
+    showAlert,
+    showConfirm,
+    showPrompt,
+    ensureToastContainer,
+    showToast,
+    checkNotifications,
+    initMap,
+    navigate,
+    attachEventListeners
+};

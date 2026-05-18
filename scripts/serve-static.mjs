@@ -5,8 +5,9 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const port = 4173;
-const root = process.cwd();
+// Serve files from the project folder (script is inside CampusShield/scripts)
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const root = path.resolve(path.join(__dirname, '..'));
 
 const mimeTypes = {
   '.html': 'text/html; charset=utf-8',

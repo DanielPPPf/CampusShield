@@ -13,7 +13,7 @@ export default defineConfig({
     trace: 'retain-on-failure',
   },
   webServer: {
-    command: 'node scripts/serve-static.mjs',
+    command: '"C:/Program Files/nodejs/node.exe" scripts/serve-static.mjs',
     url: 'http://127.0.0.1:4173',
     reuseExistingServer: true,
     timeout: 120000,
