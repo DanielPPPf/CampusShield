@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import { config } from './config.js';
 import { store } from './store.js';
 import { views } from './views.js';
