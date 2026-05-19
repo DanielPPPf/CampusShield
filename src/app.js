@@ -521,6 +521,54 @@ async function loadAIInsights() {
             </div>`;
         }
 
+        // ── Briefing de Claude ────────────────────────────────────────────────
+        const briefingEl = document.getElementById('ai-briefing');
+        if (briefingEl && data.briefing) {
+            const b = data.briefing;
+            const alertColors = { green: '#1a6e2e', yellow: '#636100', orange: '#8b4000', red: '#ba1a1a' };
+            const alertBg     = { green: '#e8f5e9', yellow: '#fffde7', orange: '#fff3e0', red: '#fdecea' };
+            const alertIcons  = { green: 'check_circle', yellow: 'warning', orange: 'emergency', red: 'crisis_alert' };
+            const alertLabel  = { green: 'Normal', yellow: 'Atención', orange: 'Precaución', red: 'Crítico' };
+            const lvl = b.alert_level || 'green';
+            briefingEl.innerHTML = `
+            <div class="rounded-2xl border p-5 space-y-4" style="border-color:${alertColors[lvl]}30; background:${alertBg[lvl]}40">
+                <div class="flex items-start justify-between gap-3">
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-base shrink-0" style="color:${alertColors[lvl]};font-variation-settings:'FILL' 1">${alertIcons[lvl]}</span>
+                        <p class="text-[10px] font-extrabold uppercase tracking-widest" style="color:${alertColors[lvl]}">Claude AI · Nivel ${alertLabel[lvl]}</p>
+                    </div>
+                    <span class="text-[9px] text-outline">${b.incidents_analyzed || 0} incidentes analizados</span>
+                </div>
+                <p class="text-sm text-on-surface leading-relaxed">${b.executive_summary || ''}</p>
+                ${b.patterns_detected?.length ? `
+                <div>
+                    <p class="text-[10px] font-bold text-outline uppercase tracking-widest mb-2">Patrones detectados</p>
+                    <ul class="space-y-1">${b.patterns_detected.map(p => `
+                        <li class="flex items-start gap-2 text-[11px] text-on-surface-variant">
+                            <span class="material-symbols-outlined text-[14px] mt-0.5 shrink-0" style="color:${alertColors[lvl]}">trending_up</span>
+                            ${p}
+                        </li>`).join('')}
+                    </ul>
+                </div>` : ''}
+                ${b.recommended_actions?.length ? `
+                <div>
+                    <p class="text-[10px] font-bold text-outline uppercase tracking-widest mb-2">Acciones recomendadas</p>
+                    <ol class="space-y-1">${b.recommended_actions.map((a, i) => `
+                        <li class="flex items-start gap-2 text-[11px] text-on-surface-variant">
+                            <span class="text-[10px] font-extrabold w-4 text-center mt-0.5 shrink-0" style="color:${alertColors[lvl]}">${i + 1}</span>
+                            ${a}
+                        </li>`).join('')}
+                    </ol>
+                </div>` : ''}
+                ${b.hotspot_insight ? `
+                <div class="flex items-start gap-2 p-3 rounded-xl" style="background:${alertColors[lvl]}15">
+                    <span class="material-symbols-outlined text-sm shrink-0 mt-0.5" style="color:${alertColors[lvl]};font-variation-settings:'FILL' 1">location_on</span>
+                    <p class="text-[11px] text-on-surface-variant">${b.hotspot_insight}</p>
+                </div>` : ''}
+                ${!b.generated_by_claude ? '<p class="text-[9px] text-outline/50 italic">Análisis sin IA generativa — configura ANTHROPIC_API_KEY para habilitar Claude.</p>' : ''}
+            </div>`;
+        }
+
     } catch {
         // API no disponible — fallback silencioso con datos locales
         const rankEl = document.getElementById('ai-zone-ranking');

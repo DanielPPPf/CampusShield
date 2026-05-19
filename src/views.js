@@ -667,6 +667,18 @@ export const views = {
                     </div>
                 </section>
 
+                <!-- Briefing ejecutivo de Claude — se rellena desde la API -->
+                <div id="ai-briefing" class="bg-surface-container-lowest rounded-[1.5rem] p-6 shadow-[0_4px_20px_rgba(0,10,52,0.05)] border border-outline-variant/10">
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="material-symbols-outlined text-secondary" style="font-variation-settings:'FILL' 1;">psychology</span>
+                        <h2 class="font-headline font-semibold text-lg text-primary">Briefing IA</h2>
+                        <span class="ml-auto text-[9px] font-bold text-outline uppercase bg-surface-container px-2 py-1 rounded-full">Claude API</span>
+                    </div>
+                    <div class="h-20 bg-surface-container animate-pulse rounded-2xl flex items-center justify-center">
+                        <span class="material-symbols-outlined text-outline animate-spin">progress_activity</span>
+                    </div>
+                </div>
+
                 <!-- Bloque de ruta segura — se rellena desde la API -->
                 <div id="ai-route-card" class="bg-surface-container-lowest rounded-[1.5rem] p-6 shadow-[0_4px_20px_rgba(0,10,52,0.05)] border border-outline-variant/10">
                     <div class="flex items-center gap-2 mb-4">

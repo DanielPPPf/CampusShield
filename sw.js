@@ -1,5 +1,5 @@
 // ── CampusShield Service Worker ───────────────────────────────────────────────
-const CACHE_NAME = 'campusshield-v3';
+const CACHE_NAME = 'campusshield-v4';
 
 // Recursos estáticos que se cachean en la instalación (cache-first)
 const STATIC_ASSETS = [

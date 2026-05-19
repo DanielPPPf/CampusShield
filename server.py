@@ -5,11 +5,22 @@ Endpoints: GET/POST /api/incidents · GET /api/zones · GET /api/health
 """
 import os, json
 from datetime import datetime
+
+# Cargar .env si existe (dev local)
+_env_path = os.path.join(os.path.dirname(__file__), ".env")
+if os.path.exists(_env_path):
+    with open(_env_path) as _f:
+        for _line in _f:
+            _line = _line.strip()
+            if _line and not _line.startswith("#") and "=" in _line:
+                _k, _, _v = _line.partition("=")
+                os.environ.setdefault(_k.strip(), _v.strip())
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 import psycopg2
 from psycopg2.extras import RealDictCursor
 import joblib, numpy as np, pandas as pd
+from ml.claude_enricher import enrich_incident, generate_security_briefing
 
 app = Flask(__name__)
 CORS(app, origins=["http://localhost:9000", "http://localhost:8000", "http://127.0.0.1:9000"])
@@ -124,6 +135,32 @@ def create_incident():
         ))
         new_id = cur.fetchone()["id"]
 
+        # Enriquecimiento semántico con Claude (async best-effort)
+        base_risk = data.get("riskScore") or 50.0
+        enrichment = enrich_incident({
+            "type":      data.get("type"),
+            "location":  zone_name,
+            "intensity": data.get("intensity", "Medium"),
+            "details":   data.get("details", ""),
+            "time":      datetime.now().strftime("%H:%M"),
+        }, float(base_risk))
+
+        adjusted_risk = max(0, min(100, float(base_risk) + enrichment["severity_adjustment"]))
+
+        # Persistir enriquecimiento en la BD
+        cur.execute("""
+            UPDATE incidents
+            SET risk_score  = %s,
+                admin_note  = %s
+            WHERE id = %s
+        """, (
+            adjusted_risk,
+            json.dumps({
+                "claude": enrichment,
+            }, ensure_ascii=False),
+            new_id,
+        ))
+
         # Actualizar risk_score y alert_count de la zona
         if zone_id:
             delta = 15 if data.get("intensity") == "High" else 5
@@ -135,7 +172,12 @@ def create_incident():
             """, (delta, zone_id))
 
         conn.commit()
-        return jsonify({"id": new_id, "status": "created"}), 201
+        return jsonify({
+            "id": new_id,
+            "status": "created",
+            "enrichment": enrichment,
+            "adjusted_risk": adjusted_risk,
+        }), 201
 
 # ── Cargar modelos ML ─────────────────────────────────────────────────────────
 _model    = joblib.load("ml/models/xgboost_risk.pkl")
@@ -224,6 +266,23 @@ def ai_insights():
 
     risk_reduction = round(((worst["risk_now"] - safest["risk_now"]) / max(worst["risk_now"], 1)) * 100)
 
+    # Obtener incidentes recientes para el briefing de Claude
+    try:
+        with get_conn() as conn, conn.cursor() as cur:
+            cur.execute("""
+                SELECT i.type, i.details, i.intensity,
+                       z.name AS location,
+                       to_char(i.created_at, 'HH24:MI') AS time
+                FROM incidents i
+                LEFT JOIN zones z ON i.zone_id = z.id
+                ORDER BY i.created_at DESC LIMIT 30
+            """)
+            recent_incidents = cur.fetchall()
+    except Exception:
+        recent_incidents = []
+
+    briefing = generate_security_briefing(list(recent_incidents), zone_risks)
+
     return jsonify({
         "generated_at":    now.isoformat(),
         "current_hour":    hour,
@@ -236,6 +295,7 @@ def ai_insights():
         "hourly_risk":     hourly,
         "clusters":        _clusters,
         "model_mae":       10.26,
+        "briefing":        briefing,
     })
 
 if __name__ == "__main__":
