@@ -1,0 +1,289 @@
+zone_enc,type_enc,hour,dow,is_night,is_peak,is_weekend,zone,type,hour_val,predicted_risk
+0,0,0,1,1,0,0,ad-portas,Dark Zone,0,57.5
+0,1,0,1,1,0,0,ad-portas,Maintenance,0,25.9
+0,2,0,1,1,0,0,ad-portas,Suspicious Person,0,54.5
+0,3,0,1,1,0,0,ad-portas,Theft/Robbery,0,87.9
+0,0,1,1,1,0,0,ad-portas,Dark Zone,1,56.8
+0,1,1,1,1,0,0,ad-portas,Maintenance,1,25.0
+0,2,1,1,1,0,0,ad-portas,Suspicious Person,1,53.9
+0,3,1,1,1,0,0,ad-portas,Theft/Robbery,1,89.7
+0,0,2,1,1,0,0,ad-portas,Dark Zone,2,54.8
+0,1,2,1,1,0,0,ad-portas,Maintenance,2,23.0
+0,2,2,1,1,0,0,ad-portas,Suspicious Person,2,52.1
+0,3,2,1,1,0,0,ad-portas,Theft/Robbery,2,87.3
+0,0,3,1,1,0,0,ad-portas,Dark Zone,3,46.5
+0,1,3,1,1,0,0,ad-portas,Maintenance,3,17.0
+0,2,3,1,1,0,0,ad-portas,Suspicious Person,3,49.7
+0,3,3,1,1,0,0,ad-portas,Theft/Robbery,3,85.4
+0,0,4,1,1,0,0,ad-portas,Dark Zone,4,48.7
+0,1,4,1,1,0,0,ad-portas,Maintenance,4,19.7
+0,2,4,1,1,0,0,ad-portas,Suspicious Person,4,53.4
+0,3,4,1,1,0,0,ad-portas,Theft/Robbery,4,88.8
+0,0,5,1,1,0,0,ad-portas,Dark Zone,5,46.4
+0,1,5,1,1,0,0,ad-portas,Maintenance,5,18.0
+0,2,5,1,1,0,0,ad-portas,Suspicious Person,5,49.5
+0,3,5,1,1,0,0,ad-portas,Theft/Robbery,5,87.4
+0,0,6,1,0,0,0,ad-portas,Dark Zone,6,46.9
+0,1,6,1,0,0,0,ad-portas,Maintenance,6,15.3
+0,2,6,1,0,0,0,ad-portas,Suspicious Person,6,48.1
+0,3,6,1,0,0,0,ad-portas,Theft/Robbery,6,87.6
+0,0,7,1,0,1,0,ad-portas,Dark Zone,7,43.5
+0,1,7,1,0,1,0,ad-portas,Maintenance,7,12.2
+0,2,7,1,0,1,0,ad-portas,Suspicious Person,7,45.0
+0,3,7,1,0,1,0,ad-portas,Theft/Robbery,7,83.2
+0,0,8,1,0,1,0,ad-portas,Dark Zone,8,45.2
+0,1,8,1,0,1,0,ad-portas,Maintenance,8,15.6
+0,2,8,1,0,1,0,ad-portas,Suspicious Person,8,50.1
+0,3,8,1,0,1,0,ad-portas,Theft/Robbery,8,87.5
+0,0,9,1,0,1,0,ad-portas,Dark Zone,9,50.1
+0,1,9,1,0,1,0,ad-portas,Maintenance,9,21.0
+0,2,9,1,0,1,0,ad-portas,Suspicious Person,9,55.0
+0,3,9,1,0,1,0,ad-portas,Theft/Robbery,9,91.5
+0,0,10,1,0,0,0,ad-portas,Dark Zone,10,43.1
+0,1,10,1,0,0,0,ad-portas,Maintenance,10,12.6
+0,2,10,1,0,0,0,ad-portas,Suspicious Person,10,45.0
+0,3,10,1,0,0,0,ad-portas,Theft/Robbery,10,81.6
+0,0,11,1,0,0,0,ad-portas,Dark Zone,11,45.9
+0,1,11,1,0,0,0,ad-portas,Maintenance,11,15.6
+0,2,11,1,0,0,0,ad-portas,Suspicious Person,11,48.6
+0,3,11,1,0,0,0,ad-portas,Theft/Robbery,11,85.9
+0,0,12,1,0,0,0,ad-portas,Dark Zone,12,45.7
+0,1,12,1,0,0,0,ad-portas,Maintenance,12,16.7
+0,2,12,1,0,0,0,ad-portas,Suspicious Person,12,49.3
+0,3,12,1,0,0,0,ad-portas,Theft/Robbery,12,92.5
+0,0,13,1,0,0,0,ad-portas,Dark Zone,13,48.7
+0,1,13,1,0,0,0,ad-portas,Maintenance,13,12.6
+0,2,13,1,0,0,0,ad-portas,Suspicious Person,13,46.8
+0,3,13,1,0,0,0,ad-portas,Theft/Robbery,13,86.8
+0,0,14,1,0,0,0,ad-portas,Dark Zone,14,38.2
+0,1,14,1,0,0,0,ad-portas,Maintenance,14,4.9
+0,2,14,1,0,0,0,ad-portas,Suspicious Person,14,36.0
+0,3,14,1,0,0,0,ad-portas,Theft/Robbery,14,79.0
+0,0,15,1,0,0,0,ad-portas,Dark Zone,15,45.4
+0,1,15,1,0,0,0,ad-portas,Maintenance,15,17.2
+0,2,15,1,0,0,0,ad-portas,Suspicious Person,15,51.0
+0,3,15,1,0,0,0,ad-portas,Theft/Robbery,15,90.7
+0,0,16,1,0,1,0,ad-portas,Dark Zone,16,45.9
+0,1,16,1,0,1,0,ad-portas,Maintenance,16,18.5
+0,2,16,1,0,1,0,ad-portas,Suspicious Person,16,52.3
+0,3,16,1,0,1,0,ad-portas,Theft/Robbery,16,91.7
+0,0,17,1,0,1,0,ad-portas,Dark Zone,17,46.7
+0,1,17,1,0,1,0,ad-portas,Maintenance,17,19.1
+0,2,17,1,0,1,0,ad-portas,Suspicious Person,17,49.8
+0,3,17,1,0,1,0,ad-portas,Theft/Robbery,17,86.0
+0,0,18,1,0,1,0,ad-portas,Dark Zone,18,49.4
+0,1,18,1,0,1,0,ad-portas,Maintenance,18,15.1
+0,2,18,1,0,1,0,ad-portas,Suspicious Person,18,45.0
+0,3,18,1,0,1,0,ad-portas,Theft/Robbery,18,89.6
+0,0,19,1,0,1,0,ad-portas,Dark Zone,19,51.5
+0,1,19,1,0,1,0,ad-portas,Maintenance,19,18.4
+0,2,19,1,0,1,0,ad-portas,Suspicious Person,19,50.0
+0,3,19,1,0,1,0,ad-portas,Theft/Robbery,19,93.1
+0,0,20,1,1,0,0,ad-portas,Dark Zone,20,51.3
+0,1,20,1,1,0,0,ad-portas,Maintenance,20,22.1
+0,2,20,1,1,0,0,ad-portas,Suspicious Person,20,41.1
+0,3,20,1,1,0,0,ad-portas,Theft/Robbery,20,77.8
+0,0,21,1,1,0,0,ad-portas,Dark Zone,21,54.1
+0,1,21,1,1,0,0,ad-portas,Maintenance,21,22.8
+0,2,21,1,1,0,0,ad-portas,Suspicious Person,21,50.6
+0,3,21,1,1,0,0,ad-portas,Theft/Robbery,21,90.2
+0,0,22,1,1,0,0,ad-portas,Dark Zone,22,52.2
+0,1,22,1,1,0,0,ad-portas,Maintenance,22,18.9
+0,2,22,1,1,0,0,ad-portas,Suspicious Person,22,51.9
+0,3,22,1,1,0,0,ad-portas,Theft/Robbery,22,82.6
+0,0,23,1,1,0,0,ad-portas,Dark Zone,23,44.2
+0,1,23,1,1,0,0,ad-portas,Maintenance,23,17.8
+0,2,23,1,1,0,0,ad-portas,Suspicious Person,23,51.8
+0,3,23,1,1,0,0,ad-portas,Theft/Robbery,23,81.2
+1,0,0,1,1,0,0,porton-cafe,Dark Zone,0,53.6
+1,1,0,1,1,0,0,porton-cafe,Maintenance,0,26.2
+1,2,0,1,1,0,0,porton-cafe,Suspicious Person,0,55.1
+1,3,0,1,1,0,0,porton-cafe,Theft/Robbery,0,86.0
+1,0,1,1,1,0,0,porton-cafe,Dark Zone,1,52.8
+1,1,1,1,1,0,0,porton-cafe,Maintenance,1,25.1
+1,2,1,1,1,0,0,porton-cafe,Suspicious Person,1,54.3
+1,3,1,1,1,0,0,porton-cafe,Theft/Robbery,1,87.7
+1,0,2,1,1,0,0,porton-cafe,Dark Zone,2,51.7
+1,1,2,1,1,0,0,porton-cafe,Maintenance,2,24.1
+1,2,2,1,1,0,0,porton-cafe,Suspicious Person,2,53.2
+1,3,2,1,1,0,0,porton-cafe,Theft/Robbery,2,86.1
+1,0,3,1,1,0,0,porton-cafe,Dark Zone,3,42.0
+1,1,3,1,1,0,0,porton-cafe,Maintenance,3,16.7
+1,2,3,1,1,0,0,porton-cafe,Suspicious Person,3,49.0
+1,3,3,1,1,0,0,porton-cafe,Theft/Robbery,3,82.2
+1,0,4,1,1,0,0,porton-cafe,Dark Zone,4,48.0
+1,1,4,1,1,0,0,porton-cafe,Maintenance,4,22.6
+1,2,4,1,1,0,0,porton-cafe,Suspicious Person,4,56.0
+1,3,4,1,1,0,0,porton-cafe,Theft/Robbery,4,88.9
+1,0,5,1,1,0,0,porton-cafe,Dark Zone,5,45.8
+1,1,5,1,1,0,0,porton-cafe,Maintenance,5,21.6
+1,2,5,1,1,0,0,porton-cafe,Suspicious Person,5,52.7
+1,3,5,1,1,0,0,porton-cafe,Theft/Robbery,5,87.6
+1,0,6,1,0,0,0,porton-cafe,Dark Zone,6,50.0
+1,1,6,1,0,0,0,porton-cafe,Maintenance,6,21.8
+1,2,6,1,0,0,0,porton-cafe,Suspicious Person,6,53.4
+1,3,6,1,0,0,0,porton-cafe,Theft/Robbery,6,88.3
+1,0,7,1,0,1,0,porton-cafe,Dark Zone,7,48.5
+1,1,7,1,0,1,0,porton-cafe,Maintenance,7,19.3
+1,2,7,1,0,1,0,porton-cafe,Suspicious Person,7,51.2
+1,3,7,1,0,1,0,porton-cafe,Theft/Robbery,7,85.0
+1,0,8,1,0,1,0,porton-cafe,Dark Zone,8,51.0
+1,1,8,1,0,1,0,porton-cafe,Maintenance,8,23.9
+1,2,8,1,0,1,0,porton-cafe,Suspicious Person,8,57.3
+1,3,8,1,0,1,0,porton-cafe,Theft/Robbery,8,90.4
+1,0,9,1,0,1,0,porton-cafe,Dark Zone,9,51.0
+1,1,9,1,0,1,0,porton-cafe,Maintenance,9,24.4
+1,2,9,1,0,1,0,porton-cafe,Suspicious Person,9,57.4
+1,3,9,1,0,1,0,porton-cafe,Theft/Robbery,9,89.4
+1,0,10,1,0,0,0,porton-cafe,Dark Zone,10,45.2
+1,1,10,1,0,0,0,porton-cafe,Maintenance,10,18.5
+1,2,10,1,0,0,0,porton-cafe,Suspicious Person,10,49.4
+1,3,10,1,0,0,0,porton-cafe,Theft/Robbery,10,81.2
+1,0,11,1,0,0,0,porton-cafe,Dark Zone,11,48.5
+1,1,11,1,0,0,0,porton-cafe,Maintenance,11,22.0
+1,2,11,1,0,0,0,porton-cafe,Suspicious Person,11,54.2
+1,3,11,1,0,0,0,porton-cafe,Theft/Robbery,11,86.2
+1,0,12,1,0,0,0,porton-cafe,Dark Zone,12,47.6
+1,1,12,1,0,0,0,porton-cafe,Maintenance,12,22.3
+1,2,12,1,0,0,0,porton-cafe,Suspicious Person,12,54.6
+1,3,12,1,0,0,0,porton-cafe,Theft/Robbery,12,92.6
+1,0,13,1,0,0,0,porton-cafe,Dark Zone,13,52.2
+1,1,13,1,0,0,0,porton-cafe,Maintenance,13,18.8
+1,2,13,1,0,0,0,porton-cafe,Suspicious Person,13,52.2
+1,3,13,1,0,0,0,porton-cafe,Theft/Robbery,13,87.0
+1,0,14,1,0,0,0,porton-cafe,Dark Zone,14,42.9
+1,1,14,1,0,0,0,porton-cafe,Maintenance,14,12.3
+1,2,14,1,0,0,0,porton-cafe,Suspicious Person,14,43.4
+1,3,14,1,0,0,0,porton-cafe,Theft/Robbery,14,80.1
+1,0,15,1,0,0,0,porton-cafe,Dark Zone,15,47.3
+1,1,15,1,0,0,0,porton-cafe,Maintenance,15,22.4
+1,2,15,1,0,0,0,porton-cafe,Suspicious Person,15,55.1
+1,3,15,1,0,0,0,porton-cafe,Theft/Robbery,15,90.0
+1,0,16,1,0,1,0,porton-cafe,Dark Zone,16,48.5
+1,1,16,1,0,1,0,porton-cafe,Maintenance,16,23.2
+1,2,16,1,0,1,0,porton-cafe,Suspicious Person,16,56.2
+1,3,16,1,0,1,0,porton-cafe,Theft/Robbery,16,91.8
+1,0,17,1,0,1,0,porton-cafe,Dark Zone,17,47.0
+1,1,17,1,0,1,0,porton-cafe,Maintenance,17,21.5
+1,2,17,1,0,1,0,porton-cafe,Suspicious Person,17,51.5
+1,3,17,1,0,1,0,porton-cafe,Theft/Robbery,17,82.0
+1,0,18,1,0,1,0,porton-cafe,Dark Zone,18,52.2
+1,1,18,1,0,1,0,porton-cafe,Maintenance,18,20.0
+1,2,18,1,0,1,0,porton-cafe,Suspicious Person,18,49.2
+1,3,18,1,0,1,0,porton-cafe,Theft/Robbery,18,87.9
+1,0,19,1,0,1,0,porton-cafe,Dark Zone,19,50.5
+1,1,19,1,0,1,0,porton-cafe,Maintenance,19,19.4
+1,2,19,1,0,1,0,porton-cafe,Suspicious Person,19,49.8
+1,3,19,1,0,1,0,porton-cafe,Theft/Robbery,19,86.1
+1,0,20,1,1,0,0,porton-cafe,Dark Zone,20,46.5
+1,1,20,1,1,0,0,porton-cafe,Maintenance,20,21.1
+1,2,20,1,1,0,0,porton-cafe,Suspicious Person,20,40.8
+1,3,20,1,1,0,0,porton-cafe,Theft/Robbery,20,68.5
+1,0,21,1,1,0,0,porton-cafe,Dark Zone,21,50.9
+1,1,21,1,1,0,0,porton-cafe,Maintenance,21,23.3
+1,2,21,1,1,0,0,porton-cafe,Suspicious Person,21,52.3
+1,3,21,1,1,0,0,porton-cafe,Theft/Robbery,21,82.8
+1,0,22,1,1,0,0,porton-cafe,Dark Zone,22,48.5
+1,1,22,1,1,0,0,porton-cafe,Maintenance,22,19.0
+1,2,22,1,1,0,0,porton-cafe,Suspicious Person,22,52.6
+1,3,22,1,1,0,0,porton-cafe,Theft/Robbery,22,75.3
+1,0,23,1,1,0,0,porton-cafe,Dark Zone,23,43.4
+1,1,23,1,1,0,0,porton-cafe,Maintenance,23,22.6
+1,2,23,1,1,0,0,porton-cafe,Suspicious Person,23,56.8
+1,3,23,1,1,0,0,porton-cafe,Theft/Robbery,23,78.3
+2,0,0,1,1,0,0,puente-madera,Dark Zone,0,50.6
+2,1,0,1,1,0,0,puente-madera,Maintenance,0,28.3
+2,2,0,1,1,0,0,puente-madera,Suspicious Person,0,49.0
+2,3,0,1,1,0,0,puente-madera,Theft/Robbery,0,70.7
+2,0,1,1,1,0,0,puente-madera,Dark Zone,1,49.8
+2,1,1,1,1,0,0,puente-madera,Maintenance,1,27.2
+2,2,1,1,1,0,0,puente-madera,Suspicious Person,1,48.2
+2,3,1,1,1,0,0,puente-madera,Theft/Robbery,1,70.5
+2,0,2,1,1,0,0,puente-madera,Dark Zone,2,51.7
+2,1,2,1,1,0,0,puente-madera,Maintenance,2,29.2
+2,2,2,1,1,0,0,puente-madera,Suspicious Person,2,50.1
+2,3,2,1,1,0,0,puente-madera,Theft/Robbery,2,71.9
+2,0,3,1,1,0,0,puente-madera,Dark Zone,3,43.1
+2,1,3,1,1,0,0,puente-madera,Maintenance,3,22.9
+2,2,3,1,1,0,0,puente-madera,Suspicious Person,3,47.1
+2,3,3,1,1,0,0,puente-madera,Theft/Robbery,3,69.3
+2,0,4,1,1,0,0,puente-madera,Dark Zone,4,48.0
+2,1,4,1,1,0,0,puente-madera,Maintenance,4,27.7
+2,2,4,1,1,0,0,puente-madera,Suspicious Person,4,52.9
+2,3,4,1,1,0,0,puente-madera,Theft/Robbery,4,74.9
+2,0,5,1,1,0,0,puente-madera,Dark Zone,5,46.0
+2,1,5,1,1,0,0,puente-madera,Maintenance,5,26.9
+2,2,5,1,1,0,0,puente-madera,Suspicious Person,5,49.9
+2,3,5,1,1,0,0,puente-madera,Theft/Robbery,5,73.4
+2,0,6,1,0,0,0,puente-madera,Dark Zone,6,50.7
+2,1,6,1,0,0,0,puente-madera,Maintenance,6,27.8
+2,2,6,1,0,0,0,puente-madera,Suspicious Person,6,51.3
+2,3,6,1,0,0,0,puente-madera,Theft/Robbery,6,75.3
+2,0,7,1,0,1,0,puente-madera,Dark Zone,7,51.8
+2,1,7,1,0,1,0,puente-madera,Maintenance,7,29.8
+2,2,7,1,0,1,0,puente-madera,Suspicious Person,7,53.5
+2,3,7,1,0,1,0,puente-madera,Theft/Robbery,7,75.8
+2,0,8,1,0,1,0,puente-madera,Dark Zone,8,63.3
+2,1,8,1,0,1,0,puente-madera,Maintenance,8,43.3
+2,2,8,1,0,1,0,puente-madera,Suspicious Person,8,68.3
+2,3,8,1,0,1,0,puente-madera,Theft/Robbery,8,91.0
+2,0,9,1,0,1,0,puente-madera,Dark Zone,9,57.1
+2,1,9,1,0,1,0,puente-madera,Maintenance,9,37.7
+2,2,9,1,0,1,0,puente-madera,Suspicious Person,9,62.2
+2,3,9,1,0,1,0,puente-madera,Theft/Robbery,9,83.8
+2,0,10,1,0,0,0,puente-madera,Dark Zone,10,51.7
+2,1,10,1,0,0,0,puente-madera,Maintenance,10,30.4
+2,2,10,1,0,0,0,puente-madera,Suspicious Person,10,52.8
+2,3,10,1,0,0,0,puente-madera,Theft/Robbery,10,74.4
+2,0,11,1,0,0,0,puente-madera,Dark Zone,11,54.3
+2,1,11,1,0,0,0,puente-madera,Maintenance,11,33.2
+2,2,11,1,0,0,0,puente-madera,Suspicious Person,11,56.9
+2,3,11,1,0,0,0,puente-madera,Theft/Robbery,11,78.7
+2,0,12,1,0,0,0,puente-madera,Dark Zone,12,53.1
+2,1,12,1,0,0,0,puente-madera,Maintenance,12,32.8
+2,2,12,1,0,0,0,puente-madera,Suspicious Person,12,56.7
+2,3,12,1,0,0,0,puente-madera,Theft/Robbery,12,87.7
+2,0,13,1,0,0,0,puente-madera,Dark Zone,13,58.8
+2,1,13,1,0,0,0,puente-madera,Maintenance,13,30.8
+2,2,13,1,0,0,0,puente-madera,Suspicious Person,13,55.7
+2,3,13,1,0,0,0,puente-madera,Theft/Robbery,13,83.8
+2,0,14,1,0,0,0,puente-madera,Dark Zone,14,50.5
+2,1,14,1,0,0,0,puente-madera,Maintenance,14,25.3
+2,2,14,1,0,0,0,puente-madera,Suspicious Person,14,48.0
+2,3,14,1,0,0,0,puente-madera,Theft/Robbery,14,78.1
+2,0,15,1,0,0,0,puente-madera,Dark Zone,15,53.4
+2,1,15,1,0,0,0,puente-madera,Maintenance,15,33.7
+2,2,15,1,0,0,0,puente-madera,Suspicious Person,15,57.9
+2,3,15,1,0,0,0,puente-madera,Theft/Robbery,15,86.2
+2,0,16,1,0,1,0,puente-madera,Dark Zone,16,52.4
+2,1,16,1,0,1,0,puente-madera,Maintenance,16,34.1
+2,2,16,1,0,1,0,puente-madera,Suspicious Person,16,58.7
+2,3,16,1,0,1,0,puente-madera,Theft/Robbery,16,86.7
+2,0,17,1,0,1,0,puente-madera,Dark Zone,17,48.0
+2,1,17,1,0,1,0,puente-madera,Maintenance,17,29.6
+2,2,17,1,0,1,0,puente-madera,Suspicious Person,17,52.3
+2,3,17,1,0,1,0,puente-madera,Theft/Robbery,17,68.5
+2,0,18,1,0,1,0,puente-madera,Dark Zone,18,57.7
+2,1,18,1,0,1,0,puente-madera,Maintenance,18,32.4
+2,2,18,1,0,1,0,puente-madera,Suspicious Person,18,54.0
+2,3,18,1,0,1,0,puente-madera,Theft/Robbery,18,77.4
+2,0,19,1,0,1,0,puente-madera,Dark Zone,19,52.8
+2,1,19,1,0,1,0,puente-madera,Maintenance,19,28.7
+2,2,19,1,0,1,0,puente-madera,Suspicious Person,19,49.3
+2,3,19,1,0,1,0,puente-madera,Theft/Robbery,19,70.6
+2,0,20,1,1,0,0,puente-madera,Dark Zone,20,51.5
+2,1,20,1,1,0,0,puente-madera,Maintenance,20,32.5
+2,2,20,1,1,0,0,puente-madera,Suspicious Person,20,42.7
+2,3,20,1,1,0,0,puente-madera,Theft/Robbery,20,63.8
+2,0,21,1,1,0,0,puente-madera,Dark Zone,21,56.5
+2,1,21,1,1,0,0,puente-madera,Maintenance,21,34.3
+2,2,21,1,1,0,0,puente-madera,Suspicious Person,21,53.2
+2,3,21,1,1,0,0,puente-madera,Theft/Robbery,21,76.9
+2,0,22,1,1,0,0,puente-madera,Dark Zone,22,50.9
+2,1,22,1,1,0,0,puente-madera,Maintenance,22,26.8
+2,2,22,1,1,0,0,puente-madera,Suspicious Person,22,50.8
+2,3,22,1,1,0,0,puente-madera,Theft/Robbery,22,71.6
+2,0,23,1,1,0,0,puente-madera,Dark Zone,23,35.2
+2,1,23,1,1,0,0,puente-madera,Maintenance,23,19.8
+2,2,23,1,1,0,0,puente-madera,Suspicious Person,23,44.9
+2,3,23,1,1,0,0,puente-madera,Theft/Robbery,23,64.2

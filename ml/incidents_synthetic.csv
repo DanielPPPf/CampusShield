@@ -1,0 +1,548 @@
+type,intensity,zone_id,zone_name,lat,lng,risk_score,hour,dow,created_at,validation_status,is_anonymous
+Theft/Robbery,High,puente-madera,Puente Madera,4.8587743428306025,-74.03153365286023,87,9,3,2026-01-29 09:08:00,verified,False
+Dark Zone,Medium,ad-portas,Ad Portas,4.864096908956922,-74.0318166613499,47,4,4,2025-11-28 04:13:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858990842563101,-74.03135251305416,44,9,5,2026-03-07 09:37:00,pending,False
+Suspicious Person,Medium,ad-portas,Ad Portas,4.863802768013076,-74.03190836707712,44,7,2,2026-02-25 07:54:00,verified,True
+Theft/Robbery,High,puente-madera,Puente Madera,4.858723392454313,-74.03188865604892,59,7,1,2026-02-24 07:18:00,verified,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858562542494152,-74.03170856622405,83,18,0,2025-12-01 18:49:00,verified,True
+Theft/Robbery,High,ad-portas,Ad Portas,4.863367592777344,-74.03228792148053,97,17,0,2026-03-16 17:23:00,verified,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858629844739903,-74.03149249435906,62,17,4,2026-04-24 17:34:00,verified,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858566123455095,-74.03148381548205,66,7,0,2026-01-26 07:47:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858750139603669,-74.03162612773798,46,9,4,2026-02-20 09:08:00,verified,True
+Suspicious Person,Medium,ad-portas,Ad Portas,4.863459488016331,-74.03098208872619,49,14,2,2026-05-13 14:04:00,verified,False
+Suspicious Person,Medium,puente-madera,Puente Madera,4.858463457814208,-74.03134149101757,35,16,5,2026-05-02 16:12:00,pending,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858716772719001,-74.03189793402477,34,17,3,2025-11-20 17:31:00,discarded,False
+Suspicious Person,Medium,puente-madera,Puente Madera,4.8587143722471735,-74.031358306684,52,6,1,2026-01-20 06:56:00,verified,False
+Maintenance,Information,ad-portas,Ad Portas,4.863605305515284,-74.03184344147823,5,14,4,2026-04-24 14:13:00,pending,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.8585310311583205,-74.03159812775418,92,6,4,2026-01-16 06:01:00,verified,True
+Suspicious Person,Medium,ad-portas,Ad Portas,4.86374308548687,-74.03242821606214,53,18,4,2026-01-30 18:13:00,pending,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858597983543917,-74.03164138440006,87,19,5,2026-03-21 19:12:00,verified,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858881199904499,-74.03131974397617,69,18,0,2026-05-11 18:41:00,verified,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.85861315752483,-74.03143974731371,91,8,3,2026-01-08 08:28:00,verified,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858579165152431,-74.03154313179533,66,19,4,2026-03-13 19:54:00,verified,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858435758675184,-74.03134349483551,96,8,0,2026-01-19 08:31:00,pending,False
+Suspicious Person,Medium,ad-portas,Ad Portas,4.863618396963526,-74.03132158684085,54,10,4,2026-02-27 10:50:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858545976049079,-74.0314337208789,68,18,4,2026-05-08 18:09:00,verified,True
+Suspicious Person,Medium,ad-portas,Ad Portas,4.863629252188267,-74.03109714253767,18,20,0,2026-05-11 20:25:00,pending,True
+Dark Zone,Medium,puente-madera,Puente Madera,4.858839380500875,-74.03148859058635,46,14,2,2025-12-10 14:37:00,verified,True
+Suspicious Person,Medium,puente-madera,Puente Madera,4.858693352155307,-74.03190351378291,47,10,1,2026-01-20 10:08:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858746422514302,-74.03121042119105,43,16,2,2026-05-06 16:42:00,verified,False
+Dark Zone,Medium,porton-cafe,Portón Café,4.863387301279421,-74.03760752711308,60,7,0,2026-01-26 07:06:00,verified,True
+Theft/Robbery,High,puente-madera,Puente Madera,4.858740750221932,-74.03161195204075,86,17,5,2025-12-13 17:53:00,verified,False
+Suspicious Person,Medium,puente-madera,Puente Madera,4.858694415509869,-74.03131227100188,41,19,2,2025-12-31 19:35:00,verified,True
+Dark Zone,Medium,porton-cafe,Portón Café,4.86348346757068,-74.03757463244594,32,5,2,2026-04-08 05:23:00,verified,True
+Suspicious Person,Medium,ad-portas,Ad Portas,4.863728836083119,-74.03161857789112,50,8,3,2026-02-19 08:15:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858628082573325,-74.0317890741484,44,21,0,2025-12-29 21:15:00,discarded,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858606457096695,-74.03166645545383,78,8,1,2026-01-27 08:44:00,pending,False
+Suspicious Person,Medium,ad-portas,Ad Portas,4.863761215257044,-74.03096852563951,52,11,0,2026-03-02 11:55:00,pending,False
+Maintenance,Information,ad-portas,Ad Portas,4.863717265117217,-74.03175277836631,5,5,0,2026-01-26 05:38:00,pending,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.85866969722491,-74.031493953958,79,13,4,2025-12-19 13:36:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858636527807044,-74.03144569053153,49,18,3,2026-05-14 18:47:00,verified,False
+Suspicious Person,Medium,porton-cafe,Portón Café,4.863315264392476,-74.03711415315564,59,11,1,2026-04-28 11:54:00,discarded,False
+Suspicious Person,Medium,puente-madera,Puente Madera,4.858833206389408,-74.03168787749095,66,18,1,2026-03-03 18:35:00,verified,False
+Theft/Robbery,High,ad-portas,Ad Portas,4.863219444681162,-74.03148825716248,100,14,0,2026-01-12 14:37:00,verified,False
+Suspicious Person,Medium,puente-madera,Puente Madera,4.8584768927349735,-74.03161925954592,51,18,1,2026-03-31 18:39:00,pending,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858574304869177,-74.0318161326862,80,8,4,2026-01-09 08:02:00,verified,False
+Dark Zone,Medium,ad-portas,Ad Portas,4.863321308885882,-74.03153356302775,38,17,3,2026-04-30 17:45:00,verified,True
+Theft/Robbery,High,puente-madera,Puente Madera,4.858984986881003,-74.03166265065846,76,19,2,2025-12-17 19:14:00,discarded,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.8588377034434735,-74.03175217286328,52,20,0,2026-03-09 20:35:00,verified,False
+Suspicious Person,Medium,puente-madera,Puente Madera,4.858936428550856,-74.03182749664691,52,6,3,2026-03-12 06:18:00,verified,False
+Dark Zone,Medium,ad-portas,Ad Portas,4.8637179648382745,-74.03141027085128,35,16,3,2026-02-12 16:26:00,pending,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858410908677383,-74.03140161168687,83,9,1,2026-03-24 09:27:00,verified,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858725098570069,-74.0314367103581,71,21,3,2026-03-19 21:39:00,discarded,False
+Dark Zone,Medium,ad-portas,Ad Portas,4.863709676109148,-74.03160577101067,41,8,2,2026-02-11 08:20:00,pending,True
+Theft/Robbery,High,porton-cafe,Portón Café,4.8639221549022285,-74.03731485012374,65,20,4,2026-01-23 20:30:00,verified,False
+Suspicious Person,Medium,ad-portas,Ad Portas,4.86383696608259,-74.0321128726681,59,8,1,2026-04-28 08:08:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858906719115802,-74.03167013646366,61,22,6,2026-03-01 22:12:00,verified,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858757556185387,-74.031341587968,100,16,0,2026-02-16 16:42:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858625922376799,-74.03165674723286,39,14,2,2025-12-17 14:23:00,pending,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858511837943007,-74.03152142034187,54,20,2,2026-03-11 20:37:00,pending,False
+Dark Zone,Medium,ad-portas,Ad Portas,4.863723007239799,-74.03139212670038,50,19,2,2026-01-21 19:36:00,verified,True
+Theft/Robbery,High,puente-madera,Puente Madera,4.8589657068154315,-74.03155893136665,100,8,1,2026-03-24 08:51:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858800133469553,-74.03167743151127,37,16,5,2025-11-22 16:12:00,pending,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858771494483048,-74.03155069255706,58,18,0,2026-05-04 18:28:00,verified,True
+Suspicious Person,Medium,puente-madera,Puente Madera,4.858769647524914,-74.03152056578253,39,17,4,2026-05-08 17:30:00,verified,False
+Suspicious Person,Medium,puente-madera,Puente Madera,4.858372030555063,-74.03159530299041,60,14,0,2026-05-18 14:19:00,verified,True
+Maintenance,Information,ad-portas,Ad Portas,4.86370422812324,-74.03222129551149,17,8,4,2026-05-15 08:13:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858752063475945,-74.03168277148724,51,23,5,2026-01-31 23:53:00,verified,True
+Maintenance,Information,ad-portas,Ad Portas,4.863657462615534,-74.03218018811913,19,10,0,2025-12-22 10:03:00,verified,True
+Dark Zone,Medium,puente-madera,Puente Madera,4.858787156905273,-74.03128938975136,62,20,1,2025-12-16 20:36:00,verified,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858399466126408,-74.03169356500797,86,13,3,2026-04-02 13:58:00,pending,False
+Maintenance,Information,ad-portas,Ad Portas,4.863794135785274,-74.03151698092547,61,17,4,2025-12-05 17:47:00,pending,False
+Suspicious Person,Medium,ad-portas,Ad Portas,4.863811267153208,-74.03126877374393,61,9,1,2025-12-30 09:35:00,verified,False
+Suspicious Person,Medium,puente-madera,Puente Madera,4.858805278250261,-74.03156905384893,59,9,4,2025-11-28 09:45:00,pending,True
+Dark Zone,Medium,puente-madera,Puente Madera,4.858520434957092,-74.03155336372134,44,18,4,2026-01-16 18:58:00,verified,True
+Dark Zone,Medium,puente-madera,Puente Madera,4.8586913748278775,-74.03104306828666,27,21,1,2026-04-14 21:28:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858812252038074,-74.03182854317423,44,3,4,2026-01-23 03:14:00,pending,False
+Suspicious Person,Medium,porton-cafe,Portón Café,4.863766790119393,-74.03743771599427,37,5,3,2026-04-16 05:48:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858531939258148,-74.0313700804502,41,11,4,2026-02-13 11:06:00,verified,False
+Dark Zone,Medium,ad-portas,Ad Portas,4.863704937576875,-74.03170477126403,42,5,3,2026-04-09 05:05:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.8591037888178645,-74.03137921619553,25,18,3,2025-11-20 18:34:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858712290862954,-74.03163835729295,60,14,2,2026-04-29 14:03:00,verified,False
+Suspicious Person,Medium,ad-portas,Ad Portas,4.86340224377847,-74.03176889457659,56,22,2,2026-03-18 22:41:00,verified,False
+Suspicious Person,Medium,puente-madera,Puente Madera,4.858848151038834,-74.0317460592814,45,20,4,2026-03-06 20:30:00,verified,False
+Maintenance,Information,ad-portas,Ad Portas,4.863497516406652,-74.03198433169302,36,20,1,2026-01-27 20:18:00,pending,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858755996342192,-74.03175817679086,91,16,5,2026-03-14 16:22:00,pending,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.859099431239402,-74.03129950694789,61,19,0,2026-02-09 19:45:00,verified,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858578153185427,-74.03125261777015,71,22,3,2026-03-26 22:08:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858763763885629,-74.03135107318931,38,16,0,2025-12-15 16:29:00,verified,False
+Maintenance,Information,porton-cafe,Portón Café,4.8635370949287875,-74.03842938020202,5,19,4,2026-03-20 19:16:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858624486369721,-74.03175555663638,69,22,2,2026-02-25 22:40:00,pending,False
+Suspicious Person,Medium,ad-portas,Ad Portas,4.863210957586612,-74.03189901779467,51,17,0,2026-01-19 17:58:00,verified,True
+Maintenance,Information,porton-cafe,Portón Café,4.863837254657813,-74.03788775864535,28,8,4,2026-03-13 08:19:00,verified,False
+Theft/Robbery,High,ad-portas,Ad Portas,4.863643069918306,-74.03211560346043,85,8,1,2026-03-10 08:33:00,verified,True
+Maintenance,Information,ad-portas,Ad Portas,4.8636997179086725,-74.03196308675086,15,17,2,2026-02-25 17:15:00,verified,True
+Dark Zone,Medium,ad-portas,Ad Portas,4.863524405920941,-74.0316775930619,57,9,4,2026-05-15 09:54:00,discarded,False
+Dark Zone,Medium,ad-portas,Ad Portas,4.864115805044844,-74.03221812619952,75,1,3,2026-01-29 01:55:00,pending,True
+Suspicious Person,Medium,ad-portas,Ad Portas,4.863054373660144,-74.03178371403801,57,9,0,2026-04-27 09:48:00,verified,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858731198373547,-74.03163053990396,77,11,1,2026-02-03 11:26:00,verified,False
+Suspicious Person,Medium,puente-madera,Puente Madera,4.858576399813068,-74.03162387295139,60,19,5,2025-12-13 19:00:00,verified,False
+Suspicious Person,Medium,ad-portas,Ad Portas,4.86374710464579,-74.0320001638381,60,3,4,2026-03-20 03:56:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858736459904176,-74.03134342757623,57,11,0,2026-05-18 11:26:00,verified,True
+Maintenance,Information,porton-cafe,Portón Café,4.8633832009978155,-74.03762505431206,23,9,6,2025-12-14 09:34:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858797074053086,-74.03151018031879,51,17,5,2026-03-07 17:46:00,verified,True
+Dark Zone,Medium,puente-madera,Puente Madera,4.858930532979158,-74.03162431427776,56,4,4,2026-01-30 04:23:00,verified,True
+Theft/Robbery,High,ad-portas,Ad Portas,4.86357934220427,-74.03181007248129,93,21,2,2026-04-08 21:41:00,verified,True
+Maintenance,Information,porton-cafe,Portón Café,4.863714083269797,-74.0372129471092,30,9,4,2026-02-13 09:08:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858679200768327,-74.03136960940573,46,19,2,2026-01-14 19:14:00,verified,False
+Suspicious Person,Medium,ad-portas,Ad Portas,4.863737249905746,-74.03177505722175,51,16,1,2025-12-23 16:51:00,verified,True
+Dark Zone,Medium,ad-portas,Ad Portas,4.863818547107631,-74.0320502882733,75,7,4,2026-04-03 07:04:00,pending,False
+Maintenance,Information,ad-portas,Ad Portas,4.86333819478555,-74.03220867544512,28,22,3,2026-01-15 22:02:00,discarded,False
+Suspicious Person,Medium,ad-portas,Ad Portas,4.863877498808189,-74.03147335207318,57,23,4,2025-12-05 23:54:00,verified,False
+Maintenance,Information,porton-cafe,Portón Café,4.863546550645431,-74.03772617631145,15,11,2,2025-12-10 11:09:00,verified,False
+Suspicious Person,Medium,puente-madera,Puente Madera,4.858539567657697,-74.0313109760533,48,23,2,2026-02-25 23:33:00,verified,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858509900560641,-74.03157027716833,84,18,2,2026-05-06 18:49:00,pending,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858562255089439,-74.03167044407911,52,7,6,2025-12-07 07:05:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.8587239933142214,-74.03160738863507,44,17,4,2025-12-05 17:35:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858721409987472,-74.0317956168683,33,22,2,2025-12-03 22:38:00,verified,False
+Dark Zone,Medium,ad-portas,Ad Portas,4.863424466733624,-74.03180837886069,53,20,4,2026-01-16 20:22:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.85897007124339,-74.03133446807536,48,17,2,2025-11-26 17:42:00,verified,True
+Maintenance,Information,ad-portas,Ad Portas,4.863634295137629,-74.03212401174585,14,13,2,2026-01-14 13:29:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858617268272216,-74.03144145628792,40,7,1,2026-04-21 07:03:00,pending,True
+Dark Zone,Medium,ad-portas,Ad Portas,4.863795803954273,-74.0311099044348,48,14,4,2026-05-08 14:38:00,verified,False
+Dark Zone,Medium,ad-portas,Ad Portas,4.86376051351663,-74.03144694240332,45,10,3,2025-12-18 10:43:00,verified,False
+Suspicious Person,Medium,puente-madera,Puente Madera,4.858719818496362,-74.03150348151983,51,11,0,2026-02-02 11:00:00,verified,True
+Suspicious Person,Medium,ad-portas,Ad Portas,4.863408097064844,-74.0317131959303,55,2,2,2026-03-11 02:58:00,verified,False
+Maintenance,Information,ad-portas,Ad Portas,4.864075343082339,-74.03133929166957,40,20,1,2026-03-17 20:58:00,verified,True
+Dark Zone,Medium,puente-madera,Puente Madera,4.8585215304874225,-74.03133153587265,52,7,4,2026-04-03 07:55:00,verified,False
+Maintenance,Information,ad-portas,Ad Portas,4.8642969408799654,-74.03204631931415,5,7,4,2026-05-01 07:32:00,pending,False
+Dark Zone,Medium,porton-cafe,Portón Café,4.863429121470911,-74.0380941687173,43,7,0,2026-01-19 07:16:00,verified,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858523173467689,-74.0314759212427,84,16,2,2026-04-29 16:48:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.859050234167843,-74.03131591523235,43,20,1,2026-02-10 20:40:00,verified,False
+Suspicious Person,Medium,puente-madera,Puente Madera,4.858495317065731,-74.0314076161657,34,6,0,2026-04-20 06:32:00,verified,True
+Suspicious Person,Medium,puente-madera,Puente Madera,4.8590412917531705,-74.03127011197584,44,17,1,2025-12-09 17:54:00,verified,False
+Suspicious Person,Medium,puente-madera,Puente Madera,4.858332373094182,-74.03123522552517,48,16,3,2025-12-11 16:11:00,pending,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858922563262395,-74.03182488553175,42,12,1,2025-12-30 12:58:00,verified,False
+Suspicious Person,Medium,porton-cafe,Portón Café,4.863550048739944,-74.03744290582188,44,18,2,2026-05-06 18:25:00,pending,True
+Maintenance,Information,porton-cafe,Portón Café,4.863673569986469,-74.03777728612882,13,18,0,2026-05-04 18:32:00,verified,True
+Dark Zone,Medium,ad-portas,Ad Portas,4.863676088689513,-74.03151722446637,58,9,3,2026-01-08 09:08:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858450071581633,-74.03181282283414,65,5,4,2026-04-03 05:21:00,verified,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858741462802396,-74.0316556973073,98,12,3,2026-03-05 12:46:00,verified,True
+Dark Zone,Medium,puente-madera,Puente Madera,4.8586981349268585,-74.03127014056318,50,20,3,2025-12-25 20:03:00,pending,False
+Dark Zone,Medium,ad-portas,Ad Portas,4.864258224377465,-74.03102086366302,47,21,1,2026-02-17 21:26:00,verified,True
+Suspicious Person,Medium,porton-cafe,Portón Café,4.863743314190191,-74.03726338721513,66,3,4,2026-01-16 03:59:00,pending,False
+Dark Zone,Medium,ad-portas,Ad Portas,4.863350522961826,-74.031448579416,62,17,5,2026-03-14 17:57:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858323252102715,-74.03174265170253,25,14,5,2026-04-04 14:49:00,verified,True
+Theft/Robbery,High,puente-madera,Puente Madera,4.858621118633111,-74.03136249154883,98,16,3,2026-04-30 16:15:00,verified,True
+Maintenance,Information,ad-portas,Ad Portas,4.863662228434126,-74.03107155378177,5,8,4,2026-03-06 08:42:00,discarded,True
+Dark Zone,Medium,ad-portas,Ad Portas,4.863128985268194,-74.03174521907955,54,9,0,2026-02-23 09:01:00,verified,True
+Theft/Robbery,High,puente-madera,Puente Madera,4.858668461050381,-74.03191948842,78,18,4,2026-04-17 18:21:00,verified,False
+Suspicious Person,Medium,ad-portas,Ad Portas,4.863248659149849,-74.03145513098046,54,12,6,2026-02-01 12:49:00,verified,True
+Suspicious Person,Medium,ad-portas,Ad Portas,4.863358036064102,-74.03192854676693,37,18,4,2026-03-27 18:23:00,verified,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858662464180545,-74.03131497153589,68,17,1,2026-03-10 17:52:00,verified,True
+Theft/Robbery,High,ad-portas,Ad Portas,4.863791213954656,-74.03193510304735,70,14,4,2026-02-06 14:45:00,verified,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858653593928009,-74.03171304846448,73,18,1,2025-12-09 18:25:00,pending,False
+Dark Zone,Medium,porton-cafe,Portón Café,4.863309424421482,-74.03686758246013,50,18,4,2026-04-24 18:28:00,verified,False
+Dark Zone,Medium,ad-portas,Ad Portas,4.863430082347603,-74.0316374080357,48,4,1,2026-04-14 04:09:00,discarded,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858630806080093,-74.03138316665998,59,16,3,2025-12-25 16:25:00,verified,False
+Suspicious Person,Medium,ad-portas,Ad Portas,4.863480849655717,-74.03195332729626,46,16,4,2026-03-27 16:58:00,verified,True
+Theft/Robbery,High,ad-portas,Ad Portas,4.86294942365058,-74.03232907642487,96,18,1,2025-12-30 18:59:00,verified,False
+Suspicious Person,Medium,ad-portas,Ad Portas,4.8641334903140505,-74.03182261441582,56,9,3,2025-12-25 09:31:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.8587372500309085,-74.0308902238383,63,17,1,2025-12-23 17:05:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858649416481704,-74.03169710808811,30,20,2,2026-03-04 20:04:00,verified,True
+Dark Zone,Medium,puente-madera,Puente Madera,4.8587156927271735,-74.03165727014905,32,7,0,2026-02-16 07:53:00,verified,True
+Suspicious Person,Medium,puente-madera,Puente Madera,4.8585456854231515,-74.03172230960071,70,8,3,2026-01-01 08:59:00,verified,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.85885132795139,-74.03150759452825,97,8,4,2026-01-23 08:35:00,verified,False
+Suspicious Person,Medium,ad-portas,Ad Portas,4.8636632104922946,-74.03206751368053,68,22,0,2026-04-20 22:09:00,verified,False
+Maintenance,Information,ad-portas,Ad Portas,4.863801673013105,-74.03213789846173,12,20,6,2025-11-30 20:01:00,discarded,False
+Suspicious Person,Medium,ad-portas,Ad Portas,4.8633773145239845,-74.03227611989239,61,13,2,2026-04-15 13:40:00,pending,False
+Suspicious Person,Medium,puente-madera,Puente Madera,4.859056883328094,-74.03178571351475,56,9,0,2026-03-23 09:51:00,verified,True
+Dark Zone,Medium,ad-portas,Ad Portas,4.863444807229263,-74.0319178501535,42,15,4,2026-03-06 15:13:00,verified,False
+Theft/Robbery,High,ad-portas,Ad Portas,4.863380802769096,-74.03170359134882,70,7,0,2026-03-02 07:23:00,verified,True
+Dark Zone,Medium,ad-portas,Ad Portas,4.863721137047734,-74.03174309524378,47,7,3,2026-01-22 07:03:00,verified,False
+Suspicious Person,Medium,ad-portas,Ad Portas,4.863367730901388,-74.03195370853223,59,21,2,2026-02-11 21:46:00,pending,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858775183437524,-74.03170151104895,51,16,4,2026-02-06 16:05:00,verified,False
+Theft/Robbery,High,ad-portas,Ad Portas,4.863865416137012,-74.03239076211244,86,6,1,2025-12-02 06:31:00,pending,False
+Suspicious Person,Medium,ad-portas,Ad Portas,4.863441212872316,-74.03149476053257,40,14,2,2025-12-17 14:56:00,verified,False
+Suspicious Person,Medium,ad-portas,Ad Portas,4.863098535369801,-74.03237401697515,50,17,1,2026-04-14 17:23:00,verified,False
+Suspicious Person,Medium,puente-madera,Puente Madera,4.8587269445003445,-74.03168686332502,57,18,1,2026-04-28 18:07:00,verified,False
+Suspicious Person,Medium,porton-cafe,Portón Café,4.863216695987546,-74.0374768239396,35,8,4,2025-12-26 08:32:00,verified,True
+Maintenance,Information,ad-portas,Ad Portas,4.86344444916766,-74.03170404053148,5,8,0,2026-02-09 08:39:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858598088891154,-74.03130474143815,43,18,2,2026-03-25 18:19:00,verified,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858842138422413,-74.03173194137092,86,15,1,2026-04-21 15:41:00,pending,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858963313724131,-74.03200032890003,40,20,5,2025-12-27 20:15:00,discarded,True
+Theft/Robbery,High,ad-portas,Ad Portas,4.863813121638154,-74.03180421815442,84,8,5,2026-03-07 08:44:00,verified,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858554202962656,-74.0314886820425,78,7,1,2026-05-19 07:13:00,discarded,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858908556412332,-74.03145511583133,84,21,1,2026-03-17 21:21:00,verified,False
+Suspicious Person,Medium,puente-madera,Puente Madera,4.858592624606775,-74.0316035212448,44,15,5,2026-04-25 15:15:00,verified,False
+Suspicious Person,Medium,porton-cafe,Portón Café,4.863627890428476,-74.03758329534425,53,8,1,2026-05-19 08:45:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.859090080159729,-74.0313317750593,46,22,0,2026-02-16 22:51:00,verified,False
+Dark Zone,Medium,ad-portas,Ad Portas,4.86400036417665,-74.03188623014921,25,9,2,2026-05-06 09:30:00,pending,True
+Suspicious Person,Medium,puente-madera,Puente Madera,4.858473382737817,-74.0318801583842,45,7,3,2025-12-25 07:47:00,verified,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858678683675838,-74.03117071253754,83,7,2,2025-12-03 07:21:00,verified,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858631179894238,-74.03134011888376,53,11,6,2026-02-01 11:41:00,pending,False
+Suspicious Person,Medium,ad-portas,Ad Portas,4.863710684367433,-74.03141465392244,32,13,5,2026-01-03 13:53:00,discarded,False
+Maintenance,Information,ad-portas,Ad Portas,4.863983126212962,-74.031587601437,10,10,3,2026-03-19 10:51:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858801556373221,-74.03105186142844,52,7,2,2026-02-11 07:42:00,discarded,False
+Suspicious Person,Medium,porton-cafe,Portón Café,4.86359864411726,-74.03759480826986,39,18,5,2026-04-18 18:00:00,verified,True
+Dark Zone,Medium,puente-madera,Puente Madera,4.858841067163309,-74.03167721676517,50,8,4,2026-02-06 08:43:00,pending,False
+Suspicious Person,Medium,ad-portas,Ad Portas,4.86349670276597,-74.0315314080697,54,21,5,2026-05-02 21:18:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858882507988851,-74.03160800327976,46,12,4,2026-04-24 12:44:00,verified,False
+Maintenance,Information,ad-portas,Ad Portas,4.863346370885266,-74.03190071730403,19,8,6,2026-03-29 08:34:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858826397723329,-74.03169043306482,60,16,1,2025-12-23 16:29:00,verified,False
+Suspicious Person,Medium,ad-portas,Ad Portas,4.8640466913576414,-74.0315576260387,72,4,4,2026-03-20 04:26:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858520242160179,-74.03175493094065,28,23,0,2026-02-23 23:24:00,discarded,False
+Maintenance,Information,ad-portas,Ad Portas,4.864088813293447,-74.03146125373746,14,18,2,2025-12-24 18:22:00,discarded,False
+Suspicious Person,Medium,ad-portas,Ad Portas,4.863723990587896,-74.03217319561892,79,19,3,2025-11-20 19:19:00,pending,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858700844236395,-74.03148412104107,88,15,3,2026-01-22 15:09:00,discarded,False
+Suspicious Person,Medium,ad-portas,Ad Portas,4.863784302769521,-74.03163344639029,40,17,0,2025-12-15 17:28:00,pending,True
+Dark Zone,Medium,puente-madera,Puente Madera,4.858769293671427,-74.0311295951007,66,9,3,2026-03-12 09:13:00,pending,True
+Theft/Robbery,High,puente-madera,Puente Madera,4.8589936373253275,-74.03160824313528,68,20,3,2026-02-05 20:42:00,verified,True
+Theft/Robbery,High,puente-madera,Puente Madera,4.85864984261598,-74.03149485501754,93,20,2,2026-02-04 20:09:00,discarded,False
+Dark Zone,Medium,porton-cafe,Portón Café,4.863210507074057,-74.03699813490417,48,9,4,2026-02-27 09:13:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858589623786011,-74.03170842087505,30,6,2,2026-01-07 06:24:00,verified,False
+Dark Zone,Medium,ad-portas,Ad Portas,4.863886951175188,-74.03169367281312,34,18,2,2026-01-21 18:45:00,discarded,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858415984245587,-74.03157315693986,70,16,3,2026-03-19 16:22:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858623081729728,-74.03180662859062,47,21,0,2026-02-09 21:23:00,verified,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.85862045528605,-74.03204537732859,79,11,4,2026-01-09 11:24:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858628813093958,-74.03136675872703,72,8,1,2026-03-17 08:50:00,verified,False
+Maintenance,Information,ad-portas,Ad Portas,4.8639779695088645,-74.03183055547622,5,22,6,2026-05-03 22:33:00,pending,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.8591896719606495,-74.03149415631319,80,7,3,2026-03-05 07:40:00,pending,True
+Suspicious Person,Medium,puente-madera,Puente Madera,4.858670174982578,-74.03146638304784,48,17,4,2025-12-05 17:42:00,discarded,False
+Maintenance,Information,ad-portas,Ad Portas,4.863467901397936,-74.0319417435765,14,13,4,2026-04-10 13:01:00,verified,False
+Maintenance,Information,ad-portas,Ad Portas,4.86347697256866,-74.03200813831307,16,9,4,2026-04-03 09:22:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858624004556516,-74.03120520140227,18,23,2,2026-01-21 23:14:00,pending,True
+Suspicious Person,Medium,ad-portas,Ad Portas,4.863967452055577,-74.031224565923,25,8,0,2026-05-18 08:31:00,verified,False
+Maintenance,Information,porton-cafe,Portón Café,4.863480462481184,-74.0375684322598,5,21,5,2026-04-04 21:14:00,pending,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.8585194366624815,-74.03172811516909,100,21,6,2026-01-04 21:20:00,verified,True
+Dark Zone,Medium,puente-madera,Puente Madera,4.8588621356786295,-74.031251688981,58,11,1,2025-12-09 11:36:00,pending,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858449189645756,-74.03161090405325,85,19,5,2026-03-28 19:22:00,verified,False
+Maintenance,Information,ad-portas,Ad Portas,4.863273361657333,-74.03143780062793,12,13,1,2026-04-21 13:49:00,verified,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.8586000358384895,-74.03136380800635,85,16,3,2026-02-19 16:24:00,verified,False
+Maintenance,Information,ad-portas,Ad Portas,4.863531710150254,-74.03125926807866,5,19,1,2026-02-03 19:45:00,verified,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858798187121389,-74.0313873797484,76,11,4,2026-02-27 11:06:00,discarded,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858740226604448,-74.03175622271527,91,7,1,2025-12-23 07:27:00,verified,False
+Theft/Robbery,High,ad-portas,Ad Portas,4.863584529359067,-74.03193208920821,92,7,4,2026-04-10 07:38:00,pending,True
+Dark Zone,Medium,ad-portas,Ad Portas,4.8634286968928375,-74.03228638451854,31,7,4,2026-01-02 07:19:00,verified,True
+Theft/Robbery,High,ad-portas,Ad Portas,4.863821802985404,-74.032235171741,100,19,0,2026-03-23 19:23:00,verified,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858258614118423,-74.03116670872633,82,7,1,2026-03-17 07:19:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858655657377626,-74.03161498381735,54,19,3,2026-04-16 19:20:00,pending,False
+Maintenance,Information,ad-portas,Ad Portas,4.863628709589273,-74.03128167924719,16,17,5,2026-01-10 17:34:00,pending,True
+Theft/Robbery,High,puente-madera,Puente Madera,4.8587050603522925,-74.03157872244243,79,19,3,2026-03-12 19:53:00,pending,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858736560353778,-74.03184803367853,33,17,3,2025-12-25 17:15:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.8588236528188045,-74.03147182691237,47,15,2,2026-04-22 15:25:00,discarded,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858678686786613,-74.03143648365892,73,18,4,2026-02-20 18:51:00,verified,True
+Suspicious Person,Medium,puente-madera,Puente Madera,4.8585193390549195,-74.03146683094897,38,18,3,2026-01-01 18:02:00,verified,False
+Suspicious Person,Medium,porton-cafe,Portón Café,4.863630650551142,-74.03796777508127,62,7,1,2026-03-10 07:06:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858769519496483,-74.03145479405313,61,14,3,2026-01-15 14:25:00,verified,False
+Suspicious Person,Medium,ad-portas,Ad Portas,4.864139642333339,-74.03131725197399,27,7,0,2026-03-23 07:26:00,verified,False
+Suspicious Person,Medium,puente-madera,Puente Madera,4.858419084606653,-74.03163096371553,50,12,5,2026-02-07 12:50:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858778531804093,-74.03165114876262,52,6,0,2026-02-09 06:02:00,verified,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.85852392341353,-74.0316283035606,63,16,2,2026-01-21 16:35:00,verified,False
+Dark Zone,Medium,ad-portas,Ad Portas,4.863363030026167,-74.03226367384225,38,8,3,2026-04-30 08:40:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858885728359321,-74.03169587977776,81,14,0,2026-04-20 14:00:00,verified,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858773663580176,-74.03146903277525,69,7,3,2026-04-16 07:55:00,verified,True
+Dark Zone,Medium,puente-madera,Puente Madera,4.858815061975882,-74.03162112756524,51,12,4,2025-12-19 12:54:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.859187016907653,-74.03152521197994,63,7,0,2026-04-20 07:08:00,verified,True
+Theft/Robbery,High,puente-madera,Puente Madera,4.858534364714974,-74.03151299769809,100,13,0,2026-03-30 13:38:00,verified,True
+Theft/Robbery,High,puente-madera,Puente Madera,4.858549606588443,-74.03114351028839,88,8,5,2026-04-11 08:18:00,verified,False
+Theft/Robbery,High,porton-cafe,Portón Café,4.863436506644821,-74.03726727767828,91,18,2,2026-03-04 18:26:00,verified,True
+Theft/Robbery,High,puente-madera,Puente Madera,4.858799361992443,-74.03182004494397,71,4,0,2026-02-02 04:14:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858625496272889,-74.03152088668581,57,16,3,2026-04-09 16:36:00,pending,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858710540200186,-74.03177306887173,84,16,3,2026-03-12 16:27:00,pending,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858797117149057,-74.0313940419104,92,8,0,2026-01-19 08:47:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.8588417844309095,-74.03141416398415,49,16,1,2026-02-17 16:38:00,verified,False
+Theft/Robbery,High,ad-portas,Ad Portas,4.863141711719946,-74.03155115271235,82,23,1,2026-03-31 23:43:00,verified,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858729315767439,-74.03176134971515,67,20,3,2026-01-29 20:08:00,verified,True
+Suspicious Person,Medium,ad-portas,Ad Portas,4.863955945856,-74.03173882206154,58,13,1,2026-05-12 13:09:00,verified,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.8586806636752256,-74.03150004877209,91,16,1,2026-03-03 16:17:00,pending,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858571791054357,-74.0314867758446,44,20,3,2025-11-20 20:54:00,pending,False
+Suspicious Person,Medium,puente-madera,Puente Madera,4.858588100754513,-74.03156783442469,52,19,5,2025-12-06 19:25:00,verified,True
+Suspicious Person,Medium,puente-madera,Puente Madera,4.8585792502756675,-74.03125484877488,39,19,2,2026-05-13 19:02:00,pending,False
+Suspicious Person,Medium,ad-portas,Ad Portas,4.863583938506752,-74.03189889242331,67,15,3,2026-03-12 15:27:00,verified,True
+Theft/Robbery,High,puente-madera,Puente Madera,4.858714310955302,-74.0312996310921,62,7,3,2026-01-29 07:23:00,verified,False
+Dark Zone,Medium,ad-portas,Ad Portas,4.863720115079761,-74.03136714768175,50,11,2,2026-04-29 11:44:00,verified,True
+Theft/Robbery,High,puente-madera,Puente Madera,4.858888096075013,-74.03160945769001,96,18,5,2025-11-22 18:52:00,pending,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.859134779624724,-74.03157856771207,74,7,3,2026-02-26 07:51:00,verified,False
+Suspicious Person,Medium,ad-portas,Ad Portas,4.8640760153431355,-74.03109117114171,43,23,6,2026-05-03 23:09:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858590962636581,-74.03156235692177,33,7,2,2026-01-14 07:06:00,verified,False
+Maintenance,Information,ad-portas,Ad Portas,4.863364404416055,-74.0321246563067,5,17,2,2026-04-22 17:38:00,discarded,True
+Theft/Robbery,High,puente-madera,Puente Madera,4.858668063022522,-74.03145915705349,98,16,1,2026-01-20 16:07:00,verified,True
+Theft/Robbery,High,puente-madera,Puente Madera,4.858475329191852,-74.0313091355203,77,21,4,2026-02-20 21:08:00,pending,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858665107258069,-74.03137103610156,66,22,4,2026-03-20 22:49:00,verified,True
+Dark Zone,Medium,puente-madera,Puente Madera,4.858751481949237,-74.03147270955834,55,13,0,2026-05-18 13:40:00,verified,True
+Suspicious Person,Medium,ad-portas,Ad Portas,4.863726750593172,-74.03074087994403,42,21,4,2025-12-12 21:07:00,verified,False
+Theft/Robbery,High,ad-portas,Ad Portas,4.8634807009135,-74.03197225621057,73,16,3,2026-04-02 16:52:00,verified,True
+Suspicious Person,Medium,puente-madera,Puente Madera,4.858547522574539,-74.03126819669377,67,19,5,2025-12-20 19:01:00,verified,False
+Maintenance,Information,ad-portas,Ad Portas,4.863468776111875,-74.03205594222923,20,6,2,2026-04-29 06:29:00,verified,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858564555391144,-74.03137941363644,82,0,0,2026-03-30 00:54:00,verified,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858371851177,-74.03119649895973,100,21,6,2026-01-04 21:54:00,pending,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858552442261903,-74.03158354031198,83,9,1,2026-02-10 09:58:00,verified,True
+Dark Zone,Medium,puente-madera,Puente Madera,4.858741891357997,-74.03137429114545,74,21,0,2026-05-11 21:11:00,verified,True
+Dark Zone,Medium,puente-madera,Puente Madera,4.858639610554501,-74.0316656594489,33,19,5,2026-01-31 19:19:00,verified,True
+Maintenance,Information,ad-portas,Ad Portas,4.863420720988017,-74.03173625078915,36,19,3,2026-02-05 19:15:00,verified,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858571477740193,-74.03146124240966,79,19,2,2026-04-08 19:15:00,discarded,True
+Theft/Robbery,High,puente-madera,Puente Madera,4.85891267865469,-74.03100061351482,73,0,4,2026-02-13 00:42:00,pending,False
+Suspicious Person,Medium,puente-madera,Puente Madera,4.8585771121114965,-74.03129716782458,58,22,1,2026-03-17 22:05:00,verified,False
+Maintenance,Information,ad-portas,Ad Portas,4.864194012197721,-74.03148942872586,10,8,2,2025-12-17 08:10:00,verified,True
+Theft/Robbery,High,ad-portas,Ad Portas,4.863817196449208,-74.03127951856777,89,18,1,2026-05-19 18:02:00,pending,True
+Theft/Robbery,High,puente-madera,Puente Madera,4.858776454806221,-74.03129266506208,94,22,3,2025-11-27 22:54:00,pending,True
+Maintenance,Information,ad-portas,Ad Portas,4.864054647697311,-74.03146351604497,12,21,6,2026-01-25 21:04:00,verified,False
+Dark Zone,Medium,ad-portas,Ad Portas,4.86368401410593,-74.0312403964134,40,8,1,2025-12-02 08:36:00,pending,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858748734661774,-74.03158466776246,50,12,5,2026-01-03 12:58:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858930690372521,-74.03146778018639,50,7,4,2025-12-05 07:24:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858403028771804,-74.03135674928679,57,23,0,2025-11-24 23:50:00,verified,False
+Maintenance,Information,ad-portas,Ad Portas,4.864288976416992,-74.03184611129399,17,11,5,2026-03-28 11:17:00,verified,True
+Suspicious Person,Medium,puente-madera,Puente Madera,4.858724876736742,-74.03119050934404,48,19,3,2025-12-04 19:30:00,pending,False
+Maintenance,Information,porton-cafe,Portón Café,4.863604804305154,-74.03727463104708,17,18,3,2026-01-22 18:17:00,pending,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.8585857132770895,-74.0314671820014,92,20,3,2026-04-16 20:51:00,discarded,False
+Suspicious Person,Medium,ad-portas,Ad Portas,4.863332045410177,-74.03166981213035,41,11,0,2026-04-20 11:47:00,discarded,True
+Dark Zone,Medium,puente-madera,Puente Madera,4.858914009325785,-74.03181063738094,43,8,0,2026-04-13 08:12:00,pending,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858750442375013,-74.03119289519415,79,5,2,2026-03-25 05:03:00,verified,False
+Suspicious Person,Medium,porton-cafe,Portón Café,4.863437960094661,-74.03689265287917,32,3,4,2025-12-05 03:37:00,verified,True
+Suspicious Person,Medium,puente-madera,Puente Madera,4.858235238808676,-74.03141799710998,43,12,0,2025-12-08 12:42:00,verified,False
+Suspicious Person,Medium,ad-portas,Ad Portas,4.863333630154861,-74.03143965742107,52,19,2,2026-03-11 19:31:00,verified,False
+Theft/Robbery,High,porton-cafe,Portón Café,4.863436184273852,-74.0378410913196,90,4,1,2026-04-14 04:38:00,pending,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858805040235592,-74.03152583517274,100,7,4,2026-03-27 07:47:00,verified,False
+Suspicious Person,Medium,ad-portas,Ad Portas,4.863318974570102,-74.03233321006837,41,18,3,2026-01-22 18:22:00,verified,True
+Dark Zone,Medium,ad-portas,Ad Portas,4.863626324195094,-74.03162566422027,47,20,0,2025-12-15 20:50:00,verified,False
+Suspicious Person,Medium,ad-portas,Ad Portas,4.863745616618955,-74.03222361576968,67,10,4,2025-11-28 10:20:00,verified,False
+Dark Zone,Medium,ad-portas,Ad Portas,4.863615354646482,-74.03127608166736,54,6,1,2025-12-30 06:21:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858766350643831,-74.03139204654394,55,18,0,2026-01-26 18:19:00,verified,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858803544551973,-74.03124016949397,82,12,2,2025-12-03 12:27:00,pending,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858816800751518,-74.03152394713885,97,8,2,2025-11-26 08:40:00,verified,False
+Dark Zone,Medium,ad-portas,Ad Portas,4.863437082309383,-74.03100262382684,49,15,4,2026-03-20 15:42:00,verified,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858388844979577,-74.03148037911701,71,17,1,2026-01-27 17:09:00,verified,True
+Maintenance,Information,ad-portas,Ad Portas,4.863892193064697,-74.03198404959171,9,22,3,2026-03-05 22:37:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858297091853811,-74.03159646126385,20,20,3,2026-05-14 20:30:00,verified,True
+Dark Zone,Medium,porton-cafe,Portón Café,4.863232219435303,-74.03722887560316,59,19,1,2026-01-13 19:08:00,verified,False
+Suspicious Person,Medium,ad-portas,Ad Portas,4.863767637268536,-74.03210979045726,49,9,1,2026-04-21 09:58:00,pending,True
+Dark Zone,Medium,puente-madera,Puente Madera,4.858674279492182,-74.03173767293784,68,20,2,2026-02-11 20:33:00,pending,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858850472458115,-74.03155019283476,50,7,5,2026-03-07 07:09:00,verified,False
+Maintenance,Information,porton-cafe,Portón Café,4.863590676561589,-74.03806952046052,12,19,0,2026-04-13 19:50:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.8585386031504,-74.03170632400197,46,15,2,2026-05-06 15:38:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.859034537305369,-74.03137783142773,43,13,5,2025-11-29 13:56:00,verified,False
+Suspicious Person,Medium,porton-cafe,Portón Café,4.863663516556271,-74.03703719336903,61,12,1,2025-11-25 12:50:00,verified,False
+Suspicious Person,Medium,puente-madera,Puente Madera,4.858686926073984,-74.03163538735554,58,17,4,2026-03-06 17:05:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858753697077084,-74.03132696135599,57,20,0,2026-02-23 20:32:00,verified,False
+Maintenance,Information,porton-cafe,Portón Café,4.863758910543064,-74.03761757056347,30,12,1,2026-01-20 12:38:00,discarded,False
+Suspicious Person,Medium,puente-madera,Puente Madera,4.858714519920938,-74.03109094782546,41,20,2,2025-12-31 20:16:00,verified,True
+Theft/Robbery,High,puente-madera,Puente Madera,4.859022192760633,-74.0314664178433,72,18,1,2026-01-27 18:32:00,pending,False
+Suspicious Person,Medium,ad-portas,Ad Portas,4.863494834249784,-74.03185113892327,55,8,0,2026-05-04 08:51:00,verified,False
+Dark Zone,Medium,ad-portas,Ad Portas,4.863796850646411,-74.03195248000158,49,18,3,2026-02-05 18:52:00,verified,True
+Suspicious Person,Medium,puente-madera,Puente Madera,4.859103454071723,-74.03116049136597,55,18,2,2026-05-06 18:57:00,verified,False
+Suspicious Person,Medium,ad-portas,Ad Portas,4.863651401043451,-74.03167498746932,57,13,2,2026-04-22 13:20:00,pending,False
+Suspicious Person,Medium,porton-cafe,Portón Café,4.86334444148696,-74.03753421296123,29,13,5,2026-03-07 13:47:00,pending,False
+Suspicious Person,Medium,ad-portas,Ad Portas,4.863759766936782,-74.03146412162411,44,16,3,2026-05-14 16:50:00,discarded,False
+Suspicious Person,Medium,ad-portas,Ad Portas,4.864112196028987,-74.0322133062652,32,20,3,2026-05-07 20:11:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858719890363711,-74.03129658033947,70,22,0,2026-01-05 22:57:00,verified,False
+Suspicious Person,Medium,puente-madera,Puente Madera,4.858583223147426,-74.03129026383331,49,19,5,2026-03-07 19:21:00,verified,False
+Suspicious Person,Medium,ad-portas,Ad Portas,4.8635882118100175,-74.03136953602501,57,17,4,2026-05-01 17:39:00,pending,False
+Theft/Robbery,High,porton-cafe,Portón Café,4.863233721568603,-74.03701403789509,96,5,4,2025-11-21 05:12:00,discarded,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858549887459698,-74.0314268392933,55,2,2,2026-01-07 02:00:00,verified,False
+Suspicious Person,Medium,ad-portas,Ad Portas,4.863718202129747,-74.03194312206153,41,13,1,2025-12-16 13:37:00,verified,True
+Theft/Robbery,High,porton-cafe,Portón Café,4.863543889185801,-74.03710518129422,86,17,3,2026-04-02 17:21:00,verified,True
+Theft/Robbery,High,puente-madera,Puente Madera,4.858600877133583,-74.03135166025787,45,20,1,2026-02-24 20:16:00,verified,False
+Suspicious Person,Medium,ad-portas,Ad Portas,4.863984629710112,-74.0324188855115,45,20,2,2026-05-06 20:03:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.8584510660210745,-74.03176493629513,63,8,0,2026-05-18 08:44:00,verified,False
+Maintenance,Information,ad-portas,Ad Portas,4.863499689639607,-74.03158439844731,14,17,2,2026-01-28 17:44:00,pending,True
+Suspicious Person,Medium,puente-madera,Puente Madera,4.858770408165444,-74.03149063562178,34,22,3,2026-04-02 22:22:00,verified,True
+Theft/Robbery,High,puente-madera,Puente Madera,4.858874253363889,-74.03160475131662,61,21,4,2026-05-15 21:21:00,verified,True
+Suspicious Person,Medium,puente-madera,Puente Madera,4.858589376967807,-74.03120584804186,60,11,1,2026-05-12 11:47:00,pending,False
+Suspicious Person,Medium,ad-portas,Ad Portas,4.863535404359678,-74.03186270308173,46,18,4,2026-05-08 18:21:00,verified,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.859090349596712,-74.03142961290955,85,19,0,2026-02-23 19:11:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858881056690806,-74.03145824216818,46,18,5,2026-03-07 18:51:00,verified,False
+Dark Zone,Medium,porton-cafe,Portón Café,4.863509730030183,-74.03747848037783,49,13,1,2025-12-16 13:37:00,verified,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858820525908727,-74.03149561082283,88,21,0,2026-03-23 21:07:00,verified,True
+Theft/Robbery,High,puente-madera,Puente Madera,4.858658856683978,-74.03149027296193,56,20,1,2026-05-19 20:33:00,verified,False
+Suspicious Person,Medium,porton-cafe,Portón Café,4.86373226553494,-74.03735305345724,61,16,2,2026-04-01 16:44:00,verified,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858095748924361,-74.03108832505903,78,19,1,2025-12-09 19:20:00,discarded,True
+Dark Zone,Medium,ad-portas,Ad Portas,4.863972454845022,-74.03213896237085,57,20,1,2026-03-03 20:05:00,pending,False
+Dark Zone,Medium,ad-portas,Ad Portas,4.863323975331048,-74.03197250758427,72,5,3,2026-03-05 05:35:00,verified,False
+Suspicious Person,Medium,puente-madera,Puente Madera,4.858636863519847,-74.03146251342535,60,17,0,2026-03-30 17:41:00,discarded,False
+Suspicious Person,Medium,ad-portas,Ad Portas,4.863788704566392,-74.03166283243795,54,11,0,2026-03-16 11:49:00,verified,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.859155683117048,-74.0315175237594,82,19,6,2025-12-14 19:14:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858885130879202,-74.0312848948134,64,12,3,2026-04-02 12:06:00,verified,True
+Dark Zone,Medium,puente-madera,Puente Madera,4.858802746044406,-74.03173460098255,69,9,2,2025-12-17 09:12:00,discarded,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858445730921396,-74.03144547290695,70,7,5,2026-02-14 07:26:00,verified,False
+Dark Zone,Medium,ad-portas,Ad Portas,4.8636207584960225,-74.03159149503588,53,18,1,2026-03-17 18:32:00,verified,False
+Dark Zone,Medium,porton-cafe,Portón Café,4.863633384150847,-74.03697288661928,55,7,0,2025-12-22 07:42:00,pending,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.8586261686729415,-74.03131318256634,64,9,3,2026-04-30 09:13:00,verified,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858429478436973,-74.03138651998603,88,16,5,2026-03-28 16:40:00,verified,False
+Suspicious Person,Medium,puente-madera,Puente Madera,4.8586154872993275,-74.03123085863733,48,19,6,2026-03-08 19:33:00,verified,True
+Theft/Robbery,High,ad-portas,Ad Portas,4.863677672936042,-74.03179222872971,80,23,2,2025-12-31 23:43:00,pending,False
+Maintenance,Information,ad-portas,Ad Portas,4.863311117473931,-74.03229902035304,34,12,4,2025-11-28 12:28:00,pending,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858505607730336,-74.03170427846989,24,9,4,2026-02-27 09:50:00,verified,False
+Dark Zone,Medium,ad-portas,Ad Portas,4.863448311475693,-74.03225223591737,69,13,4,2026-02-27 13:50:00,verified,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858876963417869,-74.03164363006903,100,18,4,2026-05-01 18:41:00,verified,False
+Suspicious Person,Medium,ad-portas,Ad Portas,4.863934529646098,-74.0318529325534,20,14,1,2026-02-03 14:43:00,discarded,False
+Suspicious Person,Medium,ad-portas,Ad Portas,4.864327282771778,-74.0322788289867,30,10,0,2026-03-09 10:16:00,verified,True
+Dark Zone,Medium,puente-madera,Puente Madera,4.858879514086402,-74.03101804951872,66,11,4,2026-05-08 11:50:00,verified,False
+Suspicious Person,Medium,ad-portas,Ad Portas,4.8638091727360155,-74.03148509826333,60,16,1,2026-01-06 16:50:00,verified,False
+Suspicious Person,Medium,ad-portas,Ad Portas,4.863867678576936,-74.03161052343042,51,18,1,2026-01-13 18:21:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.85866248137442,-74.03165679291777,46,1,1,2026-05-05 01:42:00,verified,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858336408637161,-74.03152566792535,68,9,3,2026-02-26 09:46:00,discarded,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858454282136557,-74.03147002116977,66,17,4,2025-11-21 17:13:00,pending,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.8588586633212,-74.03182010012071,38,20,0,2026-05-04 20:04:00,verified,False
+Suspicious Person,Medium,ad-portas,Ad Portas,4.863922231356397,-74.03211599495741,47,6,0,2025-12-08 06:50:00,verified,False
+Theft/Robbery,High,porton-cafe,Portón Café,4.863659010419805,-74.03774750333646,81,14,4,2026-02-27 14:25:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858408194901016,-74.03162627352879,53,19,5,2025-12-06 19:37:00,pending,False
+Suspicious Person,Medium,puente-madera,Puente Madera,4.858356401253293,-74.03141790505241,49,11,3,2026-05-14 11:05:00,discarded,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858785497990883,-74.03146121717317,96,8,5,2026-03-21 08:14:00,verified,False
+Suspicious Person,Medium,puente-madera,Puente Madera,4.858700044900529,-74.03159188110821,51,16,5,2025-11-22 16:35:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858783659605807,-74.03149622798593,50,11,3,2025-12-11 11:47:00,pending,True
+Dark Zone,Medium,porton-cafe,Portón Café,4.863408601662439,-74.03765587027527,33,8,2,2025-12-31 08:39:00,verified,True
+Theft/Robbery,High,puente-madera,Puente Madera,4.859024915348638,-74.03175477264708,71,15,3,2026-04-09 15:35:00,verified,True
+Maintenance,Information,ad-portas,Ad Portas,4.863424477820329,-74.03136503024922,11,22,1,2026-03-24 22:22:00,verified,True
+Theft/Robbery,High,puente-madera,Puente Madera,4.858924548414534,-74.03164069812485,83,15,0,2026-02-09 15:21:00,verified,False
+Suspicious Person,Medium,puente-madera,Puente Madera,4.858507930589348,-74.03107697017444,35,22,6,2026-02-08 22:10:00,verified,True
+Dark Zone,Medium,puente-madera,Puente Madera,4.858736964142046,-74.0313792446238,54,20,3,2026-01-29 20:08:00,verified,False
+Suspicious Person,Medium,puente-madera,Puente Madera,4.858637942468224,-74.03153196413994,50,16,1,2026-03-24 16:11:00,verified,True
+Dark Zone,Medium,puente-madera,Puente Madera,4.858645599599674,-74.03131322417663,76,10,4,2026-01-09 10:56:00,pending,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858563501642998,-74.03177996059591,78,17,4,2026-04-17 17:49:00,discarded,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.8591909418675305,-74.03166673491359,69,18,4,2026-03-20 18:09:00,verified,False
+Suspicious Person,Medium,puente-madera,Puente Madera,4.859010540162815,-74.03161671764833,56,15,2,2025-12-24 15:32:00,verified,True
+Maintenance,Information,ad-portas,Ad Portas,4.864128518986939,-74.03187465109639,12,8,3,2026-05-14 08:32:00,verified,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.8585586638172105,-74.03170895134613,72,22,0,2026-03-23 22:02:00,verified,True
+Dark Zone,Medium,puente-madera,Puente Madera,4.858430211946647,-74.03149918330634,40,5,0,2025-12-01 05:41:00,pending,False
+Suspicious Person,Medium,puente-madera,Puente Madera,4.858721757182358,-74.03181717912923,53,16,4,2026-04-17 16:11:00,verified,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858841705792321,-74.03190474712851,84,9,2,2026-04-01 09:58:00,verified,False
+Dark Zone,Medium,ad-portas,Ad Portas,4.864008300697742,-74.03220685640747,70,0,3,2026-04-23 00:56:00,verified,True
+Theft/Robbery,High,puente-madera,Puente Madera,4.858758803801873,-74.03164700237114,79,19,4,2026-03-06 19:46:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858786665382504,-74.03149079892171,56,9,1,2025-11-25 09:08:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858490865281384,-74.03147212783519,33,22,2,2026-04-22 22:40:00,pending,False
+Dark Zone,Medium,ad-portas,Ad Portas,4.863606632181596,-74.03208456305659,41,8,2,2026-04-22 08:37:00,verified,False
+Theft/Robbery,High,ad-portas,Ad Portas,4.864010827952563,-74.03128647595176,87,17,0,2026-03-16 17:04:00,verified,True
+Maintenance,Information,ad-portas,Ad Portas,4.863312306170599,-74.03184956337988,29,14,3,2026-05-14 14:09:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858703343382728,-74.03104213409199,54,14,3,2026-04-02 14:55:00,verified,True
+Dark Zone,Medium,puente-madera,Puente Madera,4.858713409823298,-74.03156782329283,51,14,0,2025-12-15 14:16:00,verified,False
+Maintenance,Information,ad-portas,Ad Portas,4.863594259049086,-74.03143975652932,26,9,2,2026-03-04 09:00:00,pending,False
+Suspicious Person,Medium,ad-portas,Ad Portas,4.863404203161847,-74.03225549318142,27,18,1,2026-02-24 18:44:00,verified,True
+Dark Zone,Medium,puente-madera,Puente Madera,4.858776598265383,-74.03172667332123,24,9,4,2026-01-23 09:34:00,verified,True
+Theft/Robbery,High,puente-madera,Puente Madera,4.858752715720906,-74.03100740009651,79,16,3,2026-03-05 16:35:00,verified,False
+Theft/Robbery,High,ad-portas,Ad Portas,4.863891547232336,-74.03169026825658,78,12,3,2026-04-16 12:45:00,verified,False
+Suspicious Person,Medium,ad-portas,Ad Portas,4.863915722944896,-74.03183910981768,53,19,5,2026-03-14 19:10:00,verified,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.8587393395612395,-74.03163961809072,91,9,0,2026-01-26 09:05:00,pending,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858640008048661,-74.03165714903189,56,18,6,2026-02-01 18:38:00,pending,True
+Suspicious Person,Medium,ad-portas,Ad Portas,4.863370459605463,-74.03171172753706,49,16,2,2026-04-22 16:44:00,verified,True
+Suspicious Person,Medium,ad-portas,Ad Portas,4.8639657686697495,-74.03153312070685,49,7,1,2025-12-30 07:17:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.85883855325984,-74.03122795849019,56,12,5,2026-04-18 12:52:00,verified,True
+Maintenance,Information,porton-cafe,Portón Café,4.863551070523968,-74.0378505508697,5,8,6,2026-01-25 08:32:00,verified,True
+Suspicious Person,Medium,porton-cafe,Portón Café,4.863487955059129,-74.03763985366065,47,19,0,2026-04-06 19:36:00,verified,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858686329984979,-74.03140006144912,79,7,0,2026-03-23 07:04:00,pending,True
+Suspicious Person,Medium,puente-madera,Puente Madera,4.8587723003287655,-74.03149310511704,26,22,3,2026-03-05 22:33:00,pending,True
+Dark Zone,Medium,ad-portas,Ad Portas,4.863358199381855,-74.03178063502229,35,19,0,2026-05-11 19:21:00,discarded,False
+Maintenance,Information,ad-portas,Ad Portas,4.863819978618999,-74.03111069966707,29,8,1,2026-01-27 08:47:00,discarded,False
+Suspicious Person,Medium,ad-portas,Ad Portas,4.863575967138721,-74.03112670954526,51,8,0,2026-01-26 08:12:00,pending,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858607582805776,-74.0316286805327,76,18,2,2025-12-10 18:42:00,verified,False
+Theft/Robbery,High,porton-cafe,Portón Café,4.8634713646362915,-74.03740587513329,81,17,0,2026-02-23 17:31:00,pending,False
+Suspicious Person,Medium,ad-portas,Ad Portas,4.863640913806046,-74.0315482247321,64,10,0,2026-03-30 10:14:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858864910827088,-74.03180297959368,19,16,4,2025-11-28 16:25:00,pending,False
+Maintenance,Information,ad-portas,Ad Portas,4.863920295973372,-74.03226975147936,12,11,1,2026-03-17 11:00:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858440977394788,-74.03186639608751,56,9,3,2026-05-14 09:06:00,pending,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858826831032061,-74.03162130208014,48,19,5,2025-12-27 19:47:00,pending,True
+Maintenance,Information,ad-portas,Ad Portas,4.863476126665525,-74.03156627839783,5,13,1,2025-12-02 13:44:00,verified,True
+Suspicious Person,Medium,puente-madera,Puente Madera,4.858711671983956,-74.03150906196983,56,2,0,2026-02-16 02:07:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858698916073683,-74.03170061378817,64,23,5,2026-01-03 23:18:00,verified,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858643294085394,-74.0315114609079,68,17,2,2026-02-25 17:29:00,verified,True
+Maintenance,Information,porton-cafe,Portón Café,4.863460343549762,-74.0377224408142,12,12,2,2025-12-31 12:20:00,verified,True
+Suspicious Person,Medium,puente-madera,Puente Madera,4.8590173416960285,-74.03178038022858,30,19,4,2026-03-13 19:23:00,verified,False
+Suspicious Person,Medium,ad-portas,Ad Portas,4.864081351098248,-74.03180672947086,41,18,0,2025-12-22 18:42:00,pending,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858882980937479,-74.03162712310794,100,16,6,2026-03-01 16:05:00,verified,True
+Theft/Robbery,High,porton-cafe,Portón Café,4.863684585174267,-74.03760337342244,100,9,5,2026-02-07 09:47:00,verified,True
+Theft/Robbery,High,puente-madera,Puente Madera,4.858553857015399,-74.03135758092559,83,18,4,2025-11-28 18:55:00,pending,False
+Suspicious Person,Medium,puente-madera,Puente Madera,4.858935348257879,-74.03119369776064,50,14,3,2026-04-09 14:44:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858524316425931,-74.0314140055714,41,16,2,2026-03-11 16:40:00,discarded,False
+Suspicious Person,Medium,ad-portas,Ad Portas,4.864244016174259,-74.03166838586756,45,11,4,2026-03-13 11:26:00,verified,True
+Theft/Robbery,High,puente-madera,Puente Madera,4.858711936061173,-74.0317754252579,68,10,0,2026-02-16 10:34:00,discarded,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858915082781588,-74.03163737885579,67,19,1,2026-03-10 19:38:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858782330550505,-74.03126885916906,58,13,2,2026-03-11 13:10:00,verified,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858874209537161,-74.0316573590177,62,7,0,2026-01-05 07:07:00,verified,True
+Dark Zone,Medium,ad-portas,Ad Portas,4.864090400095587,-74.03185207193553,46,15,0,2026-02-23 15:50:00,verified,False
+Theft/Robbery,High,ad-portas,Ad Portas,4.864038458242555,-74.03150050799624,85,6,5,2026-02-28 06:30:00,pending,True
+Dark Zone,Medium,puente-madera,Puente Madera,4.85910800046898,-74.03163470364606,61,19,3,2026-01-22 19:02:00,pending,True
+Suspicious Person,Medium,ad-portas,Ad Portas,4.863657103937469,-74.03161556308845,68,16,3,2026-04-09 16:16:00,verified,False
+Suspicious Person,Medium,ad-portas,Ad Portas,4.863792350726887,-74.03150768156839,62,9,3,2025-12-18 09:27:00,verified,True
+Dark Zone,Medium,puente-madera,Puente Madera,4.858602009454091,-74.03167384193345,37,12,0,2025-12-29 12:05:00,verified,False
+Suspicious Person,Medium,ad-portas,Ad Portas,4.863050093023188,-74.03090051714803,36,12,4,2025-12-05 12:09:00,pending,True
+Maintenance,Information,ad-portas,Ad Portas,4.863573623912925,-74.03183372531996,18,19,0,2026-05-04 19:51:00,pending,True
+Theft/Robbery,High,puente-madera,Puente Madera,4.8588381474425075,-74.03133390530232,73,21,4,2026-01-23 21:31:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858641575657242,-74.0314494840099,47,16,1,2026-01-06 16:20:00,verified,False
+Theft/Robbery,High,ad-portas,Ad Portas,4.864122203672806,-74.03152661001934,88,0,0,2026-03-16 00:40:00,pending,False
+Suspicious Person,Medium,puente-madera,Puente Madera,4.858807576253733,-74.0312713052285,52,9,0,2026-04-27 09:46:00,discarded,False
+Dark Zone,Medium,ad-portas,Ad Portas,4.863250950415614,-74.0315631248193,42,8,4,2026-04-10 08:18:00,verified,True
+Theft/Robbery,High,puente-madera,Puente Madera,4.8585692766636495,-74.03138872719624,94,20,0,2025-12-01 20:08:00,verified,True
+Suspicious Person,Medium,ad-portas,Ad Portas,4.863646381473021,-74.03159946679496,70,17,2,2026-04-15 17:24:00,verified,False
+Theft/Robbery,High,ad-portas,Ad Portas,4.863712225953846,-74.03068232675433,86,17,3,2026-01-15 17:04:00,discarded,False
+Maintenance,Information,porton-cafe,Portón Café,4.863196847448169,-74.03723099751367,19,19,3,2026-03-19 19:03:00,pending,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858932950550816,-74.03137136372973,78,22,2,2026-01-14 22:06:00,verified,False
+Suspicious Person,Medium,ad-portas,Ad Portas,4.863272710529113,-74.03180660930292,39,17,1,2026-04-14 17:11:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858558895310039,-74.0313882843191,70,18,3,2026-02-19 18:44:00,pending,True
+Dark Zone,Medium,puente-madera,Puente Madera,4.858753934305964,-74.0317451766124,55,17,1,2026-02-10 17:36:00,verified,False
+Suspicious Person,Medium,puente-madera,Puente Madera,4.858914326297329,-74.03162795658086,48,14,6,2026-03-15 14:25:00,verified,True
+Suspicious Person,Medium,ad-portas,Ad Portas,4.863644406458419,-74.03203695932524,57,0,3,2026-02-05 00:14:00,verified,False
+Suspicious Person,Medium,porton-cafe,Portón Café,4.863524810370278,-74.03733114026683,39,16,4,2026-04-10 16:36:00,verified,True
+Suspicious Person,Medium,ad-portas,Ad Portas,4.863508762509904,-74.03143404745687,45,12,0,2026-01-26 12:37:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.859020392770247,-74.03158592723712,52,18,2,2026-01-14 18:46:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858861518166375,-74.03178967314658,28,17,6,2025-12-14 17:19:00,pending,False
+Suspicious Person,Medium,puente-madera,Puente Madera,4.8583698687370855,-74.03125348317931,43,21,1,2026-02-17 21:27:00,pending,False
+Maintenance,Information,ad-portas,Ad Portas,4.864407459785701,-74.03194869903946,17,17,5,2025-11-22 17:40:00,verified,True
+Theft/Robbery,High,puente-madera,Puente Madera,4.858983421990513,-74.03110478142236,100,16,2,2026-02-11 16:14:00,verified,False
+Maintenance,Information,porton-cafe,Portón Café,4.863790673246118,-74.03714978124226,22,14,3,2026-01-15 14:50:00,verified,True
+Theft/Robbery,High,puente-madera,Puente Madera,4.858830672215233,-74.03161623714325,70,13,3,2026-04-09 13:05:00,verified,False
+Maintenance,Information,ad-portas,Ad Portas,4.863638987662777,-74.031791073849,9,9,4,2026-04-03 09:04:00,verified,False
+Maintenance,Information,ad-portas,Ad Portas,4.863848916234237,-74.03134087791658,16,3,2,2026-05-06 03:19:00,verified,False
+Theft/Robbery,High,ad-portas,Ad Portas,4.864083259024317,-74.03217967564565,77,19,0,2025-12-29 19:54:00,pending,True
+Dark Zone,Medium,ad-portas,Ad Portas,4.863424953303819,-74.03246961464683,49,11,1,2025-11-25 11:47:00,verified,False
+Dark Zone,Medium,ad-portas,Ad Portas,4.863603475747485,-74.0311176201027,57,18,1,2026-04-28 18:09:00,verified,False
+Maintenance,Information,porton-cafe,Portón Café,4.863344162635134,-74.0369007722301,29,8,5,2026-01-24 08:18:00,verified,True
+Dark Zone,Medium,puente-madera,Puente Madera,4.858791419540694,-74.03155129681976,38,22,0,2026-03-30 22:06:00,verified,False
+Theft/Robbery,High,ad-portas,Ad Portas,4.863528337967179,-74.03128750055212,100,12,3,2026-05-14 12:40:00,discarded,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858983648705654,-74.03160376988436,66,22,5,2026-04-11 22:14:00,pending,False
+Suspicious Person,Medium,porton-cafe,Portón Café,4.8635771772493825,-74.03798753180968,53,19,4,2026-03-13 19:52:00,discarded,True
+Dark Zone,Medium,puente-madera,Puente Madera,4.85864547948274,-74.03159920730036,30,17,1,2026-04-14 17:38:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858777720021314,-74.03161254016793,35,16,2,2025-12-24 16:38:00,verified,True
+Dark Zone,Medium,puente-madera,Puente Madera,4.858100547557344,-74.031511502981,71,8,3,2025-12-25 08:14:00,pending,True
+Dark Zone,Medium,ad-portas,Ad Portas,4.864138377764364,-74.03190583850264,42,19,3,2026-01-15 19:12:00,verified,False
+Theft/Robbery,High,porton-cafe,Portón Café,4.863642754851215,-74.03775651563176,83,11,4,2026-05-15 11:29:00,verified,False
+Suspicious Person,Medium,ad-portas,Ad Portas,4.863869824083515,-74.03123222671044,48,16,2,2026-04-01 16:47:00,verified,False
+Dark Zone,Medium,porton-cafe,Portón Café,4.863508265249965,-74.03772039477603,40,14,0,2026-02-02 14:56:00,pending,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858629704221619,-74.03143252689863,60,18,2,2025-12-03 18:57:00,pending,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858514364209864,-74.0312074622862,76,19,0,2026-01-05 19:57:00,verified,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.85867072654113,-74.03165544233582,50,17,0,2026-03-16 17:45:00,pending,True
+Maintenance,Information,ad-portas,Ad Portas,4.863905213618908,-74.03142826244117,11,18,3,2026-02-26 18:32:00,verified,False
+Suspicious Person,Medium,ad-portas,Ad Portas,4.863660097215168,-74.03151662431291,31,17,4,2026-02-13 17:42:00,verified,True
+Theft/Robbery,High,puente-madera,Puente Madera,4.85856918946453,-74.03134714706407,64,21,5,2025-12-20 21:12:00,pending,True
+Maintenance,Information,ad-portas,Ad Portas,4.86372806737965,-74.03226563272185,20,15,3,2026-05-07 15:26:00,verified,True
+Suspicious Person,Medium,puente-madera,Puente Madera,4.85866787170354,-74.03182902636317,63,17,0,2026-04-27 17:52:00,verified,True
+Suspicious Person,Medium,puente-madera,Puente Madera,4.85852808168464,-74.0316680504874,52,5,4,2025-12-12 05:26:00,verified,True
+Suspicious Person,Medium,puente-madera,Puente Madera,4.858904727469886,-74.03170916436379,50,7,5,2025-11-29 07:19:00,pending,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858760763300066,-74.03136737887854,52,10,5,2025-12-06 10:08:00,pending,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.858601594432183,-74.03167151804412,81,8,6,2026-05-17 08:03:00,pending,False
+Theft/Robbery,High,porton-cafe,Portón Café,4.863334572197603,-74.03833340514505,85,17,4,2026-05-15 17:50:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858855786968217,-74.0319785864871,37,18,3,2026-04-02 18:31:00,verified,False
+Theft/Robbery,High,puente-madera,Puente Madera,4.8587988308522005,-74.03109450090605,80,7,3,2025-11-20 07:29:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858529399411754,-74.03154257928821,66,5,3,2026-03-05 05:22:00,verified,True
+Theft/Robbery,High,ad-portas,Ad Portas,4.863446210746263,-74.03204267680266,74,19,5,2026-01-24 19:19:00,verified,False
+Dark Zone,Medium,puente-madera,Puente Madera,4.858484334278348,-74.03148146593679,69,18,5,2025-11-29 18:30:00,verified,False
+Dark Zone,Medium,ad-portas,Ad Portas,4.863736923781935,-74.03182394140084,46,16,2,2026-04-29 16:10:00,verified,False
+Suspicious Person,Medium,puente-madera,Puente Madera,4.85836236183826,-74.03132937804456,49,20,1,2026-05-19 20:45:00,verified,False
+Dark Zone,Medium,ad-portas,Ad Portas,4.863585856025923,-74.03044575697287,53,9,3,2026-02-05 09:19:00,verified,True
+Suspicious Person,Medium,ad-portas,Ad Portas,4.863414462684972,-74.03189354303848,63,16,4,2026-03-13 16:51:00,verified,True
+Suspicious Person,Medium,porton-cafe,Portón Café,4.863571654082107,-74.0378884833935,61,8,2,2026-02-11 08:55:00,discarded,False
+Theft/Robbery,High,ad-portas,Ad Portas,4.863439556774338,-74.03097368088952,92,18,0,2025-12-01 18:38:00,verified,False
+Theft/Robbery,High,ad-portas,Ad Portas,4.863505803431303,-74.0312105934553,80,17,1,2025-11-25 17:19:00,verified,True
+Maintenance,Information,ad-portas,Ad Portas,4.8638958321025365,-74.03152910687308,5,19,0,2026-02-09 19:42:00,verified,True
+Suspicious Person,Medium,puente-madera,Puente Madera,4.858546290033536,-74.03130000783648,45,22,4,2025-12-26 22:51:00,verified,True
+Suspicious Person,Medium,puente-madera,Puente Madera,4.858594270307352,-74.03169702451586,55,14,1,2026-04-07 14:08:00,discarded,True
+Theft/Robbery,High,puente-madera,Puente Madera,4.859087504983848,-74.03171950658285,80,13,0,2026-03-09 13:45:00,verified,False

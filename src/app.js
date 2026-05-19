@@ -404,6 +404,150 @@ function exportIncidents() {
     });
 }
 
+// ── AI Insights (XGBoost + DBSCAN desde la API) ───────────────────────────────
+
+async function loadAIInsights() {
+    try {
+        const res  = await fetch(`${config.apiBase}/ai/insights`);
+        if (!res.ok) throw new Error('API unavailable');
+        const data = await res.json();
+        const lang = store.getLanguage();
+
+        // Badge del modelo
+        const badge = document.getElementById('ml-badge');
+        const mae   = document.getElementById('ml-mae');
+        if (badge && mae) { badge.classList.remove('hidden'); mae.textContent = data.model_mae; }
+
+        // ── Ruta segura ───────────────────────────────────────────────────────
+        const worst  = data.worst_zone;
+        const safest = data.safest_zone;
+        const routeCard = document.getElementById('ai-route-card');
+        if (routeCard) {
+            routeCard.querySelector('.animate-pulse')?.replaceWith((() => {
+                const d = document.createElement('div');
+                d.innerHTML = `
+                <div class="p-5 bg-gradient-to-br from-primary to-primary-container rounded-2xl text-white shadow-xl relative overflow-hidden">
+                    <p class="text-white/60 text-[10px] uppercase font-bold tracking-widest mb-1">
+                        Evitar ${worst.zone_name} (riesgo ${worst.risk_now})
+                    </p>
+                    <h3 class="text-lg font-headline font-bold mb-4">Ruta vía ${safest.zone_name}</h3>
+                    <div class="flex items-center gap-6">
+                        <div>
+                            <p class="text-3xl font-headline font-extrabold text-tertiary-fixed">${data.risk_reduction}%</p>
+                            <p class="text-[10px] text-white/60 uppercase font-bold mt-0.5">Reducción de riesgo</p>
+                        </div>
+                        <div class="w-px h-10 bg-white/15"></div>
+                        <div>
+                            <p class="text-3xl font-headline font-extrabold">+4 min</p>
+                            <p class="text-[10px] text-white/60 uppercase font-bold mt-0.5">Tiempo extra</p>
+                        </div>
+                        <div class="w-px h-10 bg-white/15"></div>
+                        <div>
+                            <p class="text-3xl font-headline font-extrabold">${safest.risk_now}</p>
+                            <p class="text-[10px] text-white/60 uppercase font-bold mt-0.5">Riesgo de ruta</p>
+                        </div>
+                    </div>
+                    <span class="material-symbols-outlined absolute -right-4 -bottom-4 text-white/10 text-9xl">verified_user</span>
+                </div>`;
+                return d.firstElementChild;
+            })());
+        }
+
+        // ── Ranking de zonas ─────────────────────────────────────────────────
+        const rankEl = document.getElementById('ai-zone-ranking');
+        if (rankEl) {
+            rankEl.innerHTML = data.zone_risks.map((z, i) => {
+                const color = z.risk_now > 70 ? '#ba1a1a' : z.risk_now > 40 ? '#636100' : '#18409d';
+                return `
+                <div class="space-y-1">
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center gap-2">
+                            <span class="text-[10px] font-extrabold text-outline w-4">${i + 1}</span>
+                            <p class="text-sm font-bold text-primary">${z.zone_name}</p>
+                        </div>
+                        <span class="text-sm font-headline font-extrabold" style="color:${color}">${z.risk_now}</span>
+                    </div>
+                    <div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+                        <div class="h-full rounded-full transition-all duration-700" style="width:${z.risk_now}%; background-color:${color}"></div>
+                    </div>
+                </div>`;
+            }).join('');
+        }
+
+        // ── Clusters DBSCAN ──────────────────────────────────────────────────
+        const clustersEl = document.getElementById('ai-clusters');
+        if (clustersEl) {
+            clustersEl.innerHTML = data.clusters.map(c => {
+                const color = c.avg_risk > 70 ? '#ba1a1a' : c.avg_risk > 40 ? '#636100' : '#18409d';
+                return `
+                <div class="flex items-center gap-4 p-4 bg-surface-container-low rounded-2xl border border-outline-variant/10">
+                    <div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0" style="background:${color}20">
+                        <span class="text-lg font-headline font-extrabold" style="color:${color}">${Math.round(c.avg_risk)}</span>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <p class="text-sm font-bold text-primary">${c.zone} — Cluster ${c.cluster_id + 1}</p>
+                        <p class="text-[11px] text-outline mt-0.5">${c.count} incidentes · Tipo frecuente: <b>${c.top_type}</b></p>
+                        <p class="text-[10px] text-outline/70 mt-0.5">${c.lat.toFixed(5)}, ${c.lng.toFixed(5)}</p>
+                    </div>
+                    <span class="material-symbols-outlined text-sm shrink-0" style="color:${color}">location_on</span>
+                </div>`;
+            }).join('');
+        }
+
+        // ── Franja horaria ────────────────────────────────────────────────────
+        const slotEl = document.getElementById('ai-timeslot');
+        if (slotEl) {
+            const lvl   = data.time_risk_level;
+            const color = lvl === 'high' ? 'text-error' : lvl === 'moderate' ? 'text-tertiary' : 'text-on-secondary-fixed-variant';
+            const adviceMap = { high: lang === 'es' ? 'Usa rutas iluminadas y el servicio de acompañamiento. Evita el Puente Peatonal después de las 20h.' : 'Use lit routes and escort service. Avoid Puente Peatonal after 20h.',
+                moderate: lang === 'es' ? 'Ten precaución cerca de Ad Portas y el puente peatonal.' : 'Exercise caution near Ad Portas and the pedestrian bridge.',
+                low: lang === 'es' ? 'Condiciones normales. Mantente alerta en los puntos de acceso.' : 'Normal conditions. Stay alert at access points.' };
+            slotEl.outerHTML = `
+            <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-[10px] font-bold text-outline uppercase tracking-widest">Franja activa</p>
+                        <p class="text-2xl font-headline font-extrabold text-primary">${data.time_slot}</p>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-[10px] font-bold text-outline uppercase tracking-widest">Nivel de riesgo</p>
+                        <p class="text-2xl font-headline font-extrabold ${color}">${lvl === 'high' ? 'Alto' : lvl === 'moderate' ? 'Moderado' : 'Bajo'}</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-3 p-4 bg-surface-container-low rounded-xl">
+                    <span class="material-symbols-outlined text-secondary shrink-0 mt-0.5" style="font-variation-settings:'FILL' 1;">psychology</span>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">${adviceMap[lvl]}</p>
+                </div>
+            </div>`;
+        }
+
+    } catch {
+        // API no disponible — fallback silencioso con datos locales
+        const rankEl = document.getElementById('ai-zone-ranking');
+        if (rankEl) {
+            const zones = store.getZones().sort((a, b) => b.riskScore - a.riskScore);
+            rankEl.innerHTML = zones.map((z, i) => {
+                const color = z.riskScore > 70 ? '#ba1a1a' : z.riskScore > 40 ? '#636100' : '#18409d';
+                return `<div class="space-y-1">
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center gap-2">
+                            <span class="text-[10px] font-extrabold text-outline w-4">${i + 1}</span>
+                            <p class="text-sm font-bold text-primary">${z.name}</p>
+                        </div>
+                        <span class="text-sm font-headline font-extrabold" style="color:${color}">${z.riskScore}</span>
+                    </div>
+                    <div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+                        <div class="h-full rounded-full" style="width:${z.riskScore}%; background-color:${color}"></div>
+                    </div>
+                </div>`;
+            }).join('');
+        }
+        document.getElementById('ai-route-card')?.querySelector('.animate-pulse')?.remove();
+        document.getElementById('ai-clusters')?.querySelectorAll('.animate-pulse').forEach(e => e.remove());
+        document.getElementById('ai-timeslot')?.remove();
+    }
+}
+
 // ── Global handlers for view actions ─────────────────────────────────────────
 
 window.setLang = (lang) => {
@@ -487,6 +631,11 @@ function navigate() {
     // Init Leaflet map after DOM is ready
     if (viewName === 'map') {
         requestAnimationFrame(initMap);
+    }
+
+    // Fetch AI insights from ML API
+    if (viewName === 'ai') {
+        requestAnimationFrame(loadAIInsights);
     }
 
     // Attach view-specific listeners

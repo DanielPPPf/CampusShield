@@ -1,13 +1,15 @@
 """
 CampusShield — API mínima para demo
-Conecta el frontend (localStorage) con PostgreSQL.
 Endpoints: GET/POST /api/incidents · GET /api/zones · GET /api/health
+           GET /api/ai/insights · GET /api/ai/predict · GET /api/ai/clusters
 """
 import os, json
+from datetime import datetime
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 import psycopg2
 from psycopg2.extras import RealDictCursor
+import joblib, numpy as np, pandas as pd
 
 app = Flask(__name__)
 CORS(app, origins=["http://localhost:9000", "http://localhost:8000", "http://127.0.0.1:9000"])
@@ -134,6 +136,107 @@ def create_incident():
 
         conn.commit()
         return jsonify({"id": new_id, "status": "created"}), 201
+
+# ── Cargar modelos ML ─────────────────────────────────────────────────────────
+_model    = joblib.load("ml/models/xgboost_risk.pkl")
+_le_zone  = joblib.load("ml/models/le_zone.pkl")
+_le_type  = joblib.load("ml/models/le_type.pkl")
+_clusters = joblib.load("ml/models/clusters.pkl")
+_zone_hour_risk = pd.read_csv("ml/zone_hour_risk.csv")
+
+ZONE_NAMES = {
+    "ad-portas":     "Ad Portas",
+    "porton-cafe":   "Portón Café",
+    "puente-madera": "Puente Madera",
+}
+
+def predict_risk(zone_id, inc_type, hour, dow=None, is_weekend=0):
+    if dow is None:
+        dow = datetime.now().weekday()
+    is_night = int(hour >= 20 or hour < 6)
+    is_peak  = int((7 <= hour <= 9) or (16 <= hour <= 19))
+    zone_enc = _le_zone.transform([zone_id])[0]
+    type_enc = _le_type.transform([inc_type])[0]
+    X = np.array([[zone_enc, type_enc, hour, dow, is_night, is_peak, is_weekend]])
+    return float(round(_model.predict(X)[0], 1))
+
+# ── AI Endpoints ──────────────────────────────────────────────────────────────
+
+@app.get("/api/ai/clusters")
+def get_clusters():
+    return jsonify(_clusters)
+
+@app.get("/api/ai/predict")
+def predict():
+    zone_id  = request.args.get("zone", "ad-portas")
+    inc_type = request.args.get("type", "Theft/Robbery")
+    hour     = int(request.args.get("hour", datetime.now().hour))
+    if zone_id not in _le_zone.classes_ or inc_type not in _le_type.classes_:
+        return jsonify({"error": "invalid zone or type"}), 400
+    risk = predict_risk(zone_id, inc_type, hour)
+    return jsonify({"zone": zone_id, "type": inc_type, "hour": hour, "predicted_risk": risk})
+
+@app.get("/api/ai/insights")
+def ai_insights():
+    now  = datetime.now()
+    hour = now.hour
+    dow  = now.weekday()
+    is_weekend = int(dow >= 5)
+
+    zones_ids = ["ad-portas", "puente-madera", "porton-cafe"]
+    types     = _le_type.classes_.tolist()
+
+    # Riesgo actual por zona (promedio de todos los tipos en la hora actual)
+    zone_risks = []
+    for zid in zones_ids:
+        risks = [predict_risk(zid, t, hour, dow, is_weekend) for t in types]
+        avg   = round(float(np.mean(risks)), 1)
+        zone_risks.append({
+            "zone_id":   zid,
+            "zone_name": ZONE_NAMES[zid],
+            "risk_now":  avg,
+        })
+
+    zone_risks.sort(key=lambda x: -x["risk_now"])
+    worst  = zone_risks[0]
+    safest = zone_risks[-1]
+
+    # Riesgo por hora del día para cada zona (para gráfico de tendencia)
+    hourly = {}
+    for zid in zones_ids:
+        hourly[zid] = (
+            _zone_hour_risk[_zone_hour_risk["zone"] == zid]
+            .sort_values("hour")[["hour", "predicted_risk"]]
+            .to_dict("records")
+        )
+
+    # Franja horaria
+    if hour < 6:
+        slot, level = "00–06h", "high"
+    elif hour < 12:
+        slot, level = "06–12h", "low"
+    elif hour < 18:
+        slot, level = "12–18h", "moderate"
+    elif hour < 20:
+        slot, level = "18–20h", "moderate"
+    else:
+        slot, level = "20–24h", "high"
+
+    risk_reduction = round(((worst["risk_now"] - safest["risk_now"]) / max(worst["risk_now"], 1)) * 100)
+
+    return jsonify({
+        "generated_at":    now.isoformat(),
+        "current_hour":    hour,
+        "time_slot":       slot,
+        "time_risk_level": level,
+        "zone_risks":      zone_risks,
+        "worst_zone":      worst,
+        "safest_zone":     safest,
+        "risk_reduction":  max(risk_reduction, 0),
+        "hourly_risk":     hourly,
+        "clusters":        _clusters,
+        "model_mae":       10.26,
+    })
 
 if __name__ == "__main__":
     app.run(port=3000, debug=True)

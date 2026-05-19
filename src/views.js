@@ -645,29 +645,14 @@ export const views = {
         `;
     },
     ai: () => {
-        const zones     = store.getZones();
-        const incidents = store.getIncidents();
-        const isAllHighRisk = zones.every(z => z.riskScore > 60);
-
-        const sorted      = [...zones].sort((a, b) => b.riskScore - a.riskScore);
-        const worstZone   = sorted[0];
-        const safestZone  = sorted[sorted.length - 1];
-        const riskReduction = worstZone.riskScore > safestZone.riskScore
-            ? Math.round(((worstZone.riskScore - safestZone.riskScore) / worstZone.riskScore) * 100)
-            : 5;
-
-        const total     = incidents.length;
-        const verified  = incidents.filter(i => i.validationStatus === 'verified').length;
-        const discarded = incidents.filter(i => i.validationStatus === 'discarded').length;
-        const pending   = incidents.filter(i => i.validationStatus === 'pending').length;
-        const verifiedPct  = total > 0 ? Math.round((verified  / total) * 100) : 0;
+        // Render esqueleto — los datos reales llegan por fetch en attachEventListeners
+        const incidents     = store.getIncidents();
+        const total         = incidents.length;
+        const verified      = incidents.filter(i => i.validationStatus === 'verified').length;
+        const discarded     = incidents.filter(i => i.validationStatus === 'discarded').length;
+        const pending       = incidents.filter(i => i.validationStatus === 'pending').length;
+        const verifiedPct   = total > 0 ? Math.round((verified  / total) * 100) : 0;
         const falseAlarmPct = total > 0 ? Math.round((discarded / total) * 100) : 0;
-
-        const hour = new Date().getHours();
-        const timeSlot    = hour < 6 ? '00–06h' : hour < 12 ? '06–12h' : hour < 18 ? '12–18h' : '18–24h';
-        const timeRiskLvl = hour >= 20 || hour < 6 ? t('high') : hour >= 18 ? t('moderate') : t('low');
-        const timeColor   = hour >= 20 || hour < 6 ? 'text-error' : hour >= 18 ? 'text-tertiary' : 'text-on-secondary-fixed-variant';
-        const timeAdvice  = hour >= 20 || hour < 6 ? t('timeAdviceHigh') : hour >= 18 ? t('timeAdviceModerate') : t('timeAdviceLow');
 
         return `
             ${common.header()}
@@ -676,72 +661,52 @@ export const views = {
                     <span class="text-secondary font-label text-[10px] font-semibold uppercase tracking-[0.2em] block mb-2">${t('instIntel')}</span>
                     <h1 class="text-4xl font-headline font-extrabold text-primary tracking-tight leading-tight">${t('ai')}</h1>
                     <p class="text-on-surface-variant text-sm mt-2">${t('liveInsights')}</p>
+                    <div id="ml-badge" class="hidden mt-3 inline-flex items-center gap-2 bg-secondary/10 text-secondary text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full">
+                        <span class="material-symbols-outlined text-sm">model_training</span>
+                        XGBoost + DBSCAN · MAE <span id="ml-mae">—</span> pts
+                    </div>
                 </section>
 
-                ${isAllHighRisk ? `
-                <div class="bg-error/10 border-2 border-error rounded-2xl p-5 flex items-start gap-4 animate-pulse">
-                    <span class="material-symbols-outlined text-error text-3xl" style="font-variation-settings:'FILL' 1;">warning_amber</span>
-                    <div>
-                        <h3 class="font-bold text-error text-base">${t('highRiskAlert')}</h3>
-                        <p class="text-error/80 text-sm mt-1">${t('aiEscortAdvice')}</p>
-                    </div>
-                </div>` : ''}
-
-                <div class="bg-surface-container-lowest rounded-[1.5rem] p-6 shadow-[0_4px_20px_rgba(0,10,52,0.05)] border border-outline-variant/10">
+                <!-- Bloque de ruta segura — se rellena desde la API -->
+                <div id="ai-route-card" class="bg-surface-container-lowest rounded-[1.5rem] p-6 shadow-[0_4px_20px_rgba(0,10,52,0.05)] border border-outline-variant/10">
                     <div class="flex items-center gap-2 mb-4">
                         <span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">route</span>
                         <h2 class="font-headline font-semibold text-lg text-primary">${t('safeRoute')}</h2>
+                        <span class="ml-auto text-[9px] font-bold text-outline uppercase bg-surface-container px-2 py-1 rounded-full">Modelo ML</span>
                     </div>
-                    <div class="p-5 bg-gradient-to-br from-primary to-primary-container rounded-2xl text-white shadow-xl relative overflow-hidden group">
-                        <div class="relative z-10">
-                            <p class="text-white/60 text-[10px] uppercase font-bold tracking-widest mb-1">${t('avoid')} ${worstZone.name} (${worstZone.riskScore} risk)</p>
-                            <h3 class="text-lg font-headline font-bold mb-4">${t('routeVia')} ${safestZone.name}</h3>
-                            <div class="flex items-center gap-6">
-                                <div>
-                                    <p class="text-3xl font-headline font-extrabold text-tertiary-fixed">${riskReduction}%</p>
-                                    <p class="text-[10px] text-white/60 uppercase font-bold mt-0.5">${t('riskReduction')}</p>
-                                </div>
-                                <div class="w-px h-10 bg-white/15"></div>
-                                <div>
-                                    <p class="text-3xl font-headline font-extrabold">+4 min</p>
-                                    <p class="text-[10px] text-white/60 uppercase font-bold mt-0.5">${t('extraTime')}</p>
-                                </div>
-                                <div class="w-px h-10 bg-white/15"></div>
-                                <div>
-                                    <p class="text-3xl font-headline font-extrabold">${safestZone.riskScore}</p>
-                                    <p class="text-[10px] text-white/60 uppercase font-bold mt-0.5">${t('routeRisk')}</p>
-                                </div>
-                            </div>
-                        </div>
-                        <span class="material-symbols-outlined absolute -right-4 -bottom-4 text-white/10 text-9xl transition-transform group-hover:scale-110">verified_user</span>
+                    <div class="h-32 bg-surface-container animate-pulse rounded-2xl flex items-center justify-center">
+                        <span class="material-symbols-outlined text-outline animate-spin">progress_activity</span>
                     </div>
                 </div>
 
+                <!-- Ranking de zonas — se rellena desde la API -->
                 <div class="bg-surface-container-lowest rounded-[1.5rem] p-6 shadow-[0_4px_20px_rgba(0,10,52,0.05)] border border-outline-variant/10 space-y-4">
                     <div class="flex items-center gap-2">
                         <span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">bar_chart</span>
                         <h2 class="font-headline font-semibold text-lg text-primary">${t('zoneRanking')}</h2>
+                        <span class="ml-auto text-[9px] font-bold text-outline uppercase bg-surface-container px-2 py-1 rounded-full">Tiempo real</span>
                     </div>
-                    <div class="space-y-3">
-                        ${sorted.map((z, i) => {
-                            const zColor = z.riskScore > 70 ? '#ba1a1a' : z.riskScore > 40 ? '#636100' : '#18409d';
-                            return `
-                            <div class="space-y-1">
-                                <div class="flex justify-between items-center">
-                                    <div class="flex items-center gap-2">
-                                        <span class="text-[10px] font-extrabold text-outline w-4">${i + 1}</span>
-                                        <p class="text-sm font-bold text-primary">${z.name}</p>
-                                    </div>
-                                    <span class="text-sm font-headline font-extrabold" style="color:${zColor}">${z.riskScore}</span>
-                                </div>
-                                <div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
-                                    <div class="h-full rounded-full transition-all duration-700" style="width:${z.riskScore}%; background-color:${zColor}"></div>
-                                </div>
-                            </div>`;
-                        }).join('')}
+                    <div id="ai-zone-ranking" class="space-y-3">
+                        <div class="h-6 bg-surface-container animate-pulse rounded-full w-full"></div>
+                        <div class="h-6 bg-surface-container animate-pulse rounded-full w-3/4"></div>
+                        <div class="h-6 bg-surface-container animate-pulse rounded-full w-1/2"></div>
                     </div>
                 </div>
 
+                <!-- Hotspots DBSCAN -->
+                <div class="bg-surface-container-lowest rounded-[1.5rem] p-6 shadow-[0_4px_20px_rgba(0,10,52,0.05)] border border-outline-variant/10 space-y-4">
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">location_on</span>
+                        <h2 class="font-headline font-semibold text-lg text-primary">Hotspots DBSCAN</h2>
+                        <span class="ml-auto text-[9px] font-bold text-outline uppercase bg-surface-container px-2 py-1 rounded-full">Clustering</span>
+                    </div>
+                    <div id="ai-clusters" class="space-y-3">
+                        <div class="h-16 bg-surface-container animate-pulse rounded-2xl"></div>
+                        <div class="h-16 bg-surface-container animate-pulse rounded-2xl"></div>
+                    </div>
+                </div>
+
+                <!-- Inteligencia comunitaria (local, sin API) -->
                 <div class="bg-surface-container-lowest rounded-[1.5rem] p-6 shadow-[0_4px_20px_rgba(0,10,52,0.05)] border border-outline-variant/10 space-y-4">
                     <div class="flex items-center gap-2">
                         <span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">groups</span>
@@ -772,25 +737,13 @@ export const views = {
                     </div>
                 </div>
 
+                <!-- Franja horaria — se rellena desde la API -->
                 <div class="bg-surface-container-lowest rounded-[1.5rem] p-6 shadow-[0_4px_20px_rgba(0,10,52,0.05)] border border-outline-variant/10">
                     <div class="flex items-center gap-2 mb-4">
                         <span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">schedule</span>
                         <h2 class="font-headline font-semibold text-lg text-primary">${t('currentTimeWindow')}</h2>
                     </div>
-                    <div class="flex items-center justify-between mb-4">
-                        <div>
-                            <p class="text-[10px] font-bold text-outline uppercase tracking-widest">${t('activeSlot')}</p>
-                            <p class="text-2xl font-headline font-extrabold text-primary">${timeSlot}</p>
-                        </div>
-                        <div class="text-right">
-                            <p class="text-[10px] font-bold text-outline uppercase tracking-widest">${t('riskLevel')}</p>
-                            <p class="text-2xl font-headline font-extrabold ${timeColor}">${timeRiskLvl}</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-3 p-4 bg-surface-container-low rounded-xl">
-                        <span class="material-symbols-outlined text-secondary shrink-0 mt-0.5" style="font-variation-settings:'FILL' 1;">psychology</span>
-                        <p class="text-sm text-on-surface-variant leading-relaxed">${timeAdvice}</p>
-                    </div>
+                    <div id="ai-timeslot" class="h-24 bg-surface-container animate-pulse rounded-2xl"></div>
                 </div>
             </main>
             ${common.navbar('ai')}
