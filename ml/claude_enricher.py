@@ -9,16 +9,34 @@ from datetime import datetime
 log = logging.getLogger(__name__)
 
 try:
-    import anthropic
-    _client = anthropic.Anthropic(api_key=os.environ.get("ANTHROPIC_API_KEY", ""))
-    _enabled = bool(os.environ.get("ANTHROPIC_API_KEY"))
+    from anthropic import AsyncAnthropic as _AsyncAnthropic
+    _has_sdk = True
 except ImportError:
-    _client = None
-    _enabled = False
+    _AsyncAnthropic = None
+    _has_sdk = False
     log.warning("anthropic SDK not installed — Claude enrichment disabled")
 
+_client: "_AsyncAnthropic | None" = None
 
-def enrich_incident(incident_data: dict, xgboost_score: float) -> dict:
+
+def _get_client():
+    """Instancia el cliente de forma lazy para que siempre lea la key actual."""
+    global _client
+    if not _has_sdk:
+        return None
+    api_key = os.environ.get("ANTHROPIC_API_KEY", "")
+    if not api_key:
+        return None
+    if _client is None:
+        _client = _AsyncAnthropic(api_key=api_key)
+    return _client
+
+
+def _enabled() -> bool:
+    return _has_sdk and bool(os.environ.get("ANTHROPIC_API_KEY", ""))
+
+
+async def enrich_incident(incident_data: dict, xgboost_score: float) -> dict:
     """
     Analiza la descripción libre del incidente con Claude y devuelve:
       severity_adjustment  int   [-20, +20]  ajuste al score XGBoost
@@ -28,7 +46,7 @@ def enrich_incident(incident_data: dict, xgboost_score: float) -> dict:
       is_pattern           bool  ¿sugiere patrón recurrente?
     Fallback: valores neutros si la API no está disponible.
     """
-    if not _enabled:
+    if not _enabled():
         return _fallback_enrichment(xgboost_score)
 
     description = incident_data.get("details", "").strip()
@@ -62,7 +80,7 @@ Criterios:
 - is_pattern true si la descripción menciona reincidencia o modus operandi reconocible"""
 
     try:
-        response = _client.messages.create(
+        response = await _get_client().messages.create(
             model="claude-opus-4-6",
             max_tokens=600,
             thinking={"type": "adaptive"},
@@ -97,7 +115,7 @@ Criterios:
         return _fallback_enrichment(xgboost_score)
 
 
-def generate_security_briefing(incidents: list, zone_risks: list) -> dict:
+async def generate_security_briefing(incidents: list, zone_risks: list) -> dict:
     """
     Analiza los últimos N incidentes y el riesgo actual por zona.
     Devuelve un briefing ejecutivo con:
@@ -108,7 +126,7 @@ def generate_security_briefing(incidents: list, zone_risks: list) -> dict:
       alert_level          str  "green" | "yellow" | "orange" | "red"
       generated_by_claude  bool
     """
-    if not _enabled or not incidents:
+    if not _enabled() or not incidents:
         return _fallback_briefing(zone_risks)
 
     # Limitar a los últimos 20 incidentes con descripción
@@ -152,7 +170,7 @@ Criterios para alert_level:
 - red: situación crítica, acción inmediata requerida"""
 
     try:
-        response = _client.messages.create(
+        response = await _get_client().messages.create(
             model="claude-opus-4-6",
             max_tokens=800,
             thinking={"type": "adaptive"},
